@@ -32,7 +32,7 @@ Also includes a customizable file launcher
 
 ## USAGE
 
-These are the included commands & keybindings:
+These are the included commands & keybindings
 
 
 		Insert_MediaFile
