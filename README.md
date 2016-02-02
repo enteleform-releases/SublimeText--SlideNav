@@ -3,7 +3,7 @@
 
 Easily create slide presentations in Sublime Text with SublimeSlides
 
-Also includes a customizable file launcher
+Also includes a customizable file launcher to quickly open media files during your presentation
 
 ## FEATURES
 
