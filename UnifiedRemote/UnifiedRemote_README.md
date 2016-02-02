@@ -16,7 +16,7 @@
  *https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 
 #Layout
-
+```
 ┌────────────────────────────┐  ┌────────────────────────────┐
 │ Switch Windows ( Alt+Tab ) │  │  Exit Current Application  │
 └────────────────────────────┘  └────────────────────────────┘
@@ -29,7 +29,7 @@
 ┌────────────────────────────┐  ┌────────────────────────────┐
 │     Previous MediaLink     │  │       Next MediaLink       │
 └────────────────────────────┘  └────────────────────────────┘
-
+```
 #Key Bindings
 
 All keybindings @ "remote.lua" are set up using default SublimeSlides hotkeys
@@ -52,4 +52,3 @@ The button & it's function ( "sublimetext" ) are commented out in "layout.xml" &
 I commented it out in the release because it is a custom AutoHotkey function & requires additional setup.
 
 If you are interested in using the original function, I have included the AutoHotkey script @ "Launch_SublimeText.ahk"
-
