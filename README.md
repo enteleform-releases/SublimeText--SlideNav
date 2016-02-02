@@ -69,10 +69,7 @@ Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )
 
 ### Slide Titles
 
-Collapse ( remove endcaps from Slide titles for easy editing )  
-<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
-
-Build ( restore endcaps to Slide titles )  
+Align ( resizes all Slide titles to same length )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
 
 ## CUSTOMIZATION
