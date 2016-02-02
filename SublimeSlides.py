@@ -655,16 +655,8 @@ class Commands ():
 			cursorLine_Text         = view.substr ( cursorLine_A )
 			cursorRow, cursorColumn = view.rowcol ( cursorPoint_A )
 
-			print ( cursorLine_Text )
-
-
-			invalidLine    = False
-
-			if regionText.find ( titleEndcap ) >= 0 : invalidLine = True
-			if regionText.find ( titleFill )   >= 0 : invalidLine = True
-
-			return
-
+			if cursorLine_Text.find ( titleEndcap ) == -1:
+				return
 
 		documentStart  = 0
 		documentEnd    = view.size ()
