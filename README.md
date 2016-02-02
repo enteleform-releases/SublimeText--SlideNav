@@ -34,18 +34,22 @@ Also includes a file launcher to quickly open media files during your presentati
 
 These are the included commands & default keybindings:
 
-### Navigation
+### Navigate Slides
 
-Zoom  ( zoom to selected Slide - Slide title line must be selected )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>equals</kbd>
+Both Navigate commands will automatically show the first slide the when they are first used  
 
-NavigateDown ( show next Slide - automatically shows first slide on first use )  
+NavigateDown ( show next Slide )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>equals</kbd>
 
-NavigateUp ( show previous Slide - automatically shows first slide on first use )  
+NavigateUp ( show previous Slide )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>minus</kbd>
 
-Reset ( exit Slide & show full document )  
+### Zoom
+
+Zoom_In  ( zoom to selected Slide - Slide title line must be selected )  
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>equals</kbd>
+
+Zoom_Out ( exit Slide & show full document )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>minus</kbd>
 
 ### Snippets
