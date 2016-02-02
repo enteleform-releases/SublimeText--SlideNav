@@ -23,6 +23,18 @@ Also includes a file launcher to quickly open media files during your presentati
 
 ![MediaLinkDemo](http://i.imgur.com/0UxRYbf.gif?1)
 
+### Remote Control
+
+Included in SublimeSlides/UnifiedRemote is a custom preset for Unified Remote
+
+Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
+
+Here is a screenshot of the preset:
+
+![UnifiedRemote](http://i.imgur.com/J4S6wBm.png?1)
+
+More info in the readme file @ SublimeSlides/UnifiedRemote
+
 ### Snippets
 
 * Slide dividers & MediaLinks are generated automatically via hotkey
@@ -89,19 +101,6 @@ Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )
 
 Align ( resizes all Slide titles to same length )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
-
-## REMOTE CONTROL
-
-Included in SublimeSlides/UnifiedRemote is a custom preset for Unified Remote
-
-Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
-
-Here is a screenshot of the preset:
-
-![UnifiedRemote](http://i.imgur.com/J4S6wBm.png?1)
-
-More info in the readme file @ SublimeSlides/UnifiedRemote
-
 
 ## CUSTOMIZATION
 
