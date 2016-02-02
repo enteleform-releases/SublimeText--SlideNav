@@ -46,7 +46,7 @@ NavigateSlides_Up ( show previous Slide )
 
 ### Navigate MediaLinks
 
-* Both commands are limited to MediaLinks that are currently Visible, meaning you can use them without accidentally moving into the next slide 
+* Both NavigateMediaLinks commands are limited to MediaLinks that are currently Visible, meaning you can use them without accidentally moving into the next slide 
 
 NavigateMediaLinks_Down ( open next MediaLink )  
 <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
