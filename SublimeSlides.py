@@ -622,7 +622,7 @@ class Commands ():
 				break
 
 		if mediaFile_Path == "":
-			# print ( V.errorStart + "\"" + cursorLine_MediaLink + "\"" + " MediaLink not found" + V.errorEnd )
+			print ( V.errorStart + "\"" + cursorLine_MediaLink + "\"" + " MediaLink not found" + V.errorEnd )
 			return
 
 		trimmed_MediaFile_Path = mediaFile_Path [ fileStart_Offset : len ( mediaFile_Path ) ].lstrip ()
@@ -650,7 +650,7 @@ class Commands ():
 		fileExtension_Index = filePath.rfind ( "." )
 
 		if fileExtension_Index == -1:
-			# print ( V.errorStart + "\"" + filePath + "\"" + " has no file extension" + V.errorEnd )
+			print ( V.errorStart + "\"" + filePath + "\"" + " has no file extension" + V.errorEnd )
 			return
 
 		fileExtension = filePath [ fileExtension_Index : filePath_Length ]
@@ -660,7 +660,7 @@ class Commands ():
 		fileExists = os.path.exists ( filePath )
 
 		if not fileExists:
-			# print ( V.errorStart + "\"" + filePath + "\"" + " does not exist" + V.errorEnd )
+			print ( V.errorStart + "\"" + filePath + "\"" + " does not exist" + V.errorEnd )
 			return
 
 			#═════      • • •   Set Application      ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
@@ -680,7 +680,7 @@ class Commands ():
 
 		if application == "" \
 		or not applicationExists:
-			# print ( V.errorStart + "\"" + application + "\"" + " does not exist" + V.errorEnd )
+			print ( V.errorStart + "\"" + application + "\"" + " does not exist" + V.errorEnd )
 			return
 
 			# ? ? ?     • • •   Load Media File      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦•••i1⌡#
