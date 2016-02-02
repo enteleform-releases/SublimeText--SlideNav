@@ -75,7 +75,7 @@ Open_MediaLink
 Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
-### Slide Titles
+### Slides
 
 Align ( resizes all Slide titles to same length )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
