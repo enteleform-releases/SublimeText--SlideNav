@@ -52,7 +52,7 @@ Zoom_In  ( zoom to selected Slide - Slide title line must be selected )
 Zoom_Out ( exit Slide & show full document )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
 
-### Snippets
+### Insert Snippets
 
 * All Snippet commands can be used 2 ways
  * on blank lines ( new text area will automatically be selected )
