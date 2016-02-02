@@ -31,7 +31,7 @@ https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 ```
 #Key Bindings
 
-All keybindings @ "remote.lua" are set up using default SublimeSlides hotkeys  
+All keybindings @ `remote.lua` are set up using default SublimeSlides hotkeys  
 
 The following commands are set up for Windows & may require modification to work on non-Windows computers:  
 ```
