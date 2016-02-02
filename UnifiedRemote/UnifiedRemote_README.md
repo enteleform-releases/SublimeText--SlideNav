@@ -8,10 +8,10 @@ http://www.unifiedremote.com/
 
 Copy the "SublimeSlides" directory contained within the zip file to your UnifiedRemote custom remotes directory  
 
-Unified Remote custom remotes directory @  
+**Unified Remote custom remotes directory @**  
 https://github.com/unifiedremote/Docs/blob/master/intro/whats-included.md
 
-More Info @  
+**More Info @**  
 https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 
 #Layout
