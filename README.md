@@ -36,7 +36,7 @@ These are the included commands & default keybindings:
 
 ### Navigate Slides
 
-Both Navigate commands will automatically show the first slide the when they are first used  
+* Both Navigate commands will automatically show the first slide the when they are first used
 
 NavigateDown ( show next Slide )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>equals</kbd>
