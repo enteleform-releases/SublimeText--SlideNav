@@ -5,7 +5,7 @@ Easily create slide presentations in Sublime Text with SublimeSlides
 
 Also includes a customizable file launcher
 
-## Features
+## FEATURES
 
 ### Slides
 
@@ -27,5 +27,3 @@ Also includes a customizable file launcher
 * Slide dividers & MediaLinks are generated automatically via hotkey
 
 ![SnippetDemo](http://i.imgur.com/RUvj93C.gif?1)
-
-
