@@ -1,18 +1,18 @@
 
 #Setup
 
-###Install UnifiedRemote on your mobile device & computer:
-```http://www.unifiedremote.com/```
+###Install UnifiedRemote on your mobile device & computer:  
+http://www.unifiedremote.com/
 
 ###Install the preset @ UnifiedRemote:
 
-*Copy the "SublimeSlides" directory contained within the zip file to your UnifiedRemote custom remotes directory
+*Copy the "SublimeSlides" directory contained within the zip file to your UnifiedRemote custom remotes directory  
 
-*Unified Remote custom remotes directory @
-```https://github.com/unifiedremote/Docs/blob/master/intro/whats-included.md```
+*Unified Remote custom remotes directory @  
+https://github.com/unifiedremote/Docs/blob/master/intro/whats-included.md
 
-*More Info @
-```https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md```
+*More Info @  
+https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 
 #Layout
 ```
