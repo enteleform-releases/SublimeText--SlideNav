@@ -92,4 +92,4 @@ Modifications available @ SublimeSlides.sublime-settings:
 
 So far, SublimeSlides has only been tested with Windows & SublimeText 3.
 
-This is my first release! Feel free to contact me enteleform@gmail.com with any feedback!
+This is my first release! Feel free to contact me at enteleform@gmail.com with any feedback!
