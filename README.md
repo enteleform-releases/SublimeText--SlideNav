@@ -35,36 +35,35 @@ Also includes a customizable file launcher
 These are the included commands & keybindings
 
 
-		Insert_MediaFile
-		<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
-		
-		Insert_MediaLink
-		<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>period</kbd>
-		
-		Open_MediaLink
-		<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
-		
-		Toggle_MediaLink
-		<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
-		
-		Reset
-		<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>minus</kbd>
-		
-		Zoom
-		<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>equals</kbd>
-		
-		NavigateDown
-		<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>equals</kbd>
-		
-		NavigateUp
-		<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>minus</kbd>
-		
-		Insert_Title
-		<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
-		
-		Build
-		<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
-		
-		Collapse
-		<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
-		
+Insert_MediaFile
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
+
+Insert_MediaLink
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>period</kbd>
+
+Open_MediaLink
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
+
+Toggle_MediaLink
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
+
+Reset
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>minus</kbd>
+
+Zoom
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>equals</kbd>
+
+NavigateDown
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>equals</kbd>
+
+NavigateUp
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>minus</kbd>
+
+Insert_Title
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
+
+Build
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
+
+Collapse
+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
