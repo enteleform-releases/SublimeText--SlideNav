@@ -39,18 +39,18 @@ These are the included commands & default keybindings:
 * Both Navigate commands will automatically show the first slide when they are first used
 
 NavigateDown ( show next Slide )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>equals</kbd>
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
 NavigateUp ( show previous Slide )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>minus</kbd>
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
 
 Zoom_In  ( zoom to selected Slide - Slide title line must be selected )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>equals</kbd>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd>
 
 Zoom_Out ( exit Slide & show full document )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>minus</kbd>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
 
 ### Snippets
 
@@ -59,13 +59,13 @@ Zoom_Out ( exit Slide & show full document )
  * on lines with text ( text area will automatically use line's text )
 
 Insert_Title ( insert Slide divider )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 Insert_MediaFile ( insert MediaLink + path )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
 Insert_MediaLink ( insert MediaLink + wrapper )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>period</kbd>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
 
 ### MediaLink
 
@@ -73,12 +73,12 @@ Open_MediaLink
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
 
 Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 ### Slide Titles
 
 Align ( resizes all Slide titles to same length )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
 ## CUSTOMIZATION
 
