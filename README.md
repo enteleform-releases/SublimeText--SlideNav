@@ -1,8 +1,6 @@
 
 # ST_SublimeSlides
 
-<kbd>shift</kbd> + <kbd>command</kbd> + <kbd>3</kbd>
-
 Easily create slide presentations in Sublime Text with SublimeSlides
 
 Also includes a customizable file launcher
@@ -31,3 +29,42 @@ Also includes a customizable file launcher
 * MediaLinks can be generated with or without path ( use with path to define MediaLink, use without path to launch MediaLink anywhere else in the document )
 
 ![SnippetDemo](http://i.imgur.com/RUvj93C.gif?1)
+
+## USAGE
+
+These are the included commands & keybindings:
+
+
+		Insert_MediaFile
+		<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>super</kbd> + <kbd>period</kbd>
+		
+		Insert_MediaLink
+		<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>period</kbd>
+		
+		Open_MediaLink
+		<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>o</kbd>
+		
+		Toggle_MediaLink
+		<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>alt</kbd> + <kbd>period</kbd>
+		
+		Reset
+		<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>minus</kbd>
+		
+		Zoom
+		<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>equals</kbd>
+		
+		NavigateDown
+		<kbd>ctrl</kbd> + <kbd>super</kbd> + <kbd>alt</kbd> + <kbd>equals</kbd>
+		
+		NavigateUp
+		<kbd>ctrl</kbd> + <kbd>super</kbd> + <kbd>alt</kbd> + <kbd>minus</kbd>
+		
+		Insert_Title
+		<kbd>ctrl</kbd> + <kbd>super</kbd> + <kbd>alt</kbd> + <kbd>period</kbd>
+		
+		Build
+		<kbd>ctrl</kbd> + <kbd>super</kbd> + <kbd>period</kbd>
+		
+		Collapse
+		<kbd>super</kbd> + <kbd>alt</kbd> + <kbd>period</kbd>
+		
