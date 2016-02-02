@@ -74,3 +74,11 @@ Collapse ( remove endcaps from Slide titles for easy editing )
 
 Build ( restore endcaps to Slide titles )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
+
+## CUSTOMIZATION
+
+Modifications available @ SublimeSlides.sublime-settings:
+
+* Snippet Visual Styles
+* MediaLink Applications & Their Associated Extensions 
+* Presentation FileTypes & Comment Characters ( required for any filetype you want to use SublimeSlides with )
