@@ -9,7 +9,7 @@ Also includes a customizable file launcher
 
 ### Slides
 
-* Divide your document with Slide dividers
+* Divide your document with Slides
 * Navigate through the document slide by slide ( any content not in the current slide is folded )
 
 ![SlideDemo](http://i.imgur.com/q02FrPm.gif?1)
