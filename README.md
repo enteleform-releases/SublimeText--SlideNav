@@ -1,6 +1,8 @@
 
 # ST_SublimeSlides
 
+<kbd>shift</kbd> + <kbd>command</kbd> + <kbd>3</kbd>
+
 Easily create slide presentations in Sublime Text with SublimeSlides
 
 Also includes a customizable file launcher
