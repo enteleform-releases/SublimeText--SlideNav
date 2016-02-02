@@ -38,10 +38,10 @@ These are the included commands & default keybindings:
 
 * Both Navigate commands will automatically show the first slide when they are first used
 
-NavigateDown ( show next Slide )  
+NavigateSlides_Down ( show next Slide )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-NavigateUp ( show previous Slide )  
+NavigateSlides_Up ( show previous Slide )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
