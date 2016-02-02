@@ -67,11 +67,10 @@ class SublimeSlidesCommand ( sublime_plugin.TextCommand ):
 		elif mode == "Insert_MediaLink" : Commands.insert_MediaLink ( edit, view, True )
 		elif mode == "Insert_MediaFile" : Commands.insert_MediaFile ( edit, view )
 		elif mode == "Toggle_MediaLink" : Commands.toggle_MediaLink ()
-		elif mode == "Collapse" :         Commands.collapse_Titles  ( edit, view )
-		elif mode == "Build" :            Commands.build_Titles     ( edit, view )
+		elif mode == "Align" :            Commands.align_Titles     ( edit, view )
 		elif mode == "NavigateDown" :     Commands.navigate_Content ( view, "Down" )
 		elif mode == "NavigateUp" :       Commands.navigate_Content ( view, "Up" )
-		elif mode == "Zoom" :             Commands.zoom_Content     ( view )
+		elif mode == "Zoom" :             Commands.zoom_Content     ( view, "Manual" )
 		elif mode == "Reset" :            Commands.reset_View       ( view )
 
 #▐▌▒▓▒▐▌════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
@@ -126,9 +125,8 @@ class Commands ():
 		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
-		titleStart               = userSettings.get ( "title_start", "" )
+		titleEndcap              = userSettings.get ( "title_endcap", "" )
 		titleFill                = userSettings.get ( "title_fill", "" )
-		titleEnd                 = userSettings.get ( "title_end", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		region_A     = region.a
@@ -167,9 +165,8 @@ class Commands ():
 		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
-		titleStart               = userSettings.get ( "title_start", "" )
+		titleEndcap              = userSettings.get ( "title_endcap", "" )
 		titleFill                = userSettings.get ( "title_fill", "" )
-		titleEnd                 = userSettings.get ( "title_end", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		mediaLink_Title_Default = Commands.mediaLink_DefaultTitle
@@ -204,9 +201,8 @@ class Commands ():
 				invalidLine = True
 
 			if regionText.find ( mediaLink_WrapperFill ) >= 0 : invalidLine = True
-			if regionText.find ( titleStart )            >= 0 : invalidLine = True
+			if regionText.find ( titleEndcap )           >= 0 : invalidLine = True
 			if regionText.find ( titleFill )             >= 0 : invalidLine = True
-			if regionText.find ( titleEnd )              >= 0 : invalidLine = True
 			if regionText.find ( commentStart )          >= 0 : invalidLine = True
 			if regionText.find ( commentEnd )            >= 0 : invalidLine = True
 
@@ -238,7 +234,7 @@ class Commands ():
 		view.selection.clear ()
 		view.selection.add_all ( mediaLink_Regions )
 		view.run_command ( "reverse_selection_direction" )
-		
+
 		if wrapperEnabled == True \
 		and regionText != "":
 			Commands.insert_MediaLink_Wrapper ( edit, view )
@@ -311,10 +307,10 @@ class Commands ():
 		selectedRegions = view.sel ()
 
 		mediaLink_RightOffset = 0
-		
+
 		if commentEnd != "":
-			mediaLink_RightOffset = len ( Commands.spaceCharacter ) + len ( mediaLink_Character ) + len ( commentEnd ) 
-			
+			mediaLink_RightOffset = len ( Commands.spaceCharacter ) + len ( mediaLink_Character ) + len ( commentEnd )
+
 		for region in selectedRegions:
 			newLine_Position = region.a + mediaLink_RightOffset # Use A instead of B ( selection is reversed @ insert_MediaLink )
 			view.insert ( edit, newLine_Position, filePath_Text )
@@ -353,7 +349,7 @@ class Commands ():
 		cursorSelection         = selectedRegions [0]
 		cursorPoint_A           = cursorSelection.a
 		cursorPoint_B           = cursorSelection.b
-		cursorLine_A            = view.line ( cursorSelection.a )
+		cursorLine_A            = view.line ( cursorPoint_A )
 		cursorLine_Text         = view.substr ( cursorLine_A )
 		cursorRow, cursorColumn = view.rowcol ( cursorPoint_A )
 
@@ -365,18 +361,18 @@ class Commands ():
 
 		mediaLinkPrefix = commentStart + mediaLink_Character + Commands.spaceCharacter
 		mediaLinkSuffix = Commands.spaceCharacter + mediaLink_Character
-		
+
 		if commentEnd != "":
 			mediaLinkSuffix = mediaLinkSuffix + commentEnd
-			
+
 		mediaLink_LeftOffset  = len ( mediaLinkPrefix )
 		mediaLink_RightOffset = len ( mediaLinkSuffix )
-		
+
 		cursorLine_MediaLink = cursorLine_Text [ mediaLink_Start : mediaLink_End + mediaLink_RightOffset ]
 		cursorLine_Offset    = len ( cursorLine_Text ) - len ( cursorLine_MediaLink )
 
 			# ? ? ?     • • •   Verify MediaLink Selection      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ⌠¦•••i1⌡#
-			
+
 		if cursorColumn <= mediaLink_Start + mediaLink_LeftOffset \
 		or cursorColumn >= mediaLink_End:
 			return
@@ -389,11 +385,11 @@ class Commands ():
 			#═════      • • •   Find MediaLink FilePath      ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
 		mediaFile_Path    = ""
-		
+
 		mediaFile_Regions = Commands.find_MediaFiles ( view )
 
 		for region in mediaFile_Regions:
-			
+
 			region_A               = region.a
 			regionLine_A           = view.line ( region_A )
 			mediaLink_Text         = view.substr ( regionLine_A )
@@ -419,7 +415,7 @@ class Commands ():
 			- fileStart_Offset
 
 			#═════      • • •   Set MediaLink FilePath      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
-		
+
 		filePath_Region = sublime.Region ( mediaLink_PathLine.a + fileStart_Offset + whitespaceOffset, mediaLink_PathLine.b - fileEnd_Offset )
 		nextLine_Region = sublime.Region ( mediaLink_PathLine.b + 1, mediaLink_PathLine.b + 1 )
 		filePath        = view.substr ( filePath_Region )
@@ -428,7 +424,7 @@ class Commands ():
 		filePath = filePath.rstrip ()
 		filePath = filePath.replace ( "\"", "" )
 		filePath = filePath.replace ( "'", "" )
-		
+
 		filePath_StrippedLength = filePath_Length - len ( filePath )
 		filePath_Length         = filePath_Length - filePath_StrippedLength
 		filePath_Region         = sublime.Region ( filePath_Region.a, filePath_Region.b - filePath_StrippedLength )
@@ -470,10 +466,10 @@ class Commands ():
 			return
 
 			# ? ? ?     • • •   Load Media File      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦•••i1⌡#
-				
+
 		selectionRegion_A = cursorLine_A.a + mediaLink_Start + mediaLink_LeftOffset
 		selectionRegion_B = selectionRegion_A + ( len ( mediaLink_Text ) - ( mediaLink_LeftOffset + mediaLink_RightOffset ) ) - 1;
-		
+
 		selectionRegion = sublime.Region ( selectionRegion_A, selectionRegion_B )
 		view.selection.clear ()
 		view.selection.add ( selectionRegion )
@@ -497,9 +493,8 @@ class Commands ():
 		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
-		titleStart               = userSettings.get ( "title_start", "" )
+		titleEndcap              = userSettings.get ( "title_endcap", "" )
 		titleFill                = userSettings.get ( "title_fill", "" )
-		titleEnd                 = userSettings.get ( "title_end", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		slideTitle_Regions = []
@@ -528,9 +523,8 @@ class Commands ():
 
 			if regionText.find ( mediaLink_Character )   >= 0 : invalidLine = True
 			if regionText.find ( mediaLink_WrapperFill ) >= 0 : invalidLine = True
-			if regionText.find ( titleStart )            >= 0 : invalidLine = True
+			if regionText.find ( titleEndcap )           >= 0 : invalidLine = True
 			if regionText.find ( titleFill )             >= 0 : invalidLine = True
-			if regionText.find ( titleEnd )              >= 0 : invalidLine = True
 			if regionText.find ( commentStart )          >= 0 : invalidLine = True
 			if regionText.find ( commentEnd )            >= 0 : invalidLine = True
 
@@ -544,7 +538,7 @@ class Commands ():
 
 			regionLine_A  = view.line ( region_A )
 			titlePosition = regionLine_A.a + titleOffset
-			titleRegion = sublime.Region ( titlePosition, titlePosition + len ( slideTitle ) )
+			titleRegion   = sublime.Region ( titlePosition, titlePosition + len ( slideTitle ) )
 			slideTitle_Regions.append ( titleRegion )
 
 		view.selection.clear ()
@@ -552,36 +546,19 @@ class Commands ():
 		view.run_command ( "reverse_selection_direction" )
 
 		#▐▌»»▒▐▌────────────────────────────▐▌▒««▐▌_____________________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   build_Titles      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
+		#▐▌»»▒▐▌    • •   align_Titles      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
 		#▐▌»»▒▐▌────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
-	def build_Titles ( edit, view ):
+	def align_Titles ( edit, view ):
 
 		view.run_command ( "unfold_all" )
 
-		titleRegions = Commands.find_CollapsedTitles ( view )
+		titleRegions = Commands.find_Titles ( view )
 
 		for titleRegion in reversed ( titleRegions ):
 
 			lineText  = view.substr ( titleRegion )
 			titleText = Commands.add_TitleMarkers ( lineText, "Text", "Build" )
-
-			view.replace ( edit, titleRegion, titleText )
-
-		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌__________________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   collapse_Titles      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
-		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
-
-	def collapse_Titles ( edit, view ):
-
-		view.run_command ( "unfold_all" )
-
-		titleRegions = Commands.find_FullTitles ( view )
-
-		for titleRegion in reversed ( titleRegions ):
-
-			lineText  = view.substr ( titleRegion )
-			titleText = Commands.remove_TitleMarkers ( lineText )
 
 			view.replace ( edit, titleRegion, titleText )
 
@@ -623,7 +600,7 @@ class Commands ():
 		elif foldedRegion_Count == 0 \
 		or foldedRegion_Count > 2:
 			Commands.reset_View ( view )
-			Commands.zoom_Content ( view )
+			Commands.zoom_Content ( view, "Automatic" )
 
 			#═════      • • •   Find Next Region      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
@@ -641,14 +618,14 @@ class Commands ():
 			newRegion = contentRegions [visibleRegion_Index + 1]
 			view.selection.clear ()
 			view.selection.add ( newRegion.a )
-			Commands.zoom_Content ( view )
+			Commands.zoom_Content ( view, "Automatic" )
 
 		elif visibleRegion_Index - 1 >= 0 \
 		and direction == "Up":
 			newRegion = contentRegions [visibleRegion_Index - 1]
 			view.selection.clear ()
 			view.selection.add ( newRegion.a )
-			Commands.zoom_Content ( view )
+			Commands.zoom_Content ( view, "Automatic" )
 
 		else:
 			view.fold ( foldedRegions )
@@ -659,15 +636,43 @@ class Commands ():
 		#▐▌»»▒▐▌    • •   zoom_Content      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
 		#▐▌»»▒▐▌────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
-	def zoom_Content ( view ):
+	def zoom_Content ( view, zoomMode ):
+
+		if zoomMode == "Manual":
+
+			userSettings = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+			titleEndcap  = userSettings.get ( "title_endcap", "" )
+			titleFill    = userSettings.get ( "title_fill", "" )
+
+			selectedRegions = view.sel ()
+
+			if len ( selectedRegions ) == 0:
+				return
+
+			cursorSelection         = selectedRegions [0]
+			cursorPoint_A           = cursorSelection.a
+			cursorLine_A            = view.line ( cursorPoint_A )
+			cursorLine_Text         = view.substr ( cursorLine_A )
+			cursorRow, cursorColumn = view.rowcol ( cursorPoint_A )
+
+			print ( cursorLine_Text )
+
+
+			invalidLine    = False
+
+			if regionText.find ( titleEndcap ) >= 0 : invalidLine = True
+			if regionText.find ( titleFill )   >= 0 : invalidLine = True
+
+			return
+
 
 		documentStart  = 0
 		documentEnd    = view.size ()
 		documentRegion = sublime.Region ( documentStart, documentEnd )
 
-		contentRegion   = Commands.find_Content ( view, "Single" )
-		contentRegion_A = contentRegion.a
-		contentRegion_B = contentRegion.b
+		contentRegion        = Commands.find_Content ( view, "Single" )
+		contentRegion_A      = contentRegion.a
+		contentRegion_B      = contentRegion.b
 
 		if contentRegion_A == -1 \
 		or contentRegion_B == -1:
@@ -715,17 +720,16 @@ class Commands ():
 		contentRegion = sublime.Region ( 0, 0 )
 
 		userSettings  = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		titleStart    = userSettings.get ( "title_start", "" )
-		titleEnd      = userSettings.get ( "title_end", "" )
+		titleEndcap   = userSettings.get ( "title_endcap", "" )
 
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		content_RegEx = \
-			"(" + commentStart + titleStart + ")"       + \
-			"("                                         + \
+			"(" + commentStart + titleEndcap + ")"     + \
+			"("                                        + \
 				"("                                       + \
-					"([\\S\\s]*?)"                          + \
-					"(?=" + commentStart + titleStart + ")" + \
+					"([\\S\\s]*?)"                           + \
+					"(?=" + commentStart + titleEndcap + ")" + \
 				")"                                       + \
 				"|"                                       + \
 				"([\\S\\s]*)"                             + \
@@ -741,44 +745,22 @@ class Commands ():
 
 		return ( contentRegion )
 
-		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌__________________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   find_FullTitles      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
-		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+		#▐▌»»▒▐▌───────────────────────────▐▌▒««▐▌______________________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   find_Titles      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+		#▐▌»»▒▐▌───────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
-	def find_FullTitles ( view ):
+	def find_Titles ( view ):
 
-		userSettings  = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		titleStart    = userSettings.get ( "title_start", "" )
-		titleFill     = userSettings.get ( "title_fill", "" )
-		titleEnd      = userSettings.get ( "title_end", "" )
-
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
-		title_RegEx = \
-			"(" + commentStart + titleStart + ")" + \
-			"(" + titleFill + "*" + "\S*)"        + \
-			"(.*)"                                + \
-			"(\S*" + titleFill + "*)"             + \
-			"(" + titleEnd + commentEnd + ")"
-
-		titleRegions = view.find_all ( title_RegEx )
-		return ( titleRegions )
-
-		#▐▌»»▒▐▌────────────────────────────────────▐▌▒««▐▌_____________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   find_CollapsedTitles      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
-		#▐▌»»▒▐▌────────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
-
-	def find_CollapsedTitles ( view ):
-
-		userSettings  = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		titleStart    = userSettings.get ( "title_start", "" )
-		titleFill     = userSettings.get ( "title_fill", "" )
+		userSettings = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		titleEndcap  = userSettings.get ( "title_endcap", "" )
+		titleFill    = userSettings.get ( "title_fill", "" )
 
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		title_RegEx = \
-			"(" + commentStart + titleStart + ")" + \
-			"(" + titleFill + "*" + "\S*)"        + \
+			"(" + commentStart + titleEndcap + ")"    + \
+			"(" + titleFill + "*)"              + \
+			"(.*" + titleEndcap + commentEnd + "\S*)" + \
 			"(.*)"
 
 		titleRegions = view.find_all ( title_RegEx )
@@ -837,51 +819,44 @@ class Commands ():
 
 	def add_TitleMarkers ( titleText, titleMode, addMode ):
 
-		userSettings      = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		titleStart        = userSettings.get ( "title_start", "" )
-		titleFill         = userSettings.get ( "title_fill", "" )
-		titleEnd          = userSettings.get ( "title_end", "" )
-		title_StartLength = userSettings.get ( "title_start_length", "" )
-		titlePadding      = userSettings.get ( "title_padding", "" )
-		title_MaxLength   = userSettings.get ( "title_max_length", "" )
+		userSettings          = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		titleEndcap           = userSettings.get ( "title_endcap", "" )
+		titleFill             = userSettings.get ( "title_fill", "" )
+		title_StartCap_Length = userSettings.get ( "title_startcap_length", "" )
+		titlePadding_Amount   = userSettings.get ( "title_padding", "" )
+		title_MaxLength       = userSettings.get ( "title_max_length", "" )
 
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
-		titleText = titleText.replace ( titleStart, "" )
-		titleText = titleText.replace ( titleStart, "" )
-		titleText = titleText.replace ( titleStart, "" )
+		titleText = titleText.replace ( commentStart, "" )
+		titleText = titleText.replace ( commentEnd, "" )
+		titleText = titleText.replace ( titleEndcap, "" )
 		titleText = titleText.replace ( titleFill, "" )
-		titleText = titleText.replace ( titleEnd, "" )
 
-		if addMode == "Build" \
-		or titleText == Commands.slide_DefaultTitle:
-			titleText = titleText [ len ( commentStart ) : len ( titleText ) - len ( commentEnd ) ]
+		# if addMode == "Build" \
+		# or titleText != Commands.slide_DefaultTitle:
+		# 	titleText = titleText [ len ( commentStart ) : len ( titleText ) - len ( commentEnd ) ]
 
 		titleText = titleText.strip ()
 
-		titlePosition = \
-			len \
-				(
-					commentStart                      + \
-					titleStart                        + \
-					( titleFill * title_StartLength ) + \
-					( Commands.spaceCharacter * titlePadding )
-				)
+		titlePadding = Commands.spaceCharacter * titlePadding_Amount
 
-		titleText = \
-			commentStart                               + \
-			titleStart                                 + \
-			( titleFill * title_StartLength )          + \
-			( Commands.spaceCharacter * titlePadding ) + \
-			titleText                                  + \
-			( Commands.spaceCharacter * titlePadding )
+		titlePrefix = \
+			commentStart                          + \
+			titleEndcap                           + \
+			( titleFill * title_StartCap_Length ) + \
+			titlePadding
 
-		adjusted_MaxLength = title_MaxLength - ( len ( titleText ) + len ( titleEnd ) + len ( commentEnd ) )
+		titlePosition = len ( titlePrefix )
+
+		titleText = titlePrefix + titleText + titlePadding
+
+		adjusted_MaxLength = title_MaxLength - ( len ( titleText ) + len ( titleEndcap ) + len ( commentEnd ) )
 
 		titleText = \
 			titleText                          + \
 			( titleFill * adjusted_MaxLength ) + \
-			titleEnd                           + \
+			titleEndcap                        + \
 			commentEnd
 
 		if titleMode == "Text":
@@ -890,37 +865,6 @@ class Commands ():
 		if titleMode == "Offset":
 			return ( titlePosition )
 
-		#▐▌»»▒▐▌───────────────────────────────────▐▌▒««▐▌______________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   remove_TitleMarkers      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
-		#▐▌»»▒▐▌───────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
-
-	def remove_TitleMarkers ( titleText ):
-
-		userSettings      = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		titleStart        = userSettings.get ( "title_start", "" )
-		titleFill         = userSettings.get ( "title_fill", "" )
-		titleEnd          = userSettings.get ( "title_end", "" )
-		titlePadding      = userSettings.get ( "title_padding", "" )
-
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
-		titleText = titleText.replace ( titleStart, "" )
-		titleText = titleText.replace ( titleStart, "" )
-		titleText = titleText.replace ( titleStart, "" )
-		titleText = titleText.replace ( titleFill, "" )
-		titleText = titleText.replace ( titleEnd, "" )
-		titleText = titleText [ len ( commentStart ) : len ( titleText ) - len ( commentEnd ) ]
-		titleText = titleText.strip ()
-
-		titleText = \
-			commentStart                               + \
-			titleStart                                 + \
-			( Commands.spaceCharacter * titlePadding ) + \
-			titleText                                  + \
-			( Commands.spaceCharacter * titlePadding ) + \
-			commentEnd
-
-		return ( titleText )
 
 #▐▌▒▓▒▐▌═════════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
 #▐▌▓▒▓▐▌                         ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡#
