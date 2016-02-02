@@ -79,6 +79,12 @@ Build ( restore endcaps to Slide titles )
 
 Modifications available @ SublimeSlides.sublime-settings:
 
-* Snippet Visual Styles
-* MediaLink Applications & Their Associated Extensions 
+* Define Snippet Visual Styles
+* Define MediaLink Applications & Their Associated Extensions 
 * Presentation FileTypes & Comment Characters ( required for any filetype you want to use SublimeSlides with )
+
+## FEEDBACK
+
+So far, SublimeSlides has only been tested with Windows & SublimeText 3.
+
+This is my first release! Feel free to contact me enteleform@gmail.com with any feedback!
