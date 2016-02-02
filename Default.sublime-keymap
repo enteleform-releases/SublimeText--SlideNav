@@ -8,27 +8,27 @@
 //▐▌▒▓▒▐▌═════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
+		"command": "sublime_slides",
+		"args": { "mode": "Insert_MediaFile", },
 		"keys": ["ctrl+shift+super+period"],
-		"command": "sublime_slides",
-		"args": { "mode": "Insert_MediaFile", }
 	},
 
 	{
+		"command": "sublime_slides",
+		"args": { "mode": "Insert_MediaLink", },
 		"keys": ["ctrl+shift+period"],
-		"command": "sublime_slides",
-		"args": { "mode": "Insert_MediaLink", }
 	},
 
 	{
+		"command": "sublime_slides",
+		"args": { "mode": "Open_MediaLink", },
 		"keys": ["ctrl+shift+o"],
-		"command": "sublime_slides",
-		"args": { "mode": "Open_MediaLink", }
 	},
 
 	{
-		"keys": ["ctrl+shift+alt+period"],
 		"command": "sublime_slides",
-		"args": { "mode": "Toggle_MediaLink", }
+		"args": { "mode": "Toggle_MediaLink", },
+		"keys": ["ctrl+shift+alt+period"],
 	},
 
 //▐▌▒▓▒▐▌═════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠//
@@ -36,27 +36,27 @@
 //▐▌▒▓▒▐▌═════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
+		"command": "sublime_slides",
+		"args": { "mode": "Reset", },
 		"keys": ["ctrl+shift+minus"],
-		"command": "sublime_slides",
-		"args": { "mode": "Reset", }
 	},
 
 	{
+		"command": "sublime_slides",
+		"args": { "mode": "Zoom", },
 		"keys": ["ctrl+shift+equals"],
-		"command": "sublime_slides",
-		"args": { "mode": "Zoom", }
 	},
 
 	{
+		"command": "sublime_slides",
+		"args": { "mode": "NavigateDown", },
 		"keys": ["ctrl+super+alt+equals"],
-		"command": "sublime_slides",
-		"args": { "mode": "NavigateDown", }
 	},
 
 	{
-		"keys": ["ctrl+super+alt+minus"],
 		"command": "sublime_slides",
-		"args": { "mode": "NavigateUp", }
+		"args": { "mode": "NavigateUp", },
+		"keys": ["ctrl+super+alt+minus"],
 	},
 
 //▐▌▒▓▒▐▌═══════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠//
@@ -64,25 +64,17 @@
 //▐▌▒▓▒▐▌═══════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
+		"command": "sublime_slides",
+		"args": { "mode": "Insert_Title", },
 		"keys": ["ctrl+super+alt+period"],
-		"command": "sublime_slides",
-		"args": { "mode": "Insert_Title", }
 	},
 
 	{
+		"command": "sublime_slides",
+		"args": { "mode": "Align", },
 		"keys": ["ctrl+super+period"],
-		"command": "sublime_slides",
-		"args": { "mode": "Build", }
-	},
-
-	{
-		"keys": ["super+alt+period"],
-		"command": "sublime_slides",
-		"args": { "mode": "Collapse", }
 	},
 
 // [ { (     /Sublime Keymap      ) } ]≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈⌠¦b1⌡//
 
 ]
-
-
