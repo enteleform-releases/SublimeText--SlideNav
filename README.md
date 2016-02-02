@@ -32,38 +32,45 @@ Also includes a customizable file launcher
 
 ## USAGE
 
-These are the included commands & keybindings
+These are the included commands & default keybindings:
 
+### Navigation
 
-Insert_MediaFile ( insert medialink + path )  
+Zoom  ( zoom to selected Slide - Slide title line must be selected )  
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>equals</kbd>
+
+NavigateDown ( show next Slide - automatically shows first slide on first use )  
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>equals</kbd>
+
+NavigateUp ( show previous Slide - automatically shows first slide on first use )  
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>minus</kbd>
+
+Reset ( exit Slide & show full document )  
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>minus</kbd>
+
+### Snippets
+
+Insert_Title ( insert Slide divider )  
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
+
+Insert_MediaFile ( insert MediaLink + path )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
 
-Insert_MediaLink ( insert medialink + wrapper )  
+Insert_MediaLink ( insert MediaLink + wrapper )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>period</kbd>
+
+### MediaLink
 
 Open_MediaLink  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
 
-Toggle_MediaLink ( enable/disable automatically opening medialinks on click )  
+Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
 
-Reset ( exit slideview & show full document )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>minus</kbd>
+### Slide Titles
 
-Zoom  ( zoom to selected slide - slide title line must be selected )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>equals</kbd>
-
-NavigateDown ( show next slide )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>equals</kbd>
-
-NavigateUp ( show previous slide )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>minus</kbd>
-
-Insert_Title ( insert slide divider )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
-
-Collapse ( remove endcaps from slide titles for easy editing )  
+Collapse ( remove endcaps from Slide titles for easy editing )  
 <kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
 
-Build ( restore endcaps to slide titles )  
+Build ( restore endcaps to Slide titles )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
