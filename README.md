@@ -36,12 +36,22 @@ These are the included commands & default keybindings:
 
 ### Navigate Slides
 
-* Both Navigate commands will automatically show the first slide when they are first used
+* Both NavigateSlides commands will automatically show the first slide when they are first used
 
 NavigateSlides_Down ( show next Slide )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
 NavigateSlides_Up ( show previous Slide )  
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
+
+### Navigate MediaLinks
+
+* NavigateMediaLinks commands open MediaLinks that are currently Visible, meaning you can use them without accidentally moving into the next slide 
+
+NavigateMediaLinks_Down ( open next MediaLink )  
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
+
+NavigateMediaLinks_Up ( open previous MediaLink )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
