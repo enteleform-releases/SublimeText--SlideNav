@@ -49,10 +49,10 @@ NavigateSlides_Up ( show previous Slide )
 * NavigateMediaLinks commands open MediaLinks that are currently Visible, meaning you can use them without accidentally moving into the next slide 
 
 NavigateMediaLinks_Down ( open next MediaLink )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
 NavigateMediaLinks_Up ( open previous MediaLink )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
 
