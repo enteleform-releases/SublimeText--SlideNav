@@ -78,7 +78,7 @@ Modifications available @ SublimeSlides.sublime-settings:
 
 * Define Snippet Visual Styles
 * Define MediaLink Applications & Their Associated Extensions 
-* Presentation FileTypes & Comment Characters ( required for any filetype you want to use SublimeSlides with )
+* Define Presentation FileTypes & Comment Characters ( required for any filetype you want to use SublimeSlides with )
 
 ## FEEDBACK
 
