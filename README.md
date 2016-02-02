@@ -18,6 +18,7 @@ Also includes a customizable file launcher
 
 * Launch files during your presentation with MediaLinks
 * MediaLinks can be launched automatically upon clicking, or with a hotkey
+* List your MediaLink + Path at the beginning of the document, and access it anywhere else in the document
 * Define applications & extensions @ SublimeSlides.sublime-settings
 
 ![MediaLinkDemo](http://i.imgur.com/0UxRYbf.gif?1)
