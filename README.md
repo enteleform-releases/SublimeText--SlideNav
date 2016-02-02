@@ -35,35 +35,35 @@ Also includes a customizable file launcher
 These are the included commands & keybindings
 
 
-Insert_MediaFile  
+Insert_MediaFile ( insert medialink + path )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
 
-Insert_MediaLink  
+Insert_MediaLink ( insert medialink + wrapper )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>period</kbd>
 
 Open_MediaLink  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
 
-Toggle_MediaLink  
+Toggle_MediaLink ( enable/disable automatically opening medialinks on click )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
 
-Reset  
+Reset ( exit slideview & show full document )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>minus</kbd>
 
-Zoom  
+Zoom  ( zoom to selected slide - slide title line must be selected )  
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>equals</kbd>
 
-NavigateDown  
+NavigateDown ( show next slide )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>equals</kbd>
 
-NavigateUp  
+NavigateUp ( show previous slide )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>minus</kbd>
 
-Insert_Title  
+Insert_Title ( insert slide divider )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
 
-Build  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
-
-Collapse  
+Collapse ( remove endcaps from slide titles for easy editing )  
 <kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
+
+Build ( restore endcaps to slide titles )  
+<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>period</kbd>
