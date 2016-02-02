@@ -45,9 +45,13 @@
 	"medialink_wrapper_enabled": "True", // "True" | "False"
 	"medialink_wrapper_fill":    "■",
 
-	// If enabled, this value allows MediaLinks to launch automatically upon being clicked.
-	// Otherwise, MediaLinks must be launched manually via key-binding.
+	// If enabled, this value allows MediaLinks to launch automatically upon being clicked
+	// Otherwise, MediaLinks can be launched manually via key-binding
 	"medialink_onclick": "True", // "True" | "False"
+
+	// If enabled, this value allows MediaLinks to launch with the NavigateMediaLinks commands
+	// Otherwise, MediaLinks can be launched manually via key-binding
+	"medialink_on_navigate": "True", // "True" | "False"
 
 	// These values affect the visual appearance of MediaLinks
 	"medialink_tab_amount": 1,
