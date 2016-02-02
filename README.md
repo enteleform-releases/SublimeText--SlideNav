@@ -90,6 +90,19 @@ Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )
 Align ( resizes all Slide titles to same length )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
+## REMOTE CONTROL
+
+Included in SublimeSlides/UnifiedRemote is a custom preset for Unified Remote
+
+Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
+
+Here is a screenshot of the preset:
+
+![UnifiedRemote](http://i.imgur.com/J4S6wBm.png?1)
+
+More info in the readme file @ SublimeSlides/UnifiedRemote
+
+
 ## CUSTOMIZATION
 
 Modifications available @ SublimeSlides.sublime-settings:
