@@ -23,16 +23,13 @@
 //▐▌▒▓▒▐▌══════════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	// These characters define Slide areas and should not be used anywhere else in a presentation file
-	// title_start is required
-	// title_fill & title_end are for visual purposes only & can be omitted with a value of ""
-	"title_start": "▌",
-	"title_fill":  "▓",
-	"title_end":   "▐",
+	"title_endcap": "▌",
+	"title_fill":   "▓",
 
 	// These values affect the visual appearance of Slide titles
-	"title_start_length": 5,
-	"title_padding":      3,
-	"title_max_length":   185,
+	"title_startcap_length": 5,
+	"title_padding":         3,
+	"title_max_length":      185,
 
 //▐▌▒▓▒▐▌══════════════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠//
 //▐▌▓▒▓▐▌                              ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡//
@@ -81,6 +78,8 @@
 	// Define ApplicationPaths & FileExtensions to be used with MediaLink
 
 	// All "\" characters must be escaped in order for this file to save properly ( instead of "\", use "\\" )
+
+	// The applications listed below are optimal for presentation use, because they have settings for full-screen on load
 
 	"mediafile_types":
 		{
