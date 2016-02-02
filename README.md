@@ -54,6 +54,10 @@ Zoom_Out ( exit Slide & show full document )
 
 ### Snippets
 
+* All Snippet commands can be used 2 ways
+.* on blank lines ( new text area will automatically be selected )
+.* on lines with text ( text area will automatically use line's text )
+
 Insert_Title ( insert Slide divider )  
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>period</kbd>
 
