@@ -26,5 +26,6 @@ Also includes a customizable file launcher
 ### Snippets
 
 * Slide dividers & MediaLinks are generated automatically via hotkey
+* MediaLinks can be generated with or without path ( use with path to define MediaLink, use without path to launch MediaLink anywhere else in the document )
 
 ![SnippetDemo](http://i.imgur.com/RUvj93C.gif?1)
