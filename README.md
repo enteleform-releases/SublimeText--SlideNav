@@ -125,3 +125,4 @@ In order to get the most functionality out of SublimeSlides, read the comments @
 So far, SublimeSlides has only been tested with Windows & SublimeText 3.
 
 This is my first release! Feel free to contact me at enteleform@gmail.com with any feedback!
+ 
