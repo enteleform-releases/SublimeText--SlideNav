@@ -25,7 +25,7 @@ Also includes a file launcher to quickly open media files during your presentati
 
 ### Remote Control
 
-Included in [UnifiedRemote](https://github.com/Enteleform/ST_SublimeSlides/tree/master/UnifiedRemote "SublimeSlides/UnifiedRemote")SublimeSlides/UnifiedRemote is a custom preset for Unified Remote
+Included in [SublimeSlides/UnifiedRemote](https://github.com/Enteleform/ST_SublimeSlides/tree/master/UnifiedRemote)SublimeSlides/UnifiedRemote is a custom preset for Unified Remote
 
 Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
 
