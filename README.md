@@ -25,7 +25,7 @@ Also includes a file launcher to quickly open media files during your presentati
 
 ### Remote Control
 
-Included in [SublimeSlides/UnifiedRemote](https://github.com/Enteleform/ST_SublimeSlides/tree/master/UnifiedRemote)SublimeSlides/UnifiedRemote is a custom preset for Unified Remote
+Included in [/UnifiedRemote](https://github.com/Enteleform/ST_SublimeSlides/tree/master/UnifiedRemote) is a custom preset for Unified Remote
 
 Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
 
@@ -33,7 +33,7 @@ Here is a screenshot of the preset:
 
 ![UnifiedRemote](http://i.imgur.com/kruMIhu.png?1)
 
-More info in the readme file @ SublimeSlides/UnifiedRemote
+More info at [UnifiedRemote_README.md](https://github.com/Enteleform/ST_SublimeSlides/blob/master/UnifiedRemote/UnifiedRemote_README.md)
 
 ### Snippets
 
@@ -104,11 +104,15 @@ Align ( resizes all Slide titles to same length )
 
 ## CUSTOMIZATION
 
-Modifications available @ SublimeSlides.sublime-settings:
+Modifications available @ [SublimeSlides.sublime-settings](https://github.com/Enteleform/ST_SublimeSlides/blob/master/SublimeSlides.sublime-settings)
 
 * Define Snippet Visual Styles
 * Define MediaLink Applications & Their Associated Extensions
 * Define Presentation FileTypes & Comment Characters ( required for any filetype you want to use SublimeSlides with )
+
+## KNOWN LIMITATIONS
+
+In order to get the most functionality out of SublimeSlides, read the comments @ [SublimeSlides.sublime-settings](https://github.com/Enteleform/ST_SublimeSlides/blob/master/SublimeSlides.sublime-settings)
 
 ## FEEDBACK
 
