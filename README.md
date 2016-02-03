@@ -1,7 +1,7 @@
 
-# ST_SublimeSlides
+# ST_SlideNav
 
-Easily create slide presentations in Sublime Text with SublimeSlides
+Easily create slide presentations in Sublime Text with SlideNav
 
 Also includes a file launcher to quickly open media files during your presentation
 
@@ -19,7 +19,7 @@ Also includes a file launcher to quickly open media files during your presentati
 * Launch files during your presentation with MediaLinks
 * MediaLinks can be launched automatically upon clicking, with LinkNav, or with a hotkey
 * List your MediaLink+Path at the beginning of the document, and access it anywhere else in the document
-* Define applications & extensions @ SublimeSlides.sublime-settings
+* Define applications & extensions @ SlideNav.sublime-settings
 
 * Textlinks allow you to define segments of text to hightlight during the presentation
 * LinkNav automatically moves through your presentation by MediaLink & TextLink sections
@@ -28,15 +28,15 @@ Also includes a file launcher to quickly open media files during your presentati
 
 ### Remote Control
 
-Included in [/UnifiedRemote](https://github.com/Enteleform/ST_SublimeSlides/tree/master/UnifiedRemote) is a custom preset for Unified Remote
+Included in [/UnifiedRemote](https://github.com/Enteleform/ST_SlideNav/tree/master/UnifiedRemote) is a custom preset for Unified Remote
 
 Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
 
 Here is a screenshot of the preset:
 
-![UnifiedRemote](http://i.imgur.com/kruMIhu.png?1)
+![UnifiedRemote](http://i.imgur.com/WYe2Cf6.png?1)
 
-More info at [UnifiedRemote_README.md](https://github.com/Enteleform/ST_SublimeSlides/blob/master/UnifiedRemote/UnifiedRemote_README.md)
+More info at [UnifiedRemote_README.md](https://github.com/Enteleform/ST_SlideNav/blob/master/UnifiedRemote/UnifiedRemote_README.md)
 
 ### Snippets
 
@@ -110,19 +110,19 @@ Align ( resizes all Slide titles to same length )
 
 ## CUSTOMIZATION
 
-Modifications available @ [SublimeSlides.sublime-settings](https://github.com/Enteleform/ST_SublimeSlides/blob/master/SublimeSlides.sublime-settings)
+Modifications available @ [SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)
 
 * Define Snippet Visual Styles
 * Define MediaLink Applications & Their Associated Extensions
-* Define Presentation FileTypes & Comment Characters ( required for any filetype you want to use SublimeSlides with )
+* Define Presentation FileTypes & Comment Characters ( required for any filetype you want to use SlideNav with )
 
 ## KNOWN LIMITATIONS
 
-In order to get the most functionality out of SublimeSlides, read the comments @ [SublimeSlides.sublime-settings](https://github.com/Enteleform/ST_SublimeSlides/blob/master/SublimeSlides.sublime-settings)
+In order to get the most functionality out of SlideNav, read the comments @ [SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)
 
 ## FEEDBACK
 
-So far, SublimeSlides has only been tested with Windows & SublimeText 3.
+So far, SlideNav has only been tested with Windows & SublimeText 3.
 
 This is my first release! Feel free to contact me at enteleform@gmail.com with any feedback!
- 
+
