@@ -1,48 +1,48 @@
-#▄▄▄▄▄─────────────────────────▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
-#░░░░░      SublimeSlides      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░s2#
-#▀▀▀▀▀─────────────────────────▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡#
+#▄▄▄▄▄────────────────────▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
+#░░░░░      SlideNav      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░s2#
+#▀▀▀▀▀────────────────────▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡#
 
-#                          :yddNMh:
-#                        -yMMMMMMMMm.                                                                                       ■■■
-#                       :NMMMMMMMMMMh`                                ......................................................║║║.........................................................
-#                      `NMMMMMMMMMMMM.                o-            /||≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡||\
-#                      `dMMMMMMMMMMMM.               oM:           .||'                                                                                                                '||:
-#                       +MMMMMMMMMMMN`              :Mm--`         :||                                                                                                                  ||:
-#                       `oNMMMMMMMMm:            :o.dMMNNhs        :||                                                                                                                  ||:
-#                         dMMMMMMMMs             yMhNMMMMMMd.      :||                                                                                                                  ||:
-#                       .:hNMMMMMNy. ..`-:+-     `dMMMMMMMmh.      :||                                                                                                                  ||:
-#              .:::::+shN/`.::s+:.ohhosdNNMmoo/.  /MMMMMMM/`       :||                                                                                                                  ||:
-#             sNMMMMMMMMM/   /NN- `dMMMMMMMMMMMm-./NMMMMMd`        :||   $$$$$$\            $$\       $$\ $$\                          $$$$$$\  $$\ $$\       $$\                       ||:
-#            :MMMMMMMMMMN.   .mm.  :NMMMMMMNhNMMNN/.:+os+`         :||  $$  __$$\           $$ |      $$ |\__|                        $$  __$$\ $$ |\__|      $$ |                      ||:
-#           `dMMMMMMMMMMm    `MMs   oMMMMMMMNhMMMMh`               :||  $$ /  \__|$$\   $$\ $$$$$$$\  $$ |$$\ $$$$$$\$$$$\   $$$$$$\  $$ /  \__|$$ |$$\  $$$$$$$ | $$$$$$\   $$$$$$$\   ||:
-#           hMMMMMMMMMMMm    +MMN`  `yMMhMMMMMMMMMMdy++++s:        :||  \$$$$$$\  $$ |  $$ |$$  __$$\ $$ |$$ |$$  _$$  _$$\ $$  __$$\ \$$$$$$\  $$ |$$ |$$  __$$ |$$  __$$\ $$  _____|  ||:
-#          :MMMMMMMMMMMMm    mMMM+    hMMMMMMMMMMMMMMMMmd/`        :||   \____$$\ $$ |  $$ |$$ |  $$ |$$ |$$ |$$ / $$ / $$ |$$$$$$$$ | \____$$\ $$ |$$ |$$ /  $$ |$$$$$$$$ |\$$$$$$\    ||:
-#         `hMMMMMMMMMMMMm    NMMMd    .MMMMMMhdmmMMMMNh.`          :||  $$\   $$ |$$ |  $$ |$$ |  $$ |$$ |$$ |$$ | $$ | $$ |$$   ____|$$\   $$ |$$ |$$ |$$ |  $$ |$$   ____| \____$$\   ||:
-#         yMMMMMMMMMMMMMm    NMMMd     MMMMMM.``.-----`            :||  \$$$$$$  |\$$$$$$  |$$$$$$$  |$$ |$$ |$$ | $$ | $$ |\$$$$$$$\ \$$$$$$  |$$ |$$ |\$$$$$$$ |\$$$$$$$\ $$$$$$$  |  ||:
-#        -NMMMMMMMMMMMMMm    NMMMd     MMMMMh                      :||   \______/  \______/ \_______/ \__|\__|\__| \__| \__| \_______| \______/ \__|\__| \_______| \_______|\_______/   ||:
-#        /MMMMMMMMMMMMMMN.   NMMMd    -MMMMMy                      :||                                                                                                                  ||:
-#       -mMMMMMMMMMMMMMMM/   NMMMd    sMMMMM/                      :||                                                                                                                  ||:
-#      `mMMMMMMMMMMMMMMMM/   NMMMd   .NMMMMM-                      :||                                                                                                                  ||:
-#       oMMMMMMMMMmsohMMMNh: NMMMd   dMMMMMN.                      :||                                                                                                                  ||:
-#       `hMMMMMMMd`.hMMMMMMy`mMMNs  :MMMMMMh                       :||                                                                                                                  ||:
-#        `+mNMMMM: /MMMMMMN- .hm:  .hMMMMMMm`                      .||.                                                                                                                .||:
-#          .:/mMMo-oMMMMMNyhhhy/`+ydMMMMMMMMs                       \||≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡||/
-#     .----------------------------------------------.               \..............................................║║║.....║║║.....║║║................................................./
-#     |mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm|                                                             ║║║      ║║║      ║║║
-#      │nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn│                                                             ║║║       ║║║       ║║║
-#      │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                            ║║║        ║║║        ║║║
-#      │nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn│                                                           ║║║         ║║║         ║║║
-#       \mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm/                                                           ║║║          ║║║          ║║║
-#        \nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn/                                                           ║║║           ║║║           ║║║
-#         \++++++++++++++++++++++++++++++++++++++/                                                           ║║║            ║║║            ║║║
-#          │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                           ║║║             ║║║             ║║║
-#          │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                          ║║║              ║║║              ║║║
-#          │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                         ║║║               ║║║               ║║║
-#          │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                        ║║║                ║║║                ║║║
-#          │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                       ║║║                 ║║║                 ║║║
-#          │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                      ║║║                  ║║║                  ║║║
-#          │────────────────────────────────────│                                                     ■■■                   ■■■                   ■■■
-#           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+#                        :yddNMh:
+#                      -yMMMMMMMMm.                                                                                       ■■■
+#                     :NMMMMMMMMMMh`                                ......................................................║║║................................................
+#                    `NMMMMMMMMMMMM.                o-            /||≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡||\
+#                    `dMMMMMMMMMMMM.               oM:           .||'                                                                                                       '||:
+#                     +MMMMMMMMMMMN`              :Mm--`         :||                                                                                                         ||:
+#                     `oNMMMMMMMMm:            :o.dMMNNhs        :||                                                                                                         ||:
+#                       dMMMMMMMMs             yMhNMMMMMMd.      :||                                                                                                         ||:
+#                     .:hNMMMMMNy. ..`-:+-     `dMMMMMMMmh.      :||                                                                                                         ||:
+#            .:::::+shN/`.::s+:.ohhosdNNMmoo/.  /MMMMMMM/`       :||                                                                                                         ||:
+#           sNMMMMMMMMM/   /NN- `dMMMMMMMMMMMm-./NMMMMMd`        :||                                             ____                                                        ||:
+#          :MMMMMMMMMMN.   .mm.  :NMMMMMMNhNMMNN/.:+os+`         :||                ..'''' |        | |``````.  |            |..          |       .'.    `.           .'     ||:
+#         `dMMMMMMMMMMm    `MMs   oMMMMMMMNhMMMMh`               :||             .''       |        | |       | |______      |  ``..      |     .'   `.    `.       .'       ||:
+#         hMMMMMMMMMMMm    +MMN`  `yMMhMMMMMMMMMMdy++++s:        :||          ..'          |        | |       | |            |      ``..  |   .' ''''' `.    `.   .'         ||:
+#        :MMMMMMMMMMMMm    mMMM+    hMMMMMMMMMMMMMMMMmd/`        :||    ....''             |_______ | |......'  |___________ |          ``| .'           `.    `.'           ||:
+#       `hMMMMMMMMMMMMm    NMMMd    .MMMMMMhdmmMMMMNh.`          :||                                                                                                         ||:
+#       yMMMMMMMMMMMMMm    NMMMd     MMMMMM.``.-----`            :||                                                                                                         ||:
+#      -NMMMMMMMMMMMMMm    NMMMd     MMMMMh                      :||                                                   	 )                                                   ||:
+#      /MMMMMMMMMMMMMMN.   NMMMd    -MMMMMy                      :||                                                   	( )(_/                                               ||:
+#     -mMMMMMMMMMMMMMMM/   NMMMd    sMMMMM/                      :||                                                   	    /                                                ||:
+#    `mMMMMMMMMMMMMMMMM/   NMMMd   .NMMMMM-                      :||                                                  ENTELEFORM                                             ||:
+#     oMMMMMMMMMmsohMMMNh: NMMMd   dMMMMMN.                      :||                                                                                                         ||:
+#     `hMMMMMMMd`.hMMMMMMy`mMMNs  :MMMMMMh                       :||                                                                                                         ||:
+#      `+mNMMMM: /MMMMMMN- .hm:  .hMMMMMMm`                      .||.                                                                                                       .||:
+#        .:/mMMo-oMMMMMNyhhhy/`+ydMMMMMMMMs                       \||≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡||/
+#   .----------------------------------------------.               \..............................................║║║.....║║║.....║║║......................................../
+#   |mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm|                                                             ║║║      ║║║      ║║║
+#    │nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn│                                                             ║║║       ║║║       ║║║
+#    │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                            ║║║        ║║║        ║║║
+#    │nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn│                                                           ║║║         ║║║         ║║║
+#     \mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm/                                                           ║║║          ║║║          ║║║
+#      \nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn/                                                           ║║║           ║║║           ║║║
+#       \++++++++++++++++++++++++++++++++++++++/                                                           ║║║            ║║║            ║║║
+#        │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                           ║║║             ║║║             ║║║
+#        │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                          ║║║              ║║║              ║║║
+#        │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                         ║║║               ║║║               ║║║
+#        │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                        ║║║                ║║║                ║║║
+#        │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                       ║║║                 ║║║                 ║║║
+#        │mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm│                                                      ║║║                  ║║║                  ║║║
+#        │────────────────────────────────────│                                                     ■■■                   ■■■                   ■■■
+#         ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 #▄▄▄▄▄──────────────────▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
 #░░░░░      Import      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░s2#
@@ -52,11 +52,11 @@ import sublime, sublime_plugin, re, os, subprocess
 
 #▐▌▒▓▒▐▌═══════════════════════════════════════════════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
 #▐▌▓▒▓▐▌                                                               ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡#
-#▐▌▒▓▒▐▌      SublimeSlidesCommand ( sublime_plugin.TextCommand )      ▐▌▒▓▒▐▌████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████c3#
+#▐▌▒▓▒▐▌      SlideNavCommand ( sublime_plugin.TextCommand )      ▐▌▒▓▒▐▌████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████c3#
 #▐▌▓▒▓▐▌                                                               ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡#
 #▐▌▒▓▒▐▌═══════════════════════════════════════════════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡#
 
-class SublimeSlidesCommand ( sublime_plugin.TextCommand ):
+class SlideNavCommand ( sublime_plugin.TextCommand ):
 
 	def run ( self, edit, mode ):
 
@@ -64,17 +64,27 @@ class SublimeSlidesCommand ( sublime_plugin.TextCommand ):
 
 		if   mode == "SlideNav_Down" :    Commands.navigate_Slides  ( view, "Down" )
 		elif mode == "SlideNav_Up" :      Commands.navigate_Slides  ( view, "Up" )
+
 		elif mode == "LinkNav_Down" :     Commands.navigate_Links   ( view, "Down" )
 		elif mode == "LinkNav_Up" :       Commands.navigate_Links   ( view, "Up" )
+
 		elif mode == "Zoom_In" :          Commands.zoom_In          ( view, "Manual" )
 		elif mode == "Zoom_Out" :         Commands.zoom_Out         ( view )
+
 		elif mode == "Insert_Slide" :     Commands.insert_Slide     ( edit, view )
 		elif mode == "Insert_MediaFile" : Commands.insert_MediaFile ( edit, view )
-		elif mode == "Insert_TextLink" :  Commands.insert_TextLink ( edit, view )
+		elif mode == "Insert_TextLink" :  Commands.insert_TextLink  ( edit, view )
 		elif mode == "Insert_MediaLink" : Commands.insert_MediaLink ( edit, view, True, False )
+
 		elif mode == "Open_MediaLink" :   Commands.open_MediaLink   ( view )
 		elif mode == "Toggle_MediaLink" : Commands.toggle_MediaLink ()
+
 		elif mode == "Align" :            Commands.align_Titles     ( edit, view )
+
+		elif mode == "Reset_FontSize" :   Commands.reset_FontSize   ( view )
+		elif mode == "Scroll_Up" :        Commands.scroll_Lines     ( view, "Up" )
+		elif mode == "Scroll_Down" :      Commands.scroll_Lines     ( view, "Down" )
+
 
 #▐▌▒▓▒▐▌════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
 #▐▌▓▒▓▐▌                    ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡#
@@ -84,11 +94,50 @@ class SublimeSlidesCommand ( sublime_plugin.TextCommand ):
 
 class Commands ():
 
-	#▓▓▓▓▓──────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌠#
-	#░░░░░                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
-	#░░░░░      •   { Navigation }      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░g3#
-	#░░░░░                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
-	#▓▓▓▓▓──────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌡#
+	#▓▓▓▓▓───────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌠#
+	#░░░░░                           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
+	#░░░░░      •   { General }      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░g3#
+	#░░░░░                           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
+	#▓▓▓▓▓───────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌡#
+
+		#▐▌»»▒▐▌──────────────────────────────▐▌▒««▐▌___________________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   reset_FontSize      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
+		#▐▌»»▒▐▌──────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+
+	def reset_FontSize ( view ):
+
+		sublime.active_window ().run_command ( "reset_font_size" )
+
+		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌__________________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   scroll_Lines      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+
+	def scroll_Lines ( view, direction ):
+
+			selectedRegions = view.sel ()
+
+			if len ( selectedRegions ) == 0:
+				return
+
+			scrollAmount = int ( V.scrollAmount )
+
+			for _X_ in range ( 0, scrollAmount ):
+				if direction == "Down":
+					view.run_command ( "move", { "by": "lines", "forward": True } )
+					view.run_command ( "move_to", { "to": "hardbol" } )
+				elif direction == "Up":
+					view.run_command ( "move", { "by": "lines", "forward": False } )
+					view.run_command ( "move_to", { "to": "hardbol" } )
+
+				view.show_at_center ( view.sel () [0].a )
+				x, y = view.viewport_position()
+				view.set_viewport_position ( [ 0, y ], animate = True )
+
+	#▓▓▓▓▓────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌠#
+	#░░░░░                        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
+	#░░░░░      •   { Zoom }      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░g3#
+	#░░░░░                        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
+	#▓▓▓▓▓────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌡#
 
 		#▐▌»»▒▐▌───────────────────────▐▌▒««▐▌__________________________________________________________________________________________________________________________________________________________¦••⌠#
 		#▐▌»»▒▐▌    • •   zoom_In      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
@@ -98,7 +147,7 @@ class Commands ():
 
 		if zoomMode == "Manual":
 
-			userSettings = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+			userSettings = sublime.load_settings ( "SlideNav.sublime-settings" )
 			titleEndcap  = userSettings.get ( "title_endcap", "" )
 			titleFill    = userSettings.get ( "title_fill", "" )
 
@@ -158,6 +207,12 @@ class Commands ():
 
 		view.set_viewport_position ( [ 0, 0 ], animate = False )
 
+	#▓▓▓▓▓──────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌠#
+	#░░░░░                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
+	#░░░░░      •   { Navigation }      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░g3#
+	#░░░░░                              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
+	#▓▓▓▓▓──────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌡#
+
 		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌__________________________________________________________________________________________________________________________________________________¦••⌠#
 		#▐▌»»▒▐▌    • •   navigate_Slides      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
 		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
@@ -207,7 +262,7 @@ class Commands ():
 		mediaLink_Found = False
 		textLink_Found  = False
 
-		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_OnNav_Enabled  = userSettings.get ( "medialink_on_navigate", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
@@ -273,7 +328,12 @@ class Commands ():
 			view.selection.add ( selectionRegion )
 			Commands.open_MediaLink ( view )
 
-		view.set_viewport_position ( [ 0, 0 ], animate = False )
+		if textLink_Found == True \
+		or mediaLink_Found == True:
+			view.show_at_center ( region.a )
+
+		x, y = view.viewport_position()
+		view.set_viewport_position ( [ 0, y ], animate = False )
 
 	#▓▓▓▓▓────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌠#
 	#░░░░░                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
@@ -287,7 +347,7 @@ class Commands ():
 
 	def insert_Slide ( edit, view ):
 
-		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
@@ -348,7 +408,7 @@ class Commands ():
 
 	def insert_TextLink ( edit, view ):
 
-		userSettings                  = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings                  = sublime.load_settings ( "SlideNav.sublime-settings" )
 		titleEndcap                   = userSettings.get ( "title_endcap", "" )
 		titleFill                     = userSettings.get ( "title_fill", "" )
 		mediaLink_EndCap              = userSettings.get ( "medialink_endcap", "" )
@@ -388,7 +448,6 @@ class Commands ():
 			if fullregion_Text.find ( textLink_SingleLine_StartChar ) >= 0 : invalidLine = True
 
 			if invalidLine == True:
-				print ( "Continue" )
 				continue
 
 			multiLine = False
@@ -406,10 +465,8 @@ class Commands ():
 				textLink_Prefix_B = ""
 				commentStart_A    = regionText_Line_A.find ( commentStart )
 				commentStart_B    = 0
-			print ( commentStart_A )
 			if commentStart_A == -1: commentStart_A = 0
 			if commentStart_B == -1: commentStart_B = 0
-			print ( commentStart_A )
 
 			if textLink_Insertion_Mode == "AfterComment":
 				textLink_Position_A = commentStart_A + len ( commentStart )
@@ -431,7 +488,7 @@ class Commands ():
 
 		mediaLink_Regions = []
 
-		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
@@ -519,7 +576,7 @@ class Commands ():
 
 		mediaLink_Regions = []
 
-		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperEnabled = userSettings.get ( "medialink_wrapper_enabled", "" )
@@ -569,7 +626,7 @@ class Commands ():
 
 		filePath_Regions = []
 
-		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaPath_TabAmount      = userSettings.get ( "mediapath_tab_amount", "" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
@@ -640,7 +697,7 @@ class Commands ():
 
 			#═════      • • •   Load Settings      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
-		userSettings        = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings        = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap    = userSettings.get ( "medialink_endcap", "" )
 		mediaFileTypes      = userSettings.get ( "mediafile_types", [] )
 
@@ -798,12 +855,12 @@ class Commands ():
 		if EventListener.mediaLink_Enabled == True:
 
 			EventListener.mediaLink_Enabled = False
-			sublime.status_message ( "SublimeSlides MediaLink:  DISABLED" )
+			sublime.status_message ( "SlideNav MediaLink:  DISABLED" )
 
 		elif EventListener.mediaLink_Enabled == False:
 
 			EventListener.mediaLink_Enabled = True
-			sublime.status_message ( "SublimeSlides MediaLink:  ENABLED" )
+			sublime.status_message ( "SlideNav MediaLink:  ENABLED" )
 
 		#▐▌»»▒▐▌────────────────────────────────────▐▌▒««▐▌_____________________________________________________________________________________________________________________________________________¦••⌠#
 		#▐▌»»▒▐▌    • •   get_MediaLink_Region      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
@@ -811,7 +868,7 @@ class Commands ():
 
 	def get_MediaLink_Region ( view, region ):
 
-		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
@@ -870,7 +927,7 @@ class Commands ():
 
 	def add_TitleMarkers ( titleText, titleMode ):
 
-		userSettings          = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings          = sublime.load_settings ( "SlideNav.sublime-settings" )
 		titleEndcap           = userSettings.get ( "title_endcap", "" )
 		titleFill             = userSettings.get ( "title_fill", "" )
 		title_StartCap_Length = userSettings.get ( "title_startcap_length", "" )
@@ -925,7 +982,7 @@ class Commands ():
 
 		contentRegion = sublime.Region ( 0, 0 )
 
-		userSettings = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings = sublime.load_settings ( "SlideNav.sublime-settings" )
 		titleEndcap  = userSettings.get ( "title_endcap", "" )
 
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
@@ -946,7 +1003,7 @@ class Commands ():
 
 	def find_Titles ( view ):
 
-		userSettings = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings = sublime.load_settings ( "SlideNav.sublime-settings" )
 		titleEndcap  = userSettings.get ( "title_endcap", "" )
 		titleFill    = userSettings.get ( "title_fill", "" )
 
@@ -961,7 +1018,7 @@ class Commands ():
 
 	def find_MediaPaths ( view ):
 
-		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
@@ -975,7 +1032,7 @@ class Commands ():
 
 	def find_MediaLinks ( view ):
 
-		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
@@ -1039,7 +1096,7 @@ class Commands ():
 		commentStart = ""
 		commentEnd   = ""
 
-		userSettings      = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings      = sublime.load_settings ( "SlideNav.sublime-settings" )
 		commentCharacters = userSettings.get ( "comment_characters", [] )
 
 		documentExtension = sublime.active_window ().extract_variables () ["file_extension"]
@@ -1065,7 +1122,7 @@ class EventListener ( sublime_plugin.EventListener ):
 
 	def on_selection_modified ( self, view ):
 
-		userSettings      = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		userSettings      = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_OnClick_Enabled = userSettings.get ( "medialink_onclick", "" )
 
 		if EventListener.mediaLink_Enabled == True \
@@ -1086,7 +1143,7 @@ class V ():
 	spaceCharacter = " "
 
 	#═════      •   Settings      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
-	userSettings                  = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+	userSettings                  = sublime.load_settings ( "SlideNav.sublime-settings" )
 	titleEndcap                   = userSettings.get ( "title_endcap", "" )
 	titleFill                     = userSettings.get ( "title_fill", "" )
 	mediaLink_EndCap              = userSettings.get ( "medialink_endcap", "" )
@@ -1097,6 +1154,7 @@ class V ():
 	textLink_SingleLine_StartChar = userSettings.get ( "textlink_singleline", "" )
 	textLink_Insertion_Mode       = userSettings.get ( "textlink_insertion", "" )
 	textLink_Padding_Amount       = userSettings.get ( "textlink_padding", "" )
+	scrollAmount                  = userSettings.get ( "scroll_amount", "" )
 	commentStart, commentEnd      = Commands.get_CommentCharacters ()
 
 	#═════      •   Default Titles      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
@@ -1107,7 +1165,7 @@ class V ():
 
 	#═════      •   Errors      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
 
-	errorStart = "▌▓▓▓▓▓   @SublimeSlides: "
+	errorStart = "▌▓▓▓▓▓   @SlideNav: "
 	errorEnd   = "   ▓▓▓▓▓▐"
 
 	#▄▄▄▄▄─────────────────────▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦•⌠#

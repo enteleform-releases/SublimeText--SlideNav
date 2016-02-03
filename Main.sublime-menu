@@ -4,7 +4,7 @@
 		"children":
 			[
 				{ "id": "wrap" },
-				{ "command": "figlet", "caption": "SublimeSlides" }
+				{ "command": "figlet", "caption": "SlideNav" }
 			]
 	},
 	{
@@ -18,17 +18,17 @@
 					"children":
 						[
 							{
-								"caption": "SublimeSlides",
+								"caption": "SlideNav",
 								"children":
 									[
 										{
 											"caption": "Settings – Default",
-											"command": "open_file", "args": { "file": "${packages}/SublimeSlides/SublimeSlides.sublime-settings"},
+											"command": "open_file", "args": { "file": "${packages}/SlideNav/SlideNav.sublime-settings"},
 										},
 
 										{
 											"caption": "Settings – User",
-											"command": "open_file", "args": { "file": "${packages}/User/SublimeSlides.sublime-settings" },
+											"command": "open_file", "args": { "file": "${packages}/User/SlideNav.sublime-settings" },
 										},
 
 										{ "caption": "-" },
@@ -36,13 +36,13 @@
 										{
 											"caption": "Key Bindings – Default",
 											"command": "open_file",
-											"args": { "file": "${packages}/SublimeSlides/Default.sublime-keymap" },
+											"args": { "file": "${packages}/SlideNav/Default.sublime-keymap" },
 										},
 
 										{
 											"caption": "Key Bindings – User",
 											"command": "open_file",
-											"args": { "file": "${packages}/User/SublimeSlides/Default.sublime-keymap" },
+											"args": { "file": "${packages}/User/SlideNav/Default.sublime-keymap" },
 										},
 
 										{ "caption": "-" },

@@ -6,7 +6,7 @@ http://www.unifiedremote.com/
 
 ###Install the preset @ UnifiedRemote:
 
-Copy the `SublimeSlides` directory from `UnifiedRemote/` to your `Unified Remote\Remotes\Custom` directory
+Copy the `SlideNav` directory from `UnifiedRemote/` to your `Unified Remote\Remotes\Custom` directory
 
 **Custom Remotes Path @**
 https://github.com/unifiedremote/Docs/blob/master/intro/whats-included.md
@@ -43,7 +43,7 @@ https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 ```
 #Key Bindings
 
-All keybindings @ `remote.lua` are set up using default SublimeSlides hotkeys
+All keybindings @ `remote.lua` are set up using default SlideNav hotkeys
 
 The following commands are set up for Windows & may require modification to work on non-Windows computers:
 ```
