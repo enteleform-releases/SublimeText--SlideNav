@@ -6,7 +6,7 @@ http://www.unifiedremote.com/
 
 ###Install the preset @ UnifiedRemote:
 
-Copy the `SublimeSlides` directory from `UnifiedRemote/' to your `Unified Remote\Remotes\Custom` directory
+Copy the `SublimeSlides` directory from `UnifiedRemote/` to your `Unified Remote\Remotes\Custom` directory
 
 **Custom Remotes Path @**
 https://github.com/unifiedremote/Docs/blob/master/intro/whats-included.md
