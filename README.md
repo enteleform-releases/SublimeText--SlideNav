@@ -22,8 +22,7 @@ Also includes a file launcher to quickly open media files during your presentati
 * Define applications & extensions @ SublimeSlides.sublime-settings
 
 * Textlinks allow you to define segments of text to hightlight during the presentation
-
-* LinkNav allows you to automatically move through your presentation by MediaLink & TextLink sections
+* LinkNav automatically moves through your presentation by MediaLink & TextLink sections
 
 ![LinkDemo](http://i.imgur.com/0UxRYbf.gif?1)
 
@@ -52,22 +51,22 @@ These are the included commands & default keybindings:
 
 ### Navigate Slides
 
-* Both NavigateSlides commands will automatically show the first slide when they are first used
+* Both SlideNav commands will automatically show the first slide when they are first used
 
-NavigateSlides_Down ( show next Slide )
+SlideNav_Down ( show next Slide )
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-NavigateSlides_Up ( show previous Slide )
+SlideNav_Up ( show previous Slide )
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
-### Navigate MediaLinks
+### Navigate Links
 
-* Both NavigateMediaLinks commands are limited to MediaLinks that are currently Visible, meaning you can use them without accidentally moving into the next slide
+* Both LinkNav commands are limited to Links that are currently Visible, meaning you can use them without accidentally moving into the next slide
 
-NavigateMediaLinks_Down ( open next MediaLink )
+LinkNav_Down ( open next MediaLink )
 <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-NavigateMediaLinks_Up ( open previous MediaLink )
+LinkNav_Up ( open previous MediaLink )
 <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
