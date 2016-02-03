@@ -62,18 +62,19 @@ class SublimeSlidesCommand ( sublime_plugin.TextCommand ):
 
 		view = self.view
 
-		if   mode == "NavigateSlides_Down" :     Commands.navigate_Slides     ( view, "Down" )
-		elif mode == "NavigateSlides_Up" :       Commands.navigate_Slides     ( view, "Up" )
-		elif mode == "NavigateMediaLinks_Down" : Commands.navigate_MediaLinks ( view, "Down" )
-		elif mode == "NavigateMediaLinks_Up" :   Commands.navigate_MediaLinks ( view, "Up" )
-		elif mode == "Zoom_In" :                 Commands.zoom_In             ( view, "Manual" )
-		elif mode == "Zoom_Out" :                Commands.zoom_Out            ( view )
-		elif mode == "Insert_Slide" :            Commands.insert_Slide        ( edit, view )
-		elif mode == "Insert_MediaFile" :        Commands.insert_MediaFile    ( edit, view )
-		elif mode == "Insert_MediaLink" :        Commands.insert_MediaLink    ( edit, view, True, False )
-		elif mode == "Open_MediaLink" :          Commands.open_MediaLink      ( view )
-		elif mode == "Toggle_MediaLink" :        Commands.toggle_MediaLink    ()
-		elif mode == "Align" :                   Commands.align_Titles        ( edit, view )
+		if   mode == "SlideNav_Down" :    Commands.navigate_Slides  ( view, "Down" )
+		elif mode == "SlideNav_Up" :      Commands.navigate_Slides  ( view, "Up" )
+		elif mode == "LinkNav_Down" :     Commands.navigate_Links   ( view, "Down" )
+		elif mode == "LinkNav_Up" :       Commands.navigate_Links   ( view, "Up" )
+		elif mode == "Zoom_In" :          Commands.zoom_In          ( view, "Manual" )
+		elif mode == "Zoom_Out" :         Commands.zoom_Out         ( view )
+		elif mode == "Insert_Slide" :     Commands.insert_Slide     ( edit, view )
+		elif mode == "Insert_MediaFile" : Commands.insert_MediaFile ( edit, view )
+		elif mode == "Insert_TextLink" :  Commands.insert_TextLink ( edit, view )
+		elif mode == "Insert_MediaLink" : Commands.insert_MediaLink ( edit, view, True, False )
+		elif mode == "Open_MediaLink" :   Commands.open_MediaLink   ( view )
+		elif mode == "Toggle_MediaLink" : Commands.toggle_MediaLink ()
+		elif mode == "Align" :            Commands.align_Titles     ( edit, view )
 
 #▐▌▒▓▒▐▌════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
 #▐▌▓▒▓▐▌                    ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡#
@@ -197,20 +198,21 @@ class Commands ():
 
 		view.set_viewport_position ( [ 0, 0 ], animate = False )
 
-		#▐▌»»▒▐▌───────────────────────────────────▐▌▒««▐▌______________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   navigate_MediaLinks      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
-		#▐▌»»▒▐▌───────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+		#▐▌»»▒▐▌──────────────────────────────▐▌▒««▐▌___________________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   navigate_Links      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
+		#▐▌»»▒▐▌──────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
-	def navigate_MediaLinks ( view, direction ):
+	def navigate_Links ( view, direction ):
 
 		mediaLink_Found = False
+		textLink_Found  = False
 
 		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_OnNav_Enabled  = userSettings.get ( "medialink_on_navigate", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
-		mediaLink_Prefix      = commentStart + mediaLink_Character + V.spaceCharacter
+		mediaLink_Prefix     = commentStart + mediaLink_EndCap + V.spaceCharacter
 		mediaLink_LeftOffset = len ( mediaLink_Prefix )
 
 		mediaLink_Regions     = Commands.find_MediaLinks ( view )
@@ -237,21 +239,34 @@ class Commands ():
 
 		for region in mediaLink_Regions:
 
+			regionText = view.substr ( region )
+
+			# ? ? ?     • • •   Check Link Direction      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ⌠¦•••i1⌡#
+
 			if direction == "Down" \
 			and region.a >= visibleRegion_A \
-			and region.a > cursorSelection_Line_B \
+			and region.a > cursorSelection_Line_B - 1 \
 			and region.b <= visibleRegion_B:
-				mediaLink_Found = True
+				if re.match ( V.all_TextLink_RegEx, regionText ): textLink_Found = True
+				elif re.match ( V.mediaLink_RegEx, regionText ): mediaLink_Found = True
 				break
 
 			elif direction == "Up" \
 			and region.a >= visibleRegion_A \
 			and region.a < cursorSelection_Line_A - mediaLink_LeftOffset \
 			and region.b <= visibleRegion_B:
-				mediaLink_Found = True
+				if re.match ( V.all_TextLink_RegEx, regionText ): textLink_Found = True
+				elif re.match ( V.mediaLink_RegEx, regionText ): mediaLink_Found = True
 				break
 
-		if mediaLink_Found == True \
+			# ? ? ?     • • •   Set Selection Area      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ⌠¦•••i1⌡#
+
+		if textLink_Found == True:
+			view.selection.clear ()
+			selectionRegion = sublime.Region ( region.a + len ( "\n" ), region.b )
+			view.selection.add ( selectionRegion )
+
+		elif mediaLink_Found == True \
 		and mediaLink_OnNav_Enabled == "True":
 			view.selection.clear ()
 			selectionRegion = sublime.Region ( region.a + mediaLink_LeftOffset + 1, region.a + mediaLink_LeftOffset + 1 )
@@ -273,7 +288,7 @@ class Commands ():
 	def insert_Slide ( edit, view ):
 
 		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
 		titleEndcap              = userSettings.get ( "title_endcap", "" )
@@ -286,7 +301,6 @@ class Commands ():
 
 		for region in selectedRegions:
 
-			region.a                = region.a
 			regionLine_A            = view.line ( region.a )
 			regionText              = view.substr ( regionLine_A ).strip ()
 			cursorRow, cursorColumn = view.rowcol ( region.a )
@@ -304,7 +318,7 @@ class Commands ():
 
 			invalidLine    = False
 
-			if regionText.find ( mediaLink_Character )   >= 0 : invalidLine = True
+			if regionText.find ( mediaLink_EndCap )      >= 0 : invalidLine = True
 			if regionText.find ( mediaLink_WrapperFill ) >= 0 : invalidLine = True
 			if regionText.find ( titleEndcap )           >= 0 : invalidLine = True
 			if regionText.find ( titleFill )             >= 0 : invalidLine = True
@@ -328,6 +342,87 @@ class Commands ():
 		view.selection.add_all ( slideTitle_Regions )
 		view.run_command ( "reverse_selection_direction" )
 
+		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌__________________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   insert_TextLink      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+
+	def insert_TextLink ( edit, view ):
+
+		userSettings                  = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		titleEndcap                   = userSettings.get ( "title_endcap", "" )
+		titleFill                     = userSettings.get ( "title_fill", "" )
+		mediaLink_EndCap              = userSettings.get ( "medialink_endcap", "" )
+		mediaLink_WrapperFill         = userSettings.get ( "medialink_wrapper_fill", "" )
+		textLink_MultiLine_StartChar  = userSettings.get ( "textlink_multiline_start", "" )
+		textLink_MultiLine_EndChar    = userSettings.get ( "textlink_multiline_end", "" )
+		textLink_SingleLine_StartChar = userSettings.get ( "textlink_singleline", "" )
+		textLink_Insertion_Mode       = userSettings.get ( "textlink_insertion", "" )
+		textLink_LeftPadding_Amount   = userSettings.get ( "textlink_padding_left", "" )
+		textLink_RightPadding_Amount  = userSettings.get ( "textlink_padding_right", "" )
+		commentStart, commentEnd      = Commands.get_CommentCharacters ()
+		linkText_Regions              = []
+
+		textLink_LeftPadding  = ( V.spaceCharacter * textLink_LeftPadding_Amount )
+		textLink_RightPadding = ( V.spaceCharacter * textLink_RightPadding_Amount )
+
+		selectedRegions = view.sel ()
+
+		for region in selectedRegions:
+
+			regionLine_A            = view.line ( region.a )
+			regionLine_B            = view.line ( region.b )
+			fullRegion              = sublime.Region ( regionLine_A.a, regionLine_B.b )
+			fullregion_Text         = view.substr ( fullRegion )
+			regionText_Line_A       = view.substr ( regionLine_A )
+			regionText_Line_B       = view.substr ( regionLine_B )
+			cursorRow, cursorColumn = view.rowcol ( region.a )
+
+			invalidLine = False
+
+			if fullregion_Text.find ( mediaLink_EndCap )              >= 0 : invalidLine = True
+			if fullregion_Text.find ( mediaLink_WrapperFill )         >= 0 : invalidLine = True
+			if fullregion_Text.find ( titleEndcap )                   >= 0 : invalidLine = True
+			if fullregion_Text.find ( titleFill )                     >= 0 : invalidLine = True
+			if fullregion_Text.find ( textLink_MultiLine_StartChar )  >= 0 : invalidLine = True
+			if fullregion_Text.find ( textLink_MultiLine_EndChar )    >= 0 : invalidLine = True
+			if fullregion_Text.find ( textLink_SingleLine_StartChar ) >= 0 : invalidLine = True
+
+			if invalidLine == True:
+				print ( "Continue" )
+				continue
+
+			multiLine = False
+
+			if regionLine_A != regionLine_B:
+				multiLine = True
+
+			if multiLine == True:
+				textLink_Prefix_A = textLink_LeftPadding + textLink_MultiLine_StartChar + textLink_RightPadding
+				textLink_Prefix_B = textLink_LeftPadding + textLink_MultiLine_EndChar + textLink_RightPadding
+				commentStart_A    = regionText_Line_A.find ( commentStart )
+				commentStart_B    = regionText_Line_B.find ( commentStart )
+			elif multiLine == False:
+				textLink_Prefix_A = textLink_LeftPadding + textLink_SingleLine_StartChar + textLink_RightPadding
+				textLink_Prefix_B = ""
+				commentStart_A    = regionText_Line_A.find ( commentStart )
+				commentStart_B    = 0
+			print ( commentStart_A )
+			if commentStart_A == -1: commentStart_A = 0
+			if commentStart_B == -1: commentStart_B = 0
+			print ( commentStart_A )
+
+			if textLink_Insertion_Mode == "AfterComment":
+				textLink_Position_A = commentStart_A + len ( commentStart )
+				textLink_Position_B = commentStart_B + len ( commentStart )
+			elif textLink_Insertion_Mode == "LineStart":
+				textLink_Position_A = 0
+				textLink_Position_B = 0
+
+			view.insert ( edit, regionLine_A.a + textLink_Position_A, textLink_Prefix_A )
+
+			if multiLine == True:
+				view.insert ( edit, regionLine_B.a + textLink_Position_B + 1, textLink_Prefix_B )
+
 		#▐▌»»▒▐▌────────────────────────────────▐▌▒««▐▌_________________________________________________________________________________________________________________________________________________¦••⌠#
 		#▐▌»»▒▐▌    • •   insert_MediaLink      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
 		#▐▌»»▒▐▌────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
@@ -337,7 +432,7 @@ class Commands ():
 		mediaLink_Regions = []
 
 		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
 		titleEndcap              = userSettings.get ( "title_endcap", "" )
@@ -345,9 +440,9 @@ class Commands ():
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		mediaLink_Title_Default = V.mediaLink_DefaultTitle
-		mediaLink_StartText     = commentStart + mediaLink_Character + V.spaceCharacter
+		mediaLink_StartText     = commentStart + mediaLink_EndCap + V.spaceCharacter
 		mediaLink_Prefix        = ( V.tabCharacter * mediaLink_TabAmount ) + mediaLink_StartText
-		mediaLink_Suffix        = V.spaceCharacter + mediaLink_Character
+		mediaLink_Suffix        = V.spaceCharacter + mediaLink_EndCap
 
 		if commentEnd != "":
 			mediaLink_Suffix = mediaLink_Suffix + commentEnd
@@ -356,8 +451,6 @@ class Commands ():
 
 		for region in selectedRegions:
 
-			region.a                = region.a
-			region.b                = region.b
 			regionLine_A            = view.line ( region.a )
 			regionLine_B            = view.line ( region.b )
 			regionText              = view.substr ( regionLine_A ).strip ()
@@ -371,11 +464,11 @@ class Commands ():
 			invalidLine    = False
 			mediaLink_Line = False
 
-			if regionText.find ( mediaLink_Character ) >= 0 \
+			if regionText.find ( mediaLink_EndCap ) >= 0 \
 			and block_ExistingLines == False:
 				mediaLink_Line = True
 				invalidLine = True
-			elif regionText.find ( mediaLink_Character ) >= 0 \
+			elif regionText.find ( mediaLink_EndCap ) >= 0 \
 			and block_ExistingLines == True:
 				invalidLine = True
 
@@ -427,7 +520,7 @@ class Commands ():
 		mediaLink_Regions = []
 
 		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperEnabled = userSettings.get ( "medialink_wrapper_enabled", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
@@ -443,14 +536,13 @@ class Commands ():
 
 		if skipItem == False:
 
-			mediaLink_SurroundingText_Length = len ( mediaLink_Character + V.spaceCharacter + mediaLink_Character )
+			mediaLink_SurroundingText_Length = len ( mediaLink_EndCap + V.spaceCharacter + mediaLink_EndCap )
 
 			if commentEnd != "":
 				mediaLink_SurroundingText_Length = mediaLink_SurroundingText_Length + len ( V.spaceCharacter )
 
 			for region in selectedRegions:
 
-				region.a          = region.a
 				regionLine_A      = view.line ( region )
 				regionText        = view.substr ( region )
 				regionText_Length = len ( regionText )
@@ -479,11 +571,11 @@ class Commands ():
 
 		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
 		mediaPath_TabAmount      = userSettings.get ( "mediapath_tab_amount", "" )
-		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
-		mediaLink_Prefix = commentStart + mediaLink_Character + V.spaceCharacter
-		mediaLink_Suffix = V.spaceCharacter + mediaLink_Character
+		mediaLink_Prefix = commentStart + mediaLink_EndCap + V.spaceCharacter
+		mediaLink_Suffix = V.spaceCharacter + mediaLink_EndCap
 
 		if commentEnd != "":
 			mediaLink_Suffix = mediaLink_Suffix + commentEnd
@@ -507,7 +599,7 @@ class Commands ():
 		mediaLink_RightOffset = 0
 
 		if commentEnd != "":
-			mediaLink_RightOffset = len ( V.spaceCharacter ) + len ( mediaLink_Character ) + len ( commentEnd )
+			mediaLink_RightOffset = len ( V.spaceCharacter ) + len ( mediaLink_EndCap ) + len ( commentEnd )
 
 		for region in selectedRegions:
 
@@ -549,7 +641,7 @@ class Commands ():
 			#═════      • • •   Load Settings      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
 		userSettings        = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		mediaLink_Character = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap    = userSettings.get ( "medialink_endcap", "" )
 		mediaFileTypes      = userSettings.get ( "mediafile_types", [] )
 
 			#═════      • • •   Set Comment Characters      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
@@ -577,11 +669,11 @@ class Commands ():
 
 			#═════      • • •   Get MediaLink      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
-		mediaLink_Start = cursorLine_Text.find ( commentStart + mediaLink_Character + V.spaceCharacter )
-		mediaLink_End   = cursorLine_Text.rfind ( V.spaceCharacter + mediaLink_Character + commentEnd )
+		mediaLink_Start = cursorLine_Text.find ( commentStart + mediaLink_EndCap + V.spaceCharacter )
+		mediaLink_End   = cursorLine_Text.rfind ( V.spaceCharacter + mediaLink_EndCap + commentEnd )
 
-		mediaLink_Prefix = commentStart + mediaLink_Character + V.spaceCharacter
-		mediaLink_Suffix = V.spaceCharacter + mediaLink_Character
+		mediaLink_Prefix = commentStart + mediaLink_EndCap + V.spaceCharacter
+		mediaLink_Suffix = V.spaceCharacter + mediaLink_EndCap
 
 		if commentEnd != "":
 			mediaLink_Suffix = mediaLink_Suffix + commentEnd
@@ -611,7 +703,6 @@ class Commands ():
 
 		for region in mediaFile_Regions:
 
-			region.a               = region.a
 			regionLine_A           = view.line ( region.a )
 			mediaLink_Text         = view.substr ( regionLine_A )
 			trimmed_MediaLink_Text = mediaLink_Text.lstrip ()
@@ -721,15 +812,13 @@ class Commands ():
 	def get_MediaLink_Region ( view, region ):
 
 		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
 		titleEndcap              = userSettings.get ( "title_endcap", "" )
 		titleFill                = userSettings.get ( "title_fill", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
-		region.a     = region.a
-		region.b     = region.b
 		regionLine_A = view.line ( region.a )
 		regionText   = view.substr ( regionLine_A )
 
@@ -738,7 +827,7 @@ class Commands ():
 		trimmedLeft_Length      = len ( regionText ) - len ( regionText_TrimmedLeft )
 		trimmedRight_Length     = len ( regionText ) - len ( regionText_TrimmedRight )
 
-		mediaLink_LeftOffset = trimmedLeft_Length + len ( commentStart ) + len ( mediaLink_Character ) + len ( V.spaceCharacter )
+		mediaLink_LeftOffset = trimmedLeft_Length + len ( commentStart ) + len ( mediaLink_EndCap ) + len ( V.spaceCharacter )
 		mediaLink_RightOffset = trimmedRight_Length
 
 		if commentEnd != "":
@@ -828,16 +917,16 @@ class Commands ():
 	#░░░░░                           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
 	#▓▓▓▓▓───────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌡#
 
-		#▐▌»»▒▐▌────────────────────────────▐▌▒««▐▌_____________________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   find_Slides      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
-		#▐▌»»▒▐▌────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+		#▐▌»»▒▐▌───────────────────────────▐▌▒««▐▌______________________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   find_Slides      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+		#▐▌»»▒▐▌───────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
 	def find_Slides ( view, findMode ):
 
 		contentRegion = sublime.Region ( 0, 0 )
 
-		userSettings  = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		titleEndcap   = userSettings.get ( "title_endcap", "" )
+		userSettings = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+		titleEndcap  = userSettings.get ( "title_endcap", "" )
 
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
@@ -845,9 +934,9 @@ class Commands ():
 		cursorLine_A    = view.line ( cursorSelection.a )
 
 		if findMode == "Single":
-			contentRegion = view.find ( V.content_RegEx, cursorLine_A.a )
+			contentRegion = view.find ( V.slide_RegEx, cursorLine_A.a )
 		elif findMode == "All":
-			contentRegion = view.find_all ( V.content_RegEx )
+			contentRegion = view.find_all ( V.slide_RegEx )
 
 		return ( contentRegion )
 
@@ -873,7 +962,7 @@ class Commands ():
 	def find_MediaPaths ( view ):
 
 		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		mediaFile_Regions = view.find_all ( V.mediaPath_RegEx )
@@ -887,10 +976,11 @@ class Commands ():
 	def find_MediaLinks ( view ):
 
 		userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-		mediaLink_Character      = userSettings.get ( "medialink_character", "" )
+		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
-		mediaFile_Regions = view.find_all ( V.mediaLink_RegEx )
+		# mediaFile_Regions = view.find_all ( V.mediaLink_RegEx )
+		mediaFile_Regions = view.find_all ( V.allLinks_RegEx )
 
 		return ( mediaFile_Regions )
 
@@ -900,9 +990,9 @@ class Commands ():
 	#░░░░░                             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
 	#▓▓▓▓▓─────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌡#
 
-		#▐▌»»▒▐▌────────────────────────────────────▐▌▒««▐▌_____________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   get_VisibleRegion      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
-		#▐▌»»▒▐▌────────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+		#▐▌»»▒▐▌─────────────────────────────────▐▌▒««▐▌________________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   get_VisibleRegion      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+		#▐▌»»▒▐▌─────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
 	def get_VisibleRegion ( view, zoom_OnFail ):
 
@@ -990,25 +1080,43 @@ class EventListener ( sublime_plugin.EventListener ):
 
 class V ():
 
-	userSettings             = sublime.load_settings ( "SublimeSlides.sublime-settings" )
-	mediaLink_Character      = userSettings.get ( "medialink_character", "" )
-	mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
-	mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
-	titleEndcap              = userSettings.get ( "title_endcap", "" )
-	titleFill                = userSettings.get ( "title_fill", "" )
-	commentStart, commentEnd = Commands.get_CommentCharacters ()
-
-	errorStart = "▌▓▓▓▓▓   @SublimeSlides: "
-	errorEnd   = "   ▓▓▓▓▓▐"
+	#═════      •   WhiteSpace      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
 
 	tabCharacter   = "	"
 	spaceCharacter = " "
+
+	#═════      •   Settings      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+	userSettings                  = sublime.load_settings ( "SublimeSlides.sublime-settings" )
+	titleEndcap                   = userSettings.get ( "title_endcap", "" )
+	titleFill                     = userSettings.get ( "title_fill", "" )
+	mediaLink_EndCap              = userSettings.get ( "medialink_endcap", "" )
+	mediaLink_TabAmount           = userSettings.get ( "medialink_tab_amount", "" )
+	mediaLink_WrapperFill         = userSettings.get ( "medialink_wrapper_fill", "" )
+	textLink_MultiLine_StartChar  = userSettings.get ( "textlink_multiline_start", "" )
+	textLink_MultiLine_EndChar    = userSettings.get ( "textlink_multiline_end", "" )
+	textLink_SingleLine_StartChar = userSettings.get ( "textlink_singleline", "" )
+	textLink_Insertion_Mode       = userSettings.get ( "textlink_insertion", "" )
+	textLink_Padding_Amount       = userSettings.get ( "textlink_padding", "" )
+	commentStart, commentEnd      = Commands.get_CommentCharacters ()
+
+	#═════      •   Default Titles      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
 
 	slide_DefaultTitle     = "___SLIDE_TITLE_GOES_HERE___"
 	mediaLink_DefaultTitle = "___MEDIALINK_TITLE_GOES_HERE___"
 	filePath_DefaultTitle  = "___FILEPATH_GOES_HERE___"
 
-	content_RegEx = \
+	#═════      •   Errors      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+
+	errorStart = "▌▓▓▓▓▓   @SublimeSlides: "
+	errorEnd   = "   ▓▓▓▓▓▐"
+
+	#▄▄▄▄▄─────────────────────▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦•⌠#
+	#░░░░░      •   RegEx      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░s2#
+	#▀▀▀▀▀─────────────────────▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦•⌡#
+
+	lineStart_WhiteSpace_and_Comment_RegEx = "\n[\\	\\ ]*" + commentStart + "?[\\	\\ ]*"
+
+	slide_RegEx = \
 		"(" + commentStart + titleEndcap + ")"     + \
 		"("                                        + \
 			"("                                       + \
@@ -1025,8 +1133,31 @@ class V ():
 		"(.*" + titleEndcap + commentEnd + "\S*)" + \
 		"(.*)"
 
+		#═════      • •   MediaLinks      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
+
 	mediaPath_RegEx = \
-		"([\\	\\ ]*" + commentStart + mediaLink_Character + ".*" + mediaLink_Character + ".*)" + \
+		"([\\	\\ ]*" + commentStart + mediaLink_EndCap + ".*" + mediaLink_EndCap + ".*)" + \
 		"(\n[\\	\\ ]*" + commentStart + "@.*)"
 
-	mediaLink_RegEx = commentStart + mediaLink_Character + ".*" + mediaLink_Character + commentEnd
+	mediaLink_RegEx = commentStart + mediaLink_EndCap + ".*" + mediaLink_EndCap + commentEnd
+
+		#═════      • •   TextLinks      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
+
+	textLink_SingleLine_RegEx = lineStart_WhiteSpace_and_Comment_RegEx + textLink_SingleLine_StartChar + ".*"
+
+	textLink_MultiLine_RegEx = \
+		"(" + \
+			lineStart_WhiteSpace_and_Comment_RegEx + textLink_MultiLine_StartChar + "[\\S\\s]*?" + \
+			lineStart_WhiteSpace_and_Comment_RegEx + textLink_MultiLine_EndChar + ".*"           + \
+		")"
+
+	all_TextLink_RegEx = \
+		"(" + textLink_SingleLine_RegEx + ")" + \
+		"|"                                   + \
+		"(" + textLink_MultiLine_RegEx + ")"
+
+	allLinks_RegEx = \
+		all_TextLink_RegEx    + \
+		"|"                   + \
+		"(" + mediaLink_RegEx + ")"
+
