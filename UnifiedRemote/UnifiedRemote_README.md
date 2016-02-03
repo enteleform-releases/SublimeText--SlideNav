@@ -64,9 +64,9 @@ alttab == Alt + Tab
 
 Also - on my personal copy of this, I have an additional button in the top row which:
 
- • loads SublimeText whether it is running or not
- • removes window borders
- • sets the window size to full screen
+* loads SublimeText whether it is running or not
+* removes window borders
+* sets the window size to full screen
 
 The button & it's function `sublimetext` are commented out in `layout.xml` & `remote.lua`
 
