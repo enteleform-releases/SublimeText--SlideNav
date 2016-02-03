@@ -29,16 +29,22 @@ https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 		│  Hold: Zoom Out @ Slides   │  │  Text Size  │ │  Hold: Zoom In @ Slides    │
 		└────────────────────────────┘  └─────────────┘ └────────────────────────────┘
 
-	════════════════════════════════════  Slides  ════════════════════════════════════
+	═══════════════════════════════════  SlideNav  ═══════════════════════════════════
 
 		┌────────────────────────────────────┐  ┌────────────────────────────────────┐
 		│           Previous Slide           │  │             Next Slide             │
 		└────────────────────────────────────┘  └────────────────────────────────────┘
 
-	══════════════════════════════════  MediaLinks  ══════════════════════════════════
+	═══════════════════════════════════  LinkNav  ════════════════════════════════════
 
 		┌────────────────────────────────────┐  ┌────────────────────────────────────┐
-		│         Previous MediaLink         │  │           Next MediaLink           │
+		│           Previous Link            │  │             Next Link              │
+		└────────────────────────────────────┘  └────────────────────────────────────┘
+
+	════════════════════════════════════  Scroll  ════════════════════════════════════
+
+		┌────────────────────────────────────┐  ┌────────────────────────────────────┐
+		│                Up                  │  │               Down                 │
 		└────────────────────────────────────┘  └────────────────────────────────────┘
 ```
 #Key Bindings
@@ -49,15 +55,6 @@ The following commands are set up for Windows & may require modification to work
 ```
 exit   == Alt + F4
 alttab == Alt + Tab
-```
-
-`zoomsublime_reset` is a custom keybinding of mine. Use the following code @ `Default.sublime-keymap` to implement it:
-
-```
-	{
-		"keys": ["ctrl+alt+0"],
-		"command": "reset_font_size",
-	},
 ```
 
 #Additional Feature
