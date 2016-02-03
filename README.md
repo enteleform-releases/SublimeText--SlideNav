@@ -14,14 +14,18 @@ Also includes a file launcher to quickly open media files during your presentati
 
 ![SlideDemo](http://i.imgur.com/q02FrPm.gif?1)
 
-### MediaLink
+### MediaLink, TextLink, & LinkNav
 
 * Launch files during your presentation with MediaLinks
-* MediaLinks can be launched automatically upon clicking, or with a hotkey
+* MediaLinks can be launched automatically upon clicking, with LinkNav, or with a hotkey
 * List your MediaLink+Path at the beginning of the document, and access it anywhere else in the document
 * Define applications & extensions @ SublimeSlides.sublime-settings
 
-![MediaLinkDemo](http://i.imgur.com/0UxRYbf.gif?1)
+* Textlinks allow you to define segments of text to hightlight during the presentation
+
+* LinkNav allows you to automatically move through your presentation by MediaLink & TextLink sections
+
+![LinkDemo](http://i.imgur.com/0UxRYbf.gif?1)
 
 ### Remote Control
 
@@ -37,7 +41,7 @@ More info at [UnifiedRemote_README.md](https://github.com/Enteleform/ST_SublimeS
 
 ### Snippets
 
-* Slide dividers & MediaLinks are generated automatically via hotkey
+* Slide dividers, MediaLinks, & TextLinks are generated automatically via hotkey
 * MediaLinks can be generated with or without path ( use with path to define MediaLink, use without path to launch MediaLink anywhere else in the document )
 
 ![SnippetDemo](http://i.imgur.com/RUvj93C.gif?1)
