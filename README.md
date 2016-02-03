@@ -63,10 +63,10 @@ SlideNav_Up ( show previous Slide )
 
 * Both LinkNav commands are limited to Links that are currently Visible, meaning you can use them without accidentally moving into the next slide
 
-LinkNav_Down ( open next MediaLink )
+LinkNav_Down
 <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-LinkNav_Up ( open previous MediaLink )
+LinkNav_Up
 <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
@@ -83,13 +83,16 @@ Zoom_Out ( exit Slide & show full document )
  * on blank lines ( new text area will automatically be selected )
  * on lines with text ( text area will automatically use line's text )
 
-Insert_Slide ( insert Slide divider )
+Insert_Slide
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
-Insert_MediaFile ( insert MediaLink + path )
+Insert_TextLink
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
+
+Insert_MediaFile ( MediaLink + path )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
-Insert_MediaLink ( insert MediaLink + wrapper )
+Insert_MediaLink
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
 
 ### MediaLink
