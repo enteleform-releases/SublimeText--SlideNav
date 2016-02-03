@@ -31,7 +31,7 @@ Unified Remote can be installed on your Android/IOS devices to control your PC/M
 
 Here is a screenshot of the preset:
 
-![UnifiedRemote](http://i.imgur.com/J4S6wBm.png?1)
+![UnifiedRemote](http://i.imgur.com/kruMIhu.png?1)
 
 More info in the readme file @ SublimeSlides/UnifiedRemote
 
@@ -50,28 +50,28 @@ These are the included commands & default keybindings:
 
 * Both NavigateSlides commands will automatically show the first slide when they are first used
 
-NavigateSlides_Down ( show next Slide )  
+NavigateSlides_Down ( show next Slide )
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-NavigateSlides_Up ( show previous Slide )  
+NavigateSlides_Up ( show previous Slide )
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Navigate MediaLinks
 
-* Both NavigateMediaLinks commands are limited to MediaLinks that are currently Visible, meaning you can use them without accidentally moving into the next slide 
+* Both NavigateMediaLinks commands are limited to MediaLinks that are currently Visible, meaning you can use them without accidentally moving into the next slide
 
-NavigateMediaLinks_Down ( open next MediaLink )  
+NavigateMediaLinks_Down ( open next MediaLink )
 <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-NavigateMediaLinks_Up ( open previous MediaLink )  
+NavigateMediaLinks_Up ( open previous MediaLink )
 <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
 
-Zoom_In  ( zoom to selected Slide - Slide title line must be selected )  
+Zoom_In  ( zoom to selected Slide - Slide title line must be selected )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd>
 
-Zoom_Out ( exit Slide & show full document )  
+Zoom_Out ( exit Slide & show full document )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
 
 ### Insert Snippets
@@ -80,26 +80,26 @@ Zoom_Out ( exit Slide & show full document )
  * on blank lines ( new text area will automatically be selected )
  * on lines with text ( text area will automatically use line's text )
 
-Insert_Slide ( insert Slide divider )  
+Insert_Slide ( insert Slide divider )
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
-Insert_MediaFile ( insert MediaLink + path )  
+Insert_MediaFile ( insert MediaLink + path )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
-Insert_MediaLink ( insert MediaLink + wrapper )  
+Insert_MediaLink ( insert MediaLink + wrapper )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
 
 ### MediaLink
 
-Open_MediaLink  
+Open_MediaLink
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
 
-Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )  
+Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 ### Slides
 
-Align ( resizes all Slide titles to same length )  
+Align ( resizes all Slide titles to same length )
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
 ## CUSTOMIZATION
@@ -107,7 +107,7 @@ Align ( resizes all Slide titles to same length )
 Modifications available @ SublimeSlides.sublime-settings:
 
 * Define Snippet Visual Styles
-* Define MediaLink Applications & Their Associated Extensions 
+* Define MediaLink Applications & Their Associated Extensions
 * Define Presentation FileTypes & Comment Characters ( required for any filetype you want to use SublimeSlides with )
 
 ## FEEDBACK
