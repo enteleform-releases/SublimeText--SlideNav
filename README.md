@@ -36,7 +36,7 @@ Here is a screenshot of the preset:
 
 ![UnifiedRemote](http://i.imgur.com/WYe2Cf6.png?1)
 
-More info at [UnifiedRemote_README.md](https://github.com/Enteleform/ST_SlideNav/blob/master/UnifiedRemote/UnifiedRemote_README.md)
+More info at [UnifiedRemote/README.md](https://github.com/Enteleform/ST_SlideNav/blob/master/UnifiedRemote/UnifiedRemote_README.md)
 
 ### Snippets
 
