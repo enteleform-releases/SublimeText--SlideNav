@@ -69,7 +69,7 @@
 
 	{
 		"command": "slide_nav",
-		"args": { "mode": "Insert_MediaFile", },
+		"args": { "mode": "Insert_MediaPath", },
 		"keys": ["ctrl+shift+super+period"],
 	},
 

@@ -78,7 +78,7 @@ class SlideNavCommand ( sublime_plugin.TextCommand ):
 		elif mode == "Zoom_Out" :         Commands.zoom_Out         ( view )
 
 		elif mode == "Insert_Slide" :     Commands.insert_Slide     ( edit, view )
-		elif mode == "Insert_MediaFile" : Commands.insert_MediaFile ( edit, view )
+		elif mode == "Insert_MediaPath" : Commands.insert_MediaLink_Path ( edit, view )
 		elif mode == "Insert_TextLink" :  Commands.insert_TextLink  ( edit, view )
 		elif mode == "Insert_MediaLink" : Commands.insert_MediaLink ( edit, view, True, False )
 
@@ -206,8 +206,8 @@ class Commands ():
 
 	def zoom_Out ( view ):
 
-		userSettings = sublime.load_settings ( "SlideNav.sublime-settings" )
-		goTo_Start_OnExit  = userSettings.get ( "goto_start_onexit", "" )
+		userSettings      = sublime.load_settings ( "SlideNav.sublime-settings" )
+		goTo_Start_OnExit = userSettings.get ( "goto_start_onexit", "" )
 
 		view.run_command ( "unfold_all" )
 
@@ -358,7 +358,6 @@ class Commands ():
 
 		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
 		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
 		titleEndcap              = userSettings.get ( "title_endcap", "" )
 		titleFill                = userSettings.get ( "title_fill", "" )
@@ -497,17 +496,18 @@ class Commands ():
 
 		mediaLink_Regions = []
 
-		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
-		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
-		titleEndcap              = userSettings.get ( "title_endcap", "" )
-		titleFill                = userSettings.get ( "title_fill", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
+		userSettings                = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap            = userSettings.get ( "medialink_endcap", "" )
+		mediaLink_IndentationAmount = userSettings.get ( "medialink_indentation_amount", "" )
+		mediaLink_WrapperFill       = userSettings.get ( "medialink_wrapper_fill", "" )
+		titleEndcap                 = userSettings.get ( "title_endcap", "" )
+		titleFill                   = userSettings.get ( "title_fill", "" )
+		commentStart, commentEnd    = Commands.get_CommentCharacters ()
+		indentationCharacter        = Commands.get_IndentationCharacter ( view )
 
 		mediaLink_Title_Default = V.mediaLink_DefaultTitle
 		mediaLink_StartText     = commentStart + mediaLink_EndCap + V.spaceCharacter
-		mediaLink_Prefix        = ( V.tabCharacter * mediaLink_TabAmount ) + mediaLink_StartText
+		mediaLink_Prefix        = ( indentationCharacter * mediaLink_IndentationAmount ) + mediaLink_StartText
 		mediaLink_Suffix        = V.spaceCharacter + mediaLink_EndCap
 
 		if commentEnd != "":
@@ -585,12 +585,13 @@ class Commands ():
 
 		mediaLink_Regions = []
 
-		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
-		mediaLink_WrapperEnabled = userSettings.get ( "medialink_wrapper_enabled", "" )
-		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
+		userSettings                = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap            = userSettings.get ( "medialink_endcap", "" )
+		mediaLink_IndentationAmount = userSettings.get ( "medialink_indentation_amount", "" )
+		mediaLink_WrapperEnabled    = userSettings.get ( "medialink_wrapper_enabled", "" )
+		mediaLink_WrapperFill       = userSettings.get ( "medialink_wrapper_fill", "" )
+		commentStart, commentEnd    = Commands.get_CommentCharacters ()
+		indentationCharacter        = Commands.get_IndentationCharacter ( view )
 
 		selectedRegions = view.sel ()
 
@@ -617,7 +618,7 @@ class Commands ():
 					continue
 
 				mediaLink_WrapperLine_Text = \
-					( V.tabCharacter * mediaLink_TabAmount )                                      + \
+					( indentationCharacter * mediaLink_IndentationAmount )                                      + \
 					commentStart                                                                         + \
 					( mediaLink_WrapperFill * ( regionText_Length + mediaLink_SurroundingText_Length ) ) + \
 					commentEnd
@@ -627,11 +628,11 @@ class Commands ():
 
 			view.run_command ( "swap_line_up" )
 
-		#▐▌»»▒▐▌────────────────────────────────▐▌▒««▐▌_________________________________________________________________________________________________________________________________________________¦••⌠#
-		#▐▌»»▒▐▌    • •   insert_MediaFile      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
-		#▐▌»»▒▐▌────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+		#▐▌»»▒▐▌─────────────────────────────────────▐▌▒««▐▌____________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   insert_MediaLink_Path      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+		#▐▌»»▒▐▌─────────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
-	def insert_MediaFile ( edit, view ):
+	def insert_MediaLink_Path ( edit, view ):
 
 		filePath_Regions = []
 
@@ -639,6 +640,7 @@ class Commands ():
 		mediaPath_TabAmount      = userSettings.get ( "mediapath_tab_amount", "" )
 		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
+		indentationCharacter     = Commands.get_IndentationCharacter ( view )
 
 		mediaLink_Prefix = commentStart + mediaLink_EndCap + V.spaceCharacter
 		mediaLink_Suffix = V.spaceCharacter + mediaLink_EndCap
@@ -650,7 +652,7 @@ class Commands ():
 
 		filePath_Prefix = \
 			"\n" + \
-			( V.tabCharacter * mediaPath_TabAmount ) + \
+			( indentationCharacter * mediaPath_TabAmount ) + \
 			commentStart + \
 			filePath_Marker + \
 			V.spaceCharacter
@@ -676,8 +678,7 @@ class Commands ():
 			mediaLink_RightOffset =  \
 				len ( V.spaceCharacter ) + \
 				len ( mediaLink_EndCap ) + \
-				len ( commentEnd ) + \
-				len ( "\n" )
+				len ( commentEnd )
 
 		for region in selectedRegions:
 
@@ -794,7 +795,7 @@ class Commands ():
 				break
 
 		if mediaFile_Path == "":
-			print ( V.errorStart + "\"" + cursorLine_MediaLink + "\"" + " MediaLink not found" + V.errorEnd )
+			# print ( V.errorStart + "\"" + cursorLine_MediaLink + "\"" + " MediaLink not found" + V.errorEnd )
 			return
 
 		trimmed_MediaFile_Path = mediaFile_Path [ fileStart_Offset : len ( mediaFile_Path ) ].lstrip ()
@@ -822,7 +823,7 @@ class Commands ():
 		fileExtension_Index = filePath.rfind ( "." )
 
 		if fileExtension_Index == -1:
-			print ( V.errorStart + "\"" + filePath + "\"" + " has no file extension" + V.errorEnd )
+			# print ( V.errorStart + "\"" + filePath + "\"" + " has no file extension" + V.errorEnd )
 			return
 
 		fileExtension = filePath [ fileExtension_Index : filePath_Length ]
@@ -832,7 +833,7 @@ class Commands ():
 		fileExists = os.path.exists ( filePath )
 
 		if not fileExists:
-			print ( V.errorStart + "\"" + filePath + "\"" + " does not exist" + V.errorEnd )
+			# print ( V.errorStart + "\"" + filePath + "\"" + " does not exist" + V.errorEnd )
 			return
 
 			#═════      • • •   Set Application      ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
@@ -852,7 +853,7 @@ class Commands ():
 
 		if application == "" \
 		or not applicationExists:
-			print ( V.errorStart + "MediaLink application for \"" + filePath + "\" does not exist" + V.errorEnd )
+			# print ( V.errorStart + "MediaLink application for \"" + filePath + "\" does not exist" + V.errorEnd )
 			return
 
 			# ? ? ?     • • •   Load Media File      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦•••i1⌡#
@@ -889,13 +890,12 @@ class Commands ():
 
 	def get_MediaLink_Region ( view, region ):
 
-		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_TabAmount      = userSettings.get ( "medialink_tab_amount", "" )
-		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
-		titleEndcap              = userSettings.get ( "title_endcap", "" )
-		titleFill                = userSettings.get ( "title_fill", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
+		userSettings                = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap            = userSettings.get ( "medialink_endcap", "" )
+		mediaLink_WrapperFill       = userSettings.get ( "medialink_wrapper_fill", "" )
+		titleEndcap                 = userSettings.get ( "title_endcap", "" )
+		titleFill                   = userSettings.get ( "title_fill", "" )
+		commentStart, commentEnd    = Commands.get_CommentCharacters ()
 
 		regionLine_A = view.line ( region.a )
 		regionText   = view.substr ( regionLine_A )
@@ -1068,6 +1068,25 @@ class Commands ():
 	#░░░░░                             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
 	#▓▓▓▓▓─────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌡#
 
+		#▐▌»»▒▐▌────────────────────────────────────────▐▌▒««▐▌_________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   get_IndentationCharacter      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
+		#▐▌»»▒▐▌────────────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+
+	def get_IndentationCharacter ( view ):
+
+			indentationCharacter = ""
+
+			indent_Size                  = view.settings ().get ( "tab_size" )
+			indentationCharacter_IsSpace = view.settings ().get ( "translate_tabs_to_spaces" )
+
+			if indentationCharacter_IsSpace == True:
+				indentationCharacter = V.spaceCharacter * indent_Size
+
+			elif indentationCharacter_IsSpace == False:
+				indentationCharacter = V.tabCharacter
+
+			return ( indentationCharacter )
+
 		#▐▌»»▒▐▌─────────────────────────────────▐▌▒««▐▌________________________________________________________________________________________________________________________________________________¦••⌠#
 		#▐▌»»▒▐▌    • •   get_VisibleRegion      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
 		#▐▌»»▒▐▌─────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
@@ -1168,7 +1187,7 @@ class V ():
 	titleEndcap                   = userSettings.get ( "title_endcap", "" )
 	titleFill                     = userSettings.get ( "title_fill", "" )
 	mediaLink_EndCap              = userSettings.get ( "medialink_endcap", "" )
-	mediaLink_TabAmount           = userSettings.get ( "medialink_tab_amount", "" )
+	mediaLink_IndentationAmount   = userSettings.get ( "medialink_indentation_amount", "" )
 	mediaLink_WrapperFill         = userSettings.get ( "medialink_wrapper_fill", "" )
 	textLink_MultiLine_StartChar  = userSettings.get ( "textlink_multiline_start", "" )
 	textLink_MultiLine_EndChar    = userSettings.get ( "textlink_multiline_end", "" )
