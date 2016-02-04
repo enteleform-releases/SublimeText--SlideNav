@@ -8,13 +8,13 @@
 //▐▌▒▓▒▐▌═══════════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "SlideNav_Down", },
 		"keys": ["ctrl+super+alt+equals"],
 	},
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "SlideNav_Up", },
 		"keys": ["ctrl+super+alt+minus"],
 	},
@@ -24,13 +24,13 @@
 //▐▌▒▓▒▐▌══════════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "LinkNav_Down", },
 		"keys": ["ctrl+alt+equals"],
 	},
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "LinkNav_Up", },
 		"keys": ["ctrl+alt+minus"],
 	},
@@ -40,13 +40,13 @@
 //▐▌▒▓▒▐▌════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Zoom_In", },
 		"keys": ["ctrl+shift+equals"],
 	},
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Zoom_Out", },
 		"keys": ["ctrl+shift+minus"],
 	},
@@ -56,25 +56,25 @@
 //▐▌▒▓▒▐▌═══════════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Insert_Slide", },
 		"keys": ["ctrl+super+alt+period"],
 	},
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Insert_TextLink", },
 		"keys": ["ctrl+alt+period"],
 	},
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Insert_MediaFile", },
 		"keys": ["ctrl+shift+super+period"],
 	},
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Insert_MediaLink", },
 		"keys": ["ctrl+shift+period"],
 	},
@@ -84,13 +84,13 @@
 //▐▌▒▓▒▐▌═══════════════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Open_MediaLink", },
 		"keys": ["ctrl+shift+o"],
 	},
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Toggle_MediaLink", },
 		"keys": ["ctrl+shift+alt+period"],
 	},
@@ -100,7 +100,7 @@
 //▐▌▒▓▒▐▌══════════════════▐▌▒▓▒▐▌▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡//
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Align", },
 		"keys": ["ctrl+super+period"],
 	},
@@ -114,7 +114,7 @@
 	//═════      •   Reset_FontSize      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡//
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Reset_FontSize", },
 		"keys": ["ctrl+alt+0"],
 	},
@@ -122,13 +122,13 @@
 	//═════      •   Scroll      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡//
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Scroll_Up" },
 		"keys": ["ctrl+shift+alt+up"],
 	},
 
 	{
-		"command": "sublime_nav",
+		"command": "slide_nav",
 		"args": { "mode": "Scroll_Down" },
 		"keys": ["ctrl+shift+alt+down"],
 	},
