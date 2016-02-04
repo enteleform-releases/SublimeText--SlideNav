@@ -29,16 +29,22 @@ https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 		│  Hold: Zoom Out @ Slides   │  │  Text Size  │ │  Hold: Zoom In @ Slides    │
 		└────────────────────────────┘  └─────────────┘ └────────────────────────────┘
 
-	════════════════════════════════════  Slides  ════════════════════════════════════
+	═══════════════════════════════════  SlideNav  ═══════════════════════════════════
 
 		┌────────────────────────────────────┐  ┌────────────────────────────────────┐
 		│           Previous Slide           │  │             Next Slide             │
 		└────────────────────────────────────┘  └────────────────────────────────────┘
 
-	══════════════════════════════════  MediaLinks  ══════════════════════════════════
+	═══════════════════════════════════  LinkNav  ════════════════════════════════════
 
 		┌────────────────────────────────────┐  ┌────────────────────────────────────┐
-		│         Previous MediaLink         │  │           Next MediaLink           │
+		│           Previous Link            │  │             Next Link              │
+		└────────────────────────────────────┘  └────────────────────────────────────┘
+
+	════════════════════════════════════  Scroll  ════════════════════════════════════
+
+		┌────────────────────────────────────┐  ┌────────────────────────────────────┐
+		│                Up                  │  │               Down                 │
 		└────────────────────────────────────┘  └────────────────────────────────────┘
 ```
 #Key Bindings
@@ -51,22 +57,13 @@ exit   == Alt + F4
 alttab == Alt + Tab
 ```
 
-`zoomsublime_reset` is a custom keybinding of mine. Use the following code @ `Default.sublime-keymap` to implement it:
-
-```
-	{
-		"keys": ["ctrl+alt+0"],
-		"command": "reset_font_size",
-	},
-```
-
 #Additional Feature
 
 Also - on my personal copy of this, I have an additional button in the top row which:
 
- • loads SublimeText whether it is running or not
- • removes window borders
- • sets the window size to full screen
+* loads SublimeText whether it is running or not
+* removes window borders
+* sets the window size to full screen
 
 The button & it's function `sublimetext` are commented out in `layout.xml` & `remote.lua`
 
