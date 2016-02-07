@@ -11,7 +11,7 @@
 
 
 	// All character values are processed by RegEx
-	// Most ASCII characters should work, but some characters will not work properly if escaped
+	// Most ASCII characters should work, some characters might need to be escaped
 
 	// AutoSnippets may require whitespace trimming in order to function properly.
 	// If you have any issues with auto-selections being in the wrong area,
