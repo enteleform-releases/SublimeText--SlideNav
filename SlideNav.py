@@ -1114,9 +1114,66 @@ class EventListener ( sublime_plugin.EventListener ):
 
 class V ():
 
+<<<<<<< HEAD
 	#▐▌»»▒▐▌─────────────────────────────▐▌▒««▐▌_______________________________________________________________________________________________________________________________________________________¦•⌠#
 	#▐▌»»▒▐▌    •   load_StaticVars      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
 	#▐▌»»▒▐▌─────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦•⌡#
+=======
+	#═════      •   WhiteSpace      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+
+	tabCharacter   = "	"
+	spaceCharacter = " "
+
+	#═════      •   Settings      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+
+	settings                      = sublime.load_settings ( "SlideNav.sublime-settings" )
+	titleEndcap                   = settings.get ( "title_endcap", "" )
+	titleFill                     = settings.get ( "title_fill", "" )
+	mediaLink_EndCap              = settings.get ( "medialink_endcap", "" )
+	mediaLink_IndentationAmount   = settings.get ( "medialink_indentation_amount", "" )
+	mediaLink_WrapperFill         = settings.get ( "medialink_wrapper_fill", "" )
+	textLink_MultiLine_StartChar  = settings.get ( "textlink_multiline_start", "" )
+	textLink_MultiLine_EndChar    = settings.get ( "textlink_multiline_end", "" )
+	textLink_SingleLine_StartChar = settings.get ( "textlink_singleline", "" )
+	textLink_Insertion_Mode       = settings.get ( "textlink_insertion", "" )
+	textLink_Padding_Amount       = settings.get ( "textlink_padding", "" )
+	scrollAmount                  = settings.get ( "scroll_amount", "" )
+	commentStart, commentEnd      = Commands.get_CommentCharacters ()
+
+	#═════      •   Default Titles      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+
+	slide_DefaultTitle     = "___SLIDE_TITLE_GOES_HERE___"
+	mediaLink_DefaultTitle = "___MEDIALINK_TITLE_GOES_HERE___"
+	filePath_DefaultTitle  = "___FILEPATH_GOES_HERE___"
+
+	#═════      •   Errors      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+
+	errorStart = "▌▓▓▓▓▓   @SlideNav: "
+	errorEnd   = "   ▓▓▓▓▓▐"
+
+	#▄▄▄▄▄─────────────────────▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦•⌠#
+	#░░░░░      •   RegEx      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░s2#
+	#▀▀▀▀▀─────────────────────▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦•⌡#
+
+	lineStart_WhiteSpace_and_Comment_RegEx = "\n[\\	\\ ]*" + commentStart + "?[\\	\\ ]*"
+
+	slide_RegEx =                                    \
+		"(" + commentStart + titleEndcap + ")"       + \
+		"("                                          + \
+			"("                                        + \
+				"([\\S\\s]*?)"                           + \
+				"(?=" + commentStart + titleEndcap + ")" + \
+			")"                                        + \
+			"|"                                        + \
+			"([\\S\\s]*)"                              + \
+		")"
+
+	title_RegEx =                                 \
+		"(" + commentStart + titleEndcap + ")"    + \
+		"(" + titleFill + "*)"                    + \
+		"(.*" + titleEndcap + commentEnd + "\S*)" + \
+		"(.*)"
+>>>>>>> origin/master
 
 	def load_StaticVars ( V ):
 
