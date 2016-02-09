@@ -1191,6 +1191,7 @@ class V ():
 	spaceCharacter = " "
 
 	#═════      •   Settings      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+
 	settings                      = sublime.load_settings ( "SlideNav.sublime-settings" )
 	titleEndcap                   = settings.get ( "title_endcap", "" )
 	titleFill                     = settings.get ( "title_fill", "" )
