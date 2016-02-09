@@ -153,9 +153,9 @@ class Commands ():
 
 		if zoomMode == "Manual":
 
-			userSettings = sublime.load_settings ( "SlideNav.sublime-settings" )
-			titleEndcap  = userSettings.get ( "title_endcap", "" )
-			titleFill    = userSettings.get ( "title_fill", "" )
+			settings    = sublime.load_settings ( "SlideNav.sublime-settings" )
+			titleEndcap = settings.get ( "title_endcap", "" )
+			titleFill   = settings.get ( "title_fill", "" )
 
 			selectedRegions = view.sel ()
 
@@ -206,8 +206,8 @@ class Commands ():
 
 	def zoom_Out ( view ):
 
-		userSettings      = sublime.load_settings ( "SlideNav.sublime-settings" )
-		goTo_Start_OnExit = userSettings.get ( "goto_start_onexit", "" )
+		settings          = sublime.load_settings ( "SlideNav.sublime-settings" )
+		goTo_Start_OnExit = settings.get ( "goto_start_onexit", "" )
 
 		view.run_command ( "unfold_all" )
 
@@ -271,9 +271,9 @@ class Commands ():
 		mediaLink_Found = False
 		textLink_Found  = False
 
-		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_OnNav_Enabled  = userSettings.get ( "medialink_on_navigate", "" )
+		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
+		mediaLink_OnNav_Enabled  = settings.get ( "medialink_on_navigate", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		mediaLink_Prefix     = commentStart + mediaLink_EndCap + V.spaceCharacter
@@ -339,7 +339,8 @@ class Commands ():
 
 		if textLink_Found == True \
 		or mediaLink_Found == True:
-			view.show_at_center ( region.a )
+			view.show ( region.a )
+			# view.show_at_center ( region.a )
 
 		x, y = view.viewport_position()
 		view.set_viewport_position ( [ 0, y ], animate = False )
@@ -356,11 +357,11 @@ class Commands ():
 
 	def insert_Slide ( edit, view ):
 
-		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_WrapperFill    = userSettings.get ( "medialink_wrapper_fill", "" )
-		titleEndcap              = userSettings.get ( "title_endcap", "" )
-		titleFill                = userSettings.get ( "title_fill", "" )
+		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
+		mediaLink_WrapperFill    = settings.get ( "medialink_wrapper_fill", "" )
+		titleEndcap              = settings.get ( "title_endcap", "" )
+		titleFill                = settings.get ( "title_fill", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		slideTitle_Regions = []
@@ -416,17 +417,17 @@ class Commands ():
 
 	def insert_TextLink ( edit, view ):
 
-		userSettings                  = sublime.load_settings ( "SlideNav.sublime-settings" )
-		titleEndcap                   = userSettings.get ( "title_endcap", "" )
-		titleFill                     = userSettings.get ( "title_fill", "" )
-		mediaLink_EndCap              = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_WrapperFill         = userSettings.get ( "medialink_wrapper_fill", "" )
-		textLink_MultiLine_StartChar  = userSettings.get ( "textlink_multiline_start", "" )
-		textLink_MultiLine_EndChar    = userSettings.get ( "textlink_multiline_end", "" )
-		textLink_SingleLine_StartChar = userSettings.get ( "textlink_singleline", "" )
-		textLink_Insertion_Mode       = userSettings.get ( "textlink_insertion", "" )
-		textLink_LeftPadding_Amount   = userSettings.get ( "textlink_padding_left", "" )
-		textLink_RightPadding_Amount  = userSettings.get ( "textlink_padding_right", "" )
+		settings                      = sublime.load_settings ( "SlideNav.sublime-settings" )
+		titleEndcap                   = settings.get ( "title_endcap", "" )
+		titleFill                     = settings.get ( "title_fill", "" )
+		mediaLink_EndCap              = settings.get ( "medialink_endcap", "" )
+		mediaLink_WrapperFill         = settings.get ( "medialink_wrapper_fill", "" )
+		textLink_MultiLine_StartChar  = settings.get ( "textlink_multiline_start", "" )
+		textLink_MultiLine_EndChar    = settings.get ( "textlink_multiline_end", "" )
+		textLink_SingleLine_StartChar = settings.get ( "textlink_singleline", "" )
+		textLink_Insertion_Mode       = settings.get ( "textlink_insertion", "" )
+		textLink_LeftPadding_Amount   = settings.get ( "textlink_padding_left", "" )
+		textLink_RightPadding_Amount  = settings.get ( "textlink_padding_right", "" )
 		commentStart, commentEnd      = Commands.get_CommentCharacters ()
 		linkText_Regions              = []
 
@@ -496,12 +497,12 @@ class Commands ():
 
 		mediaLink_Regions = []
 
-		userSettings                = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap            = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_IndentationAmount = userSettings.get ( "medialink_indentation_amount", "" )
-		mediaLink_WrapperFill       = userSettings.get ( "medialink_wrapper_fill", "" )
-		titleEndcap                 = userSettings.get ( "title_endcap", "" )
-		titleFill                   = userSettings.get ( "title_fill", "" )
+		settings                    = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap            = settings.get ( "medialink_endcap", "" )
+		mediaLink_IndentationAmount = settings.get ( "medialink_indentation_amount", "" )
+		mediaLink_WrapperFill       = settings.get ( "medialink_wrapper_fill", "" )
+		titleEndcap                 = settings.get ( "title_endcap", "" )
+		titleFill                   = settings.get ( "title_fill", "" )
 		commentStart, commentEnd    = Commands.get_CommentCharacters ()
 		indentationCharacter        = Commands.get_IndentationCharacter ( view )
 
@@ -585,11 +586,11 @@ class Commands ():
 
 		mediaLink_Regions = []
 
-		userSettings                = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap            = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_IndentationAmount = userSettings.get ( "medialink_indentation_amount", "" )
-		mediaLink_WrapperEnabled    = userSettings.get ( "medialink_wrapper_enabled", "" )
-		mediaLink_WrapperFill       = userSettings.get ( "medialink_wrapper_fill", "" )
+		settings                    = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap            = settings.get ( "medialink_endcap", "" )
+		mediaLink_IndentationAmount = settings.get ( "medialink_indentation_amount", "" )
+		mediaLink_WrapperEnabled    = settings.get ( "medialink_wrapper_enabled", "" )
+		mediaLink_WrapperFill       = settings.get ( "medialink_wrapper_fill", "" )
 		commentStart, commentEnd    = Commands.get_CommentCharacters ()
 		indentationCharacter        = Commands.get_IndentationCharacter ( view )
 
@@ -636,9 +637,9 @@ class Commands ():
 
 		filePath_Regions = []
 
-		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaPath_TabAmount      = userSettings.get ( "mediapath_tab_amount", "" )
-		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
+		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaPath_TabAmount      = settings.get ( "mediapath_tab_amount", "" )
+		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 		indentationCharacter     = Commands.get_IndentationCharacter ( view )
 
@@ -719,9 +720,9 @@ class Commands ():
 
 			#═════      • • •   Load Settings      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
-		userSettings        = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap    = userSettings.get ( "medialink_endcap", "" )
-		mediaFileTypes      = userSettings.get ( "mediafile_types", [] )
+		settings         = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap = settings.get ( "medialink_endcap", "" )
+		mediaFileTypes   = settings.get ( "mediafile_types", [] )
 
 			#═════      • • •   Set Comment Characters      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
@@ -795,7 +796,7 @@ class Commands ():
 				break
 
 		if mediaFile_Path == "":
-			# print ( V.errorStart + "\"" + cursorLine_MediaLink + "\"" + " MediaLink not found" + V.errorEnd )
+			print ( V.errorStart + "\"" + cursorLine_MediaLink + "\"" + " MediaLink not found" + V.errorEnd )
 			return
 
 		trimmed_MediaFile_Path = mediaFile_Path [ fileStart_Offset : len ( mediaFile_Path ) ].lstrip ()
@@ -823,7 +824,7 @@ class Commands ():
 		fileExtension_Index = filePath.rfind ( "." )
 
 		if fileExtension_Index == -1:
-			# print ( V.errorStart + "\"" + filePath + "\"" + " has no file extension" + V.errorEnd )
+			print ( V.errorStart + "\"" + filePath + "\"" + " has no file extension" + V.errorEnd )
 			return
 
 		fileExtension = filePath [ fileExtension_Index : filePath_Length ]
@@ -833,7 +834,7 @@ class Commands ():
 		fileExists = os.path.exists ( filePath )
 
 		if not fileExists:
-			# print ( V.errorStart + "\"" + filePath + "\"" + " does not exist" + V.errorEnd )
+			print ( V.errorStart + "\"" + filePath + "\"" + " does not exist" + V.errorEnd )
 			return
 
 			#═════      • • •   Set Application      ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
@@ -853,7 +854,7 @@ class Commands ():
 
 		if application == "" \
 		or not applicationExists:
-			# print ( V.errorStart + "MediaLink application for \"" + filePath + "\" does not exist" + V.errorEnd )
+			print ( V.errorStart + "MediaLink application for \"" + filePath + "\" does not exist" + V.errorEnd )
 			return
 
 			# ? ? ?     • • •   Load Media File      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦•••i1⌡#
@@ -890,12 +891,12 @@ class Commands ():
 
 	def get_MediaLink_Region ( view, region ):
 
-		userSettings                = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap            = userSettings.get ( "medialink_endcap", "" )
-		mediaLink_WrapperFill       = userSettings.get ( "medialink_wrapper_fill", "" )
-		titleEndcap                 = userSettings.get ( "title_endcap", "" )
-		titleFill                   = userSettings.get ( "title_fill", "" )
-		commentStart, commentEnd    = Commands.get_CommentCharacters ()
+		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
+		mediaLink_WrapperFill    = settings.get ( "medialink_wrapper_fill", "" )
+		titleEndcap              = settings.get ( "title_endcap", "" )
+		titleFill                = settings.get ( "title_fill", "" )
+		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		regionLine_A = view.line ( region.a )
 		regionText   = view.substr ( regionLine_A )
@@ -948,12 +949,12 @@ class Commands ():
 
 	def add_TitleMarkers ( titleText, titleMode ):
 
-		userSettings          = sublime.load_settings ( "SlideNav.sublime-settings" )
-		titleEndcap           = userSettings.get ( "title_endcap", "" )
-		titleFill             = userSettings.get ( "title_fill", "" )
-		title_StartCap_Length = userSettings.get ( "title_startcap_length", "" )
-		titlePadding_Amount   = userSettings.get ( "title_padding", "" )
-		title_MaxLength       = userSettings.get ( "title_max_length", "" )
+		settings              = sublime.load_settings ( "SlideNav.sublime-settings" )
+		titleEndcap           = settings.get ( "title_endcap", "" )
+		titleFill             = settings.get ( "title_fill", "" )
+		title_StartCap_Length = settings.get ( "title_startcap_length", "" )
+		titlePadding_Amount   = settings.get ( "title_padding", "" )
+		title_MaxLength       = settings.get ( "title_max_length", "" )
 
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
@@ -1003,8 +1004,8 @@ class Commands ():
 
 		contentRegion = sublime.Region ( 0, 0 )
 
-		userSettings = sublime.load_settings ( "SlideNav.sublime-settings" )
-		titleEndcap  = userSettings.get ( "title_endcap", "" )
+		settings    = sublime.load_settings ( "SlideNav.sublime-settings" )
+		titleEndcap = settings.get ( "title_endcap", "" )
 
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
@@ -1024,9 +1025,9 @@ class Commands ():
 
 	def find_Titles ( view ):
 
-		userSettings = sublime.load_settings ( "SlideNav.sublime-settings" )
-		titleEndcap  = userSettings.get ( "title_endcap", "" )
-		titleFill    = userSettings.get ( "title_fill", "" )
+		settings    = sublime.load_settings ( "SlideNav.sublime-settings" )
+		titleEndcap = settings.get ( "title_endcap", "" )
+		titleFill   = settings.get ( "title_fill", "" )
 
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
@@ -1039,8 +1040,8 @@ class Commands ():
 
 	def find_MediaPaths ( view ):
 
-		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
+		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		mediaFile_Regions = view.find_all ( V.mediaPath_RegEx )
@@ -1053,8 +1054,8 @@ class Commands ():
 
 	def find_MediaLinks ( view ):
 
-		userSettings             = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = userSettings.get ( "medialink_endcap", "" )
+		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
 		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		# mediaFile_Regions = view.find_all ( V.mediaLink_RegEx )
@@ -1116,6 +1117,9 @@ class Commands ():
 
 		if visibleRegion == False \
 		and zoom_OnFail == True:
+			documentStart = sublime.Region ( 0, 0 )
+			view.selection.clear ()
+			view.selection.add ( documentStart )
 			Commands.zoom_Out ( view )
 			Commands.zoom_In ( view, "Automatic" )
 			return ( False )
@@ -1133,20 +1137,24 @@ class Commands ():
 
 	def get_CommentCharacters ():
 
+		fileType_Exists = True
 		commentStart = ""
 		commentEnd   = ""
 
-		userSettings      = sublime.load_settings ( "SlideNav.sublime-settings" )
-		commentCharacters = userSettings.get ( "comment_characters", [] )
+		settings          = sublime.load_settings ( "SlideNav.sublime-settings" )
+		commentCharacters = settings.get ( "comment_characters", [] )
 
-		documentExtension = sublime.active_window ().extract_variables () ["file_extension"]
+		try:
+			documentExtension = sublime.active_window ().extract_variables () ["file_extension"]
+		except KeyError:
+			fileType_Exists = False
 
-		for documentType in commentCharacters:
+		if fileType_Exists == True:
+			for documentType in commentCharacters:
 
-			if commentCharacters [ documentType ] [ "extension" ] == documentExtension:
-
-				commentStart = commentCharacters [ documentType ] [ "comment_start" ]
-				commentEnd   = commentCharacters [ documentType ] [ "comment_end" ]
+				if commentCharacters [ documentType ] [ "extension" ] == documentExtension:
+					commentStart = commentCharacters [ documentType ] [ "comment_start" ]
+					commentEnd   = commentCharacters [ documentType ] [ "comment_end" ]
 
 		return ( commentStart, commentEnd )
 
@@ -1162,8 +1170,8 @@ class EventListener ( sublime_plugin.EventListener ):
 
 	def on_selection_modified ( self, view ):
 
-		userSettings              = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_OnClick_Enabled = userSettings.get ( "medialink_onclick", "" )
+		settings                  = sublime.load_settings ( "SlideNav.sublime-settings" )
+		mediaLink_OnClick_Enabled = settings.get ( "medialink_onclick", "" )
 
 		if EventListener.mediaLink_Enabled == True \
 		and mediaLink_OnClick_Enabled == True:
@@ -1183,18 +1191,18 @@ class V ():
 	spaceCharacter = " "
 
 	#═════      •   Settings      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
-	userSettings                  = sublime.load_settings ( "SlideNav.sublime-settings" )
-	titleEndcap                   = userSettings.get ( "title_endcap", "" )
-	titleFill                     = userSettings.get ( "title_fill", "" )
-	mediaLink_EndCap              = userSettings.get ( "medialink_endcap", "" )
-	mediaLink_IndentationAmount   = userSettings.get ( "medialink_indentation_amount", "" )
-	mediaLink_WrapperFill         = userSettings.get ( "medialink_wrapper_fill", "" )
-	textLink_MultiLine_StartChar  = userSettings.get ( "textlink_multiline_start", "" )
-	textLink_MultiLine_EndChar    = userSettings.get ( "textlink_multiline_end", "" )
-	textLink_SingleLine_StartChar = userSettings.get ( "textlink_singleline", "" )
-	textLink_Insertion_Mode       = userSettings.get ( "textlink_insertion", "" )
-	textLink_Padding_Amount       = userSettings.get ( "textlink_padding", "" )
-	scrollAmount                  = userSettings.get ( "scroll_amount", "" )
+	settings                      = sublime.load_settings ( "SlideNav.sublime-settings" )
+	titleEndcap                   = settings.get ( "title_endcap", "" )
+	titleFill                     = settings.get ( "title_fill", "" )
+	mediaLink_EndCap              = settings.get ( "medialink_endcap", "" )
+	mediaLink_IndentationAmount   = settings.get ( "medialink_indentation_amount", "" )
+	mediaLink_WrapperFill         = settings.get ( "medialink_wrapper_fill", "" )
+	textLink_MultiLine_StartChar  = settings.get ( "textlink_multiline_start", "" )
+	textLink_MultiLine_EndChar    = settings.get ( "textlink_multiline_end", "" )
+	textLink_SingleLine_StartChar = settings.get ( "textlink_singleline", "" )
+	textLink_Insertion_Mode       = settings.get ( "textlink_insertion", "" )
+	textLink_Padding_Amount       = settings.get ( "textlink_padding", "" )
+	scrollAmount                  = settings.get ( "scroll_amount", "" )
 	commentStart, commentEnd      = Commands.get_CommentCharacters ()
 
 	#═════      •   Default Titles      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
