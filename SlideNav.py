@@ -618,8 +618,8 @@ class Commands ():
 				if ( regionText == V.mediaLink_DefaultTitle ):
 					continue
 
-				mediaLink_WrapperLine_Text = \
-					( indentationCharacter * mediaLink_IndentationAmount )                                      + \
+				mediaLink_WrapperLine_Text =                                                             \
+					( indentationCharacter * mediaLink_IndentationAmount )                               + \
 					commentStart                                                                         + \
 					( mediaLink_WrapperFill * ( regionText_Length + mediaLink_SurroundingText_Length ) ) + \
 					commentEnd
@@ -651,11 +651,11 @@ class Commands ():
 
 		filePath_Marker = "@"
 
-		filePath_Prefix = \
-			"\n" + \
+		filePath_Prefix =                                  \
+			"\n"                                           + \
 			( indentationCharacter * mediaPath_TabAmount ) + \
-			commentStart + \
-			filePath_Marker + \
+			commentStart                                   + \
+			filePath_Marker                                + \
 			V.spaceCharacter
 
 		filePath_Suffix = V.spaceCharacter + commentEnd
@@ -667,16 +667,16 @@ class Commands ():
 		selectedRegions = view.sel ()
 		view.run_command ( "reverse_selection_direction" )
 
-		mediaLink_LeftOffset  = \
-			len ( commentStart ) + \
-			len ( filePath_Marker ) + \
+		mediaLink_LeftOffset  =      \
+			len ( commentStart )     + \
+			len ( filePath_Marker )  + \
 			len ( V.spaceCharacter )
 
 		mediaLink_RightOffset = 0
 
 		if commentEnd != "":
 
-			mediaLink_RightOffset =  \
+			mediaLink_RightOffset =      \
 				len ( V.spaceCharacter ) + \
 				len ( mediaLink_EndCap ) + \
 				len ( commentEnd )
@@ -966,7 +966,7 @@ class Commands ():
 
 		titlePadding = V.spaceCharacter * titlePadding_Amount
 
-		titlePrefix = \
+		titlePrefix =                             \
 			commentStart                          + \
 			titleEndcap                           + \
 			( titleFill * title_StartCap_Length ) + \
@@ -978,7 +978,7 @@ class Commands ():
 
 		adjusted_MaxLength = title_MaxLength - ( len ( titleText ) + len ( titleEndcap ) + len ( commentEnd ) )
 
-		titleText = \
+		titleText =                            \
 			titleText                          + \
 			( titleFill * adjusted_MaxLength ) + \
 			titleEndcap                        + \
@@ -1222,26 +1222,26 @@ class V ():
 
 	lineStart_WhiteSpace_and_Comment_RegEx = "\n[\\	\\ ]*" + commentStart + "?[\\	\\ ]*"
 
-	slide_RegEx = \
-		"(" + commentStart + titleEndcap + ")"     + \
-		"("                                        + \
-			"("                                       + \
+	slide_RegEx =                                    \
+		"(" + commentStart + titleEndcap + ")"       + \
+		"("                                          + \
+			"("                                        + \
 				"([\\S\\s]*?)"                           + \
 				"(?=" + commentStart + titleEndcap + ")" + \
-			")"                                       + \
-			"|"                                       + \
-			"([\\S\\s]*)"                             + \
+			")"                                        + \
+			"|"                                        + \
+			"([\\S\\s]*)"                              + \
 		")"
 
-	title_RegEx = \
+	title_RegEx =                                 \
 		"(" + commentStart + titleEndcap + ")"    + \
-		"(" + titleFill + "*)"              + \
+		"(" + titleFill + "*)"                    + \
 		"(.*" + titleEndcap + commentEnd + "\S*)" + \
 		"(.*)"
 
 		#═════      • •   MediaLinks      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
-	mediaPath_RegEx = \
+	mediaPath_RegEx =                                                                    \
 		"([\\	\\ ]*" + commentStart + mediaLink_EndCap + ".*" + mediaLink_EndCap + ".*)" + \
 		"(\n[\\	\\ ]*" + commentStart + "@.*)"
 
@@ -1251,19 +1251,19 @@ class V ():
 
 	textLink_SingleLine_RegEx = lineStart_WhiteSpace_and_Comment_RegEx + textLink_SingleLine_StartChar + ".*"
 
-	textLink_MultiLine_RegEx = \
-		"(" + \
+	textLink_MultiLine_RegEx =                                                                 \
+		"("                                                                                    + \
 			lineStart_WhiteSpace_and_Comment_RegEx + textLink_MultiLine_StartChar + "[\\S\\s]*?" + \
 			lineStart_WhiteSpace_and_Comment_RegEx + textLink_MultiLine_EndChar + ".*"           + \
 		")"
 
-	all_TextLink_RegEx = \
+	all_TextLink_RegEx =                      \
 		"(" + textLink_SingleLine_RegEx + ")" + \
 		"|"                                   + \
 		"(" + textLink_MultiLine_RegEx + ")"
 
-	allLinks_RegEx = \
-		all_TextLink_RegEx    + \
-		"|"                   + \
+	allLinks_RegEx =                \
+		all_TextLink_RegEx          + \
+		"|"                         + \
 		"(" + mediaLink_RegEx + ")"
 
