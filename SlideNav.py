@@ -68,29 +68,40 @@ class SlideNavCommand ( sublime_plugin.TextCommand ):
 
 		view = self.view
 
-		if   mode == "SlideNav_Down" :    Commands.navigate_Slides  ( view, "Down" )
-		elif mode == "SlideNav_Up" :      Commands.navigate_Slides  ( view, "Up" )
+		# ? ? ?     • •   Verify Extension      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦••i1⌡#
 
-		elif mode == "LinkNav_Down" :     Commands.navigate_Links   ( view, "Down" )
-		elif mode == "LinkNav_Up" :       Commands.navigate_Links   ( view, "Up" )
+		documentExtension = Commands.get_FileType ()
 
-		elif mode == "Zoom_In" :          Commands.zoom_In          ( view, "Manual" )
-		elif mode == "Zoom_Out" :         Commands.zoom_Out         ( view )
+		if documentExtension != V.documentExtension \
+		or V.settingsLoaded == False:
+			V.load_DynamicVars ()
 
-		elif mode == "Insert_Slide" :     Commands.insert_Slide     ( edit, view )
+		#┌─────┬───────────────────────────────┬─────┐__________________________________________________________________________________________________________________________________________________¦••⌠#
+		#│? ? ?│    • •   Execute Command      │? ? ?│ ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?i2#
+		#└─────┴───────────────────────────────┴─────┘‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+
+		if   mode == "SlideNav_Down"    : Commands.navigate_Slides       ( view, "Down" )
+		elif mode == "SlideNav_Up"      : Commands.navigate_Slides       ( view, "Up" )
+
+		elif mode == "LinkNav_Down"     : Commands.navigate_Links        ( view, "Down" )
+		elif mode == "LinkNav_Up"       : Commands.navigate_Links        ( view, "Up" )
+
+		elif mode == "Zoom_In"          : Commands.zoom_In               ( view, "Manual" )
+		elif mode == "Zoom_Out"         : Commands.zoom_Out              ( view )
+
+		elif mode == "Insert_Slide"     : Commands.insert_Slide          ( edit, view )
 		elif mode == "Insert_MediaPath" : Commands.insert_MediaLink_Path ( edit, view )
-		elif mode == "Insert_TextLink" :  Commands.insert_TextLink  ( edit, view )
-		elif mode == "Insert_MediaLink" : Commands.insert_MediaLink ( edit, view, True, False )
+		elif mode == "Insert_TextLink"  : Commands.insert_TextLink       ( edit, view )
+		elif mode == "Insert_MediaLink" : Commands.insert_MediaLink      ( edit, view, True, False )
 
-		elif mode == "Open_MediaLink" :   Commands.open_MediaLink   ( view )
-		elif mode == "Toggle_MediaLink" : Commands.toggle_MediaLink ()
+		elif mode == "Open_MediaLink"   : Commands.open_MediaLink        ( view )
+		elif mode == "Toggle_MediaLink" : Commands.toggle_MediaLink      ()
 
-		elif mode == "Align" :            Commands.align_Titles     ( edit, view )
+		elif mode == "Align"            : Commands.align_Titles          ( edit, view )
 
-		elif mode == "Reset_FontSize" :   Commands.reset_FontSize   ( view )
-		elif mode == "Scroll_Up" :        Commands.scroll_Lines     ( view, "Up" )
-		elif mode == "Scroll_Down" :      Commands.scroll_Lines     ( view, "Down" )
-
+		elif mode == "Reset_FontSize"   : Commands.reset_FontSize        ( view )
+		elif mode == "Scroll_Up"        : Commands.scroll_Lines          ( view, "Up" )
+		elif mode == "Scroll_Down"      : Commands.scroll_Lines          ( view, "Down" )
 
 #▐▌▒▓▒▐▌════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
 #▐▌▓▒▓▐▌                    ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡#
@@ -125,9 +136,9 @@ class Commands ():
 			if len ( selectedRegions ) == 0:
 				return
 
-			scrollAmount = int ( V.scrollAmount )
+			V.scrollAmount = int ( V.scrollAmount )
 
-			for _X_ in range ( 0, scrollAmount ):
+			for _X_ in range ( 0, V.scrollAmount ):
 				if direction == "Down":
 					view.run_command ( "move", { "by": "lines", "forward": True } )
 					view.run_command ( "move_to", { "to": "hardbol" } )
@@ -153,10 +164,6 @@ class Commands ():
 
 		if zoomMode == "Manual":
 
-			settings    = sublime.load_settings ( "SlideNav.sublime-settings" )
-			titleEndcap = settings.get ( "title_endcap", "" )
-			titleFill   = settings.get ( "title_fill", "" )
-
 			selectedRegions = view.sel ()
 
 			if len ( selectedRegions ) == 0:
@@ -168,7 +175,7 @@ class Commands ():
 			cursorLine_Text         = view.substr ( cursorLine_A )
 			cursorRow, cursorColumn = view.rowcol ( cursorSelection_A )
 
-			if cursorLine_Text.find ( titleEndcap ) == -1:
+			if cursorLine_Text.find ( V.titleEndcap ) == -1:
 				return
 
 		documentStart  = 0
@@ -206,12 +213,9 @@ class Commands ():
 
 	def zoom_Out ( view ):
 
-		settings          = sublime.load_settings ( "SlideNav.sublime-settings" )
-		goTo_Start_OnExit = settings.get ( "goto_start_onexit", "" )
-
 		view.run_command ( "unfold_all" )
 
-		if goTo_Start_OnExit == True:
+		if V.goTo_Start_OnExit == True:
 			view.selection.clear ()
 			view.selection.add ( 0 )
 			view.set_viewport_position ( [ 0, 0 ], animate = False )
@@ -271,12 +275,7 @@ class Commands ():
 		mediaLink_Found = False
 		textLink_Found  = False
 
-		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
-		mediaLink_OnNav_Enabled  = settings.get ( "medialink_on_navigate", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
-		mediaLink_Prefix     = commentStart + mediaLink_EndCap + V.spaceCharacter
+		mediaLink_Prefix     = V.commentStart + V.mediaLink_EndCap + V.spaceCharacter
 		mediaLink_LeftOffset = len ( mediaLink_Prefix )
 
 		mediaLink_Regions     = Commands.find_MediaLinks ( view )
@@ -331,7 +330,7 @@ class Commands ():
 			view.selection.add ( selectionRegion )
 
 		elif mediaLink_Found == True \
-		and mediaLink_OnNav_Enabled == True:
+		and V.mediaLink_OnNav_Enabled == True:
 			view.selection.clear ()
 			selectionRegion = sublime.Region ( region.a + mediaLink_LeftOffset + 1, region.a + mediaLink_LeftOffset + 1 )
 			view.selection.add ( selectionRegion )
@@ -357,13 +356,6 @@ class Commands ():
 
 	def insert_Slide ( edit, view ):
 
-		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
-		mediaLink_WrapperFill    = settings.get ( "medialink_wrapper_fill", "" )
-		titleEndcap              = settings.get ( "title_endcap", "" )
-		titleFill                = settings.get ( "title_fill", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
 		slideTitle_Regions = []
 
 		selectedRegions = view.sel ()
@@ -387,12 +379,12 @@ class Commands ():
 
 			invalidLine    = False
 
-			if regionText.find ( mediaLink_EndCap )      >= 0 : invalidLine = True
-			if regionText.find ( mediaLink_WrapperFill ) >= 0 : invalidLine = True
-			if regionText.find ( titleEndcap )           >= 0 : invalidLine = True
-			if regionText.find ( titleFill )             >= 0 : invalidLine = True
-			if regionText.find ( commentStart )          >= 0 : invalidLine = True
-			if regionText.find ( commentEnd )            >= 0 : invalidLine = True
+			if regionText.find ( V.mediaLink_EndCap )      >= 0 : invalidLine = True
+			if regionText.find ( V.mediaLink_WrapperFill ) >= 0 : invalidLine = True
+			if regionText.find ( V.titleEndcap )           >= 0 : invalidLine = True
+			if regionText.find ( V.titleFill )             >= 0 : invalidLine = True
+			if regionText.find ( V.commentStart )          >= 0 : invalidLine = True
+			if regionText.find ( V.commentEnd )            >= 0 : invalidLine = True
 
 			if invalidLine == True:
 				continue
@@ -417,22 +409,10 @@ class Commands ():
 
 	def insert_TextLink ( edit, view ):
 
-		settings                      = sublime.load_settings ( "SlideNav.sublime-settings" )
-		titleEndcap                   = settings.get ( "title_endcap", "" )
-		titleFill                     = settings.get ( "title_fill", "" )
-		mediaLink_EndCap              = settings.get ( "medialink_endcap", "" )
-		mediaLink_WrapperFill         = settings.get ( "medialink_wrapper_fill", "" )
-		textLink_MultiLine_StartChar  = settings.get ( "textlink_multiline_start", "" )
-		textLink_MultiLine_EndChar    = settings.get ( "textlink_multiline_end", "" )
-		textLink_SingleLine_StartChar = settings.get ( "textlink_singleline", "" )
-		textLink_Insertion_Mode       = settings.get ( "textlink_insertion", "" )
-		textLink_LeftPadding_Amount   = settings.get ( "textlink_padding_left", "" )
-		textLink_RightPadding_Amount  = settings.get ( "textlink_padding_right", "" )
-		commentStart, commentEnd      = Commands.get_CommentCharacters ()
-		linkText_Regions              = []
+		linkText_Regions = []
 
-		textLink_LeftPadding  = ( V.spaceCharacter * textLink_LeftPadding_Amount )
-		textLink_RightPadding = ( V.spaceCharacter * textLink_RightPadding_Amount )
+		textLink_LeftPadding  = ( V.spaceCharacter * V.textLink_LeftPadding_Amount )
+		textLink_RightPadding = ( V.spaceCharacter * V.textLink_RightPadding_Amount )
 
 		selectedRegions = view.sel ()
 
@@ -448,13 +428,13 @@ class Commands ():
 
 			invalidLine = False
 
-			if fullregion_Text.find ( mediaLink_EndCap )              >= 0 : invalidLine = True
-			if fullregion_Text.find ( mediaLink_WrapperFill )         >= 0 : invalidLine = True
-			if fullregion_Text.find ( titleEndcap )                   >= 0 : invalidLine = True
-			if fullregion_Text.find ( titleFill )                     >= 0 : invalidLine = True
-			if fullregion_Text.find ( textLink_MultiLine_StartChar )  >= 0 : invalidLine = True
-			if fullregion_Text.find ( textLink_MultiLine_EndChar )    >= 0 : invalidLine = True
-			if fullregion_Text.find ( textLink_SingleLine_StartChar ) >= 0 : invalidLine = True
+			if fullregion_Text.find ( V.mediaLink_EndCap )              >= 0 : invalidLine = True
+			if fullregion_Text.find ( V.mediaLink_WrapperFill )         >= 0 : invalidLine = True
+			if fullregion_Text.find ( V.titleEndcap )                   >= 0 : invalidLine = True
+			if fullregion_Text.find ( V.titleFill )                     >= 0 : invalidLine = True
+			if fullregion_Text.find ( V.textLink_MultiLine_StartChar )  >= 0 : invalidLine = True
+			if fullregion_Text.find ( V.textLink_MultiLine_EndChar )    >= 0 : invalidLine = True
+			if fullregion_Text.find ( V.textLink_SingleLine_StartChar ) >= 0 : invalidLine = True
 
 			if invalidLine == True:
 				continue
@@ -465,22 +445,22 @@ class Commands ():
 				multiLine = True
 
 			if multiLine == True:
-				textLink_Prefix_A = textLink_LeftPadding + textLink_MultiLine_StartChar + textLink_RightPadding
-				textLink_Prefix_B = textLink_LeftPadding + textLink_MultiLine_EndChar + textLink_RightPadding
-				commentStart_A    = regionText_Line_A.find ( commentStart )
-				commentStart_B    = regionText_Line_B.find ( commentStart )
+				textLink_Prefix_A = textLink_LeftPadding + V.textLink_MultiLine_StartChar + textLink_RightPadding
+				textLink_Prefix_B = textLink_LeftPadding + V.textLink_MultiLine_EndChar + textLink_RightPadding
+				commentStart_A    = regionText_Line_A.find ( V.commentStart )
+				commentStart_B    = regionText_Line_B.find ( V.commentStart )
 			elif multiLine == False:
-				textLink_Prefix_A = textLink_LeftPadding + textLink_SingleLine_StartChar + textLink_RightPadding
+				textLink_Prefix_A = textLink_LeftPadding + V.textLink_SingleLine_StartChar + textLink_RightPadding
 				textLink_Prefix_B = ""
-				commentStart_A    = regionText_Line_A.find ( commentStart )
+				commentStart_A    = regionText_Line_A.find ( V.commentStart )
 				commentStart_B    = 0
 			if commentStart_A == -1: commentStart_A = 0
 			if commentStart_B == -1: commentStart_B = 0
 
-			if textLink_Insertion_Mode == "AfterComment":
-				textLink_Position_A = commentStart_A + len ( commentStart )
-				textLink_Position_B = commentStart_B + len ( commentStart )
-			elif textLink_Insertion_Mode == "LineStart":
+			if V.textLink_Insertion_Mode == "AfterComment":
+				textLink_Position_A = commentStart_A + len ( V.commentStart )
+				textLink_Position_B = commentStart_B + len ( V.commentStart )
+			elif V.textLink_Insertion_Mode == "LineStart":
 				textLink_Position_A = 0
 				textLink_Position_B = 0
 
@@ -497,22 +477,13 @@ class Commands ():
 
 		mediaLink_Regions = []
 
-		settings                    = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap            = settings.get ( "medialink_endcap", "" )
-		mediaLink_IndentationAmount = settings.get ( "medialink_indentation_amount", "" )
-		mediaLink_WrapperFill       = settings.get ( "medialink_wrapper_fill", "" )
-		titleEndcap                 = settings.get ( "title_endcap", "" )
-		titleFill                   = settings.get ( "title_fill", "" )
-		commentStart, commentEnd    = Commands.get_CommentCharacters ()
-		indentationCharacter        = Commands.get_IndentationCharacter ( view )
-
 		mediaLink_Title_Default = V.mediaLink_DefaultTitle
-		mediaLink_StartText     = commentStart + mediaLink_EndCap + V.spaceCharacter
-		mediaLink_Prefix        = ( indentationCharacter * mediaLink_IndentationAmount ) + mediaLink_StartText
-		mediaLink_Suffix        = V.spaceCharacter + mediaLink_EndCap
+		mediaLink_StartText     = V.commentStart + V.mediaLink_EndCap + V.spaceCharacter
+		mediaLink_Prefix        = ( V.indentationCharacter * V.mediaLink_IndentationAmount ) + mediaLink_StartText
+		mediaLink_Suffix        = V.spaceCharacter + V.mediaLink_EndCap
 
-		if commentEnd != "":
-			mediaLink_Suffix = mediaLink_Suffix + commentEnd
+		if V.commentEnd != "":
+			mediaLink_Suffix = mediaLink_Suffix + V.commentEnd
 
 		selectedRegions = view.sel ()
 
@@ -531,19 +502,19 @@ class Commands ():
 			invalidLine    = False
 			mediaLink_Line = False
 
-			if regionText.find ( mediaLink_EndCap ) >= 0 \
+			if regionText.find ( V.mediaLink_EndCap ) >= 0 \
 			and block_ExistingLines == False:
 				mediaLink_Line = True
 				invalidLine = True
-			elif regionText.find ( mediaLink_EndCap ) >= 0 \
+			elif regionText.find ( V.mediaLink_EndCap ) >= 0 \
 			and block_ExistingLines == True:
 				invalidLine = True
 
-			if regionText.find ( mediaLink_WrapperFill ) >= 0 : invalidLine = True
-			if regionText.find ( titleEndcap )           >= 0 : invalidLine = True
-			if regionText.find ( titleFill )             >= 0 : invalidLine = True
-			if regionText.find ( commentStart )          >= 0 : invalidLine = True
-			if regionText.find ( commentEnd )            >= 0 : invalidLine = True
+			if regionText.find ( V.mediaLink_WrapperFill ) >= 0 : invalidLine = True
+			if regionText.find ( V.titleEndcap )           >= 0 : invalidLine = True
+			if regionText.find ( V.titleFill )             >= 0 : invalidLine = True
+			if regionText.find ( V.commentStart )          >= 0 : invalidLine = True
+			if regionText.find ( V.commentEnd )            >= 0 : invalidLine = True
 
 			if mediaLink_Line == True:
 				mediaLink_Region = Commands.get_MediaLink_Region ( view, region )
@@ -586,27 +557,19 @@ class Commands ():
 
 		mediaLink_Regions = []
 
-		settings                    = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap            = settings.get ( "medialink_endcap", "" )
-		mediaLink_IndentationAmount = settings.get ( "medialink_indentation_amount", "" )
-		mediaLink_WrapperEnabled    = settings.get ( "medialink_wrapper_enabled", "" )
-		mediaLink_WrapperFill       = settings.get ( "medialink_wrapper_fill", "" )
-		commentStart, commentEnd    = Commands.get_CommentCharacters ()
-		indentationCharacter        = Commands.get_IndentationCharacter ( view )
-
 		selectedRegions = view.sel ()
 
 		skipItem = False
 
-		if mediaLink_WrapperEnabled != True \
+		if V.mediaLink_WrapperEnabled != True \
 		or len ( selectedRegions ) == 0:
 			skipItem = True
 
 		if skipItem == False:
 
-			mediaLink_SurroundingText_Length = len ( mediaLink_EndCap + V.spaceCharacter + mediaLink_EndCap )
+			mediaLink_SurroundingText_Length = len ( V.mediaLink_EndCap + V.spaceCharacter + V.mediaLink_EndCap )
 
-			if commentEnd != "":
+			if V.commentEnd != "":
 				mediaLink_SurroundingText_Length = mediaLink_SurroundingText_Length + len ( V.spaceCharacter )
 
 			for region in selectedRegions:
@@ -619,10 +582,10 @@ class Commands ():
 					continue
 
 				mediaLink_WrapperLine_Text =                                                             \
-					( indentationCharacter * mediaLink_IndentationAmount )                               + \
-					commentStart                                                                         + \
-					( mediaLink_WrapperFill * ( regionText_Length + mediaLink_SurroundingText_Length ) ) + \
-					commentEnd
+					( V.indentationCharacter * V.mediaLink_IndentationAmount )                               + \
+					V.commentStart                                                                         + \
+					( V.mediaLink_WrapperFill * ( regionText_Length + mediaLink_SurroundingText_Length ) ) + \
+					V.commentEnd
 
 				view.insert ( edit, regionLine_A.a, mediaLink_WrapperLine_Text + "\n" )
 				view.insert ( edit, regionLine_A.a, mediaLink_WrapperLine_Text + "\n" )
@@ -637,28 +600,22 @@ class Commands ():
 
 		filePath_Regions = []
 
-		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaPath_TabAmount      = settings.get ( "mediapath_tab_amount", "" )
-		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-		indentationCharacter     = Commands.get_IndentationCharacter ( view )
+		mediaLink_Prefix = V.commentStart + V.mediaLink_EndCap + V.spaceCharacter
+		mediaLink_Suffix = V.spaceCharacter + V.mediaLink_EndCap
 
-		mediaLink_Prefix = commentStart + mediaLink_EndCap + V.spaceCharacter
-		mediaLink_Suffix = V.spaceCharacter + mediaLink_EndCap
-
-		if commentEnd != "":
-			mediaLink_Suffix = mediaLink_Suffix + commentEnd
+		if V.commentEnd != "":
+			mediaLink_Suffix = mediaLink_Suffix + V.commentEnd
 
 		filePath_Marker = "@"
 
 		filePath_Prefix =                                  \
 			"\n"                                           + \
-			( indentationCharacter * mediaPath_TabAmount ) + \
-			commentStart                                   + \
+			( V.indentationCharacter * V.mediaPath_TabAmount ) + \
+			V.commentStart                                   + \
 			filePath_Marker                                + \
 			V.spaceCharacter
 
-		filePath_Suffix = V.spaceCharacter + commentEnd
+		filePath_Suffix = V.spaceCharacter + V.commentEnd
 
 		complete_FilePath = filePath_Prefix + V.filePath_DefaultTitle + filePath_Suffix
 
@@ -668,18 +625,18 @@ class Commands ():
 		view.run_command ( "reverse_selection_direction" )
 
 		mediaLink_LeftOffset  =      \
-			len ( commentStart )     + \
+			len ( V.commentStart )     + \
 			len ( filePath_Marker )  + \
 			len ( V.spaceCharacter )
 
 		mediaLink_RightOffset = 0
 
-		if commentEnd != "":
+		if V.commentEnd != "":
 
 			mediaLink_RightOffset =      \
 				len ( V.spaceCharacter ) + \
-				len ( mediaLink_EndCap ) + \
-				len ( commentEnd )
+				len ( V.mediaLink_EndCap ) + \
+				len ( V.commentEnd )
 
 		for region in selectedRegions:
 
@@ -718,18 +675,10 @@ class Commands ():
 		application   = ""
 		fileExtension = ""
 
-			#═════      • • •   Load Settings      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
+			#═════      • • •   Set File Offsets      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
-		settings         = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap = settings.get ( "medialink_endcap", "" )
-		mediaFileTypes   = settings.get ( "mediafile_types", [] )
-
-			#═════      • • •   Set Comment Characters      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
-
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
-		fileStart_Offset = len ( commentStart ) + len ( "@" )
-		fileEnd_Offset   = len ( commentEnd )
+		fileStart_Offset = len ( V.commentStart ) + len ( "@" )
+		fileEnd_Offset   = len ( V.commentEnd )
 
 			#═════      • • •   Check For Selections      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
@@ -749,14 +698,14 @@ class Commands ():
 
 			#═════      • • •   Get MediaLink      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
-		mediaLink_Start = cursorLine_Text.find ( commentStart + mediaLink_EndCap + V.spaceCharacter )
-		mediaLink_End   = cursorLine_Text.rfind ( V.spaceCharacter + mediaLink_EndCap + commentEnd )
+		mediaLink_Start = cursorLine_Text.find ( V.commentStart + V.mediaLink_EndCap + V.spaceCharacter )
+		mediaLink_End   = cursorLine_Text.rfind ( V.spaceCharacter + V.mediaLink_EndCap + V.commentEnd )
 
-		mediaLink_Prefix = commentStart + mediaLink_EndCap + V.spaceCharacter
-		mediaLink_Suffix = V.spaceCharacter + mediaLink_EndCap
+		mediaLink_Prefix = V.commentStart + V.mediaLink_EndCap + V.spaceCharacter
+		mediaLink_Suffix = V.spaceCharacter + V.mediaLink_EndCap
 
-		if commentEnd != "":
-			mediaLink_Suffix = mediaLink_Suffix + commentEnd
+		if V.commentEnd != "":
+			mediaLink_Suffix = mediaLink_Suffix + V.commentEnd
 
 		mediaLink_LeftOffset  = len ( mediaLink_Prefix )
 		mediaLink_RightOffset = len ( mediaLink_Suffix )
@@ -796,7 +745,7 @@ class Commands ():
 				break
 
 		if mediaFile_Path == "":
-			print ( V.errorStart + "\"" + cursorLine_MediaLink + "\"" + " MediaLink not found" + V.errorEnd )
+			# print ( V.errorStart + "\"" + cursorLine_MediaLink + "\"" + " MediaLink not found" + V.errorEnd )
 			return
 
 		trimmed_MediaFile_Path = mediaFile_Path [ fileStart_Offset : len ( mediaFile_Path ) ].lstrip ()
@@ -824,7 +773,7 @@ class Commands ():
 		fileExtension_Index = filePath.rfind ( "." )
 
 		if fileExtension_Index == -1:
-			print ( V.errorStart + "\"" + filePath + "\"" + " has no file extension" + V.errorEnd )
+			# print ( V.errorStart + "\"" + filePath + "\"" + " has no file extension" + V.errorEnd )
 			return
 
 		fileExtension = filePath [ fileExtension_Index : filePath_Length ]
@@ -834,19 +783,19 @@ class Commands ():
 		fileExists = os.path.exists ( filePath )
 
 		if not fileExists:
-			print ( V.errorStart + "\"" + filePath + "\"" + " does not exist" + V.errorEnd )
+			# print ( V.errorStart + "\"" + filePath + "\"" + " does not exist" + V.errorEnd )
 			return
 
 			#═════      • • •   Set Application      ═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
-		for fileType in mediaFileTypes:
+		for fileType in V.mediaFileTypes:
 
-			typeExtensions = mediaFileTypes [ fileType ] [ "extensions" ]
+			typeExtensions = V.mediaFileTypes [ fileType ] [ "extensions" ]
 
 			for typeExtension in typeExtensions:
 
 				if fileExtension == "." + typeExtension:
-					application = mediaFileTypes [ fileType ] [ "application" ]
+					application = V.mediaFileTypes [ fileType ] [ "application" ]
 
 			# ? ? ?     • • •   Verify Application      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ⌠¦•••i1⌡#
 
@@ -854,7 +803,7 @@ class Commands ():
 
 		if application == "" \
 		or not applicationExists:
-			print ( V.errorStart + "MediaLink application for \"" + filePath + "\" does not exist" + V.errorEnd )
+			# print ( V.errorStart + "MediaLink application for \"" + filePath + "\" does not exist" + V.errorEnd )
 			return
 
 			# ? ? ?     • • •   Load Media File      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦•••i1⌡#
@@ -891,13 +840,6 @@ class Commands ():
 
 	def get_MediaLink_Region ( view, region ):
 
-		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
-		mediaLink_WrapperFill    = settings.get ( "medialink_wrapper_fill", "" )
-		titleEndcap              = settings.get ( "title_endcap", "" )
-		titleFill                = settings.get ( "title_fill", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
 		regionLine_A = view.line ( region.a )
 		regionText   = view.substr ( regionLine_A )
 
@@ -906,11 +848,11 @@ class Commands ():
 		trimmedLeft_Length      = len ( regionText ) - len ( regionText_TrimmedLeft )
 		trimmedRight_Length     = len ( regionText ) - len ( regionText_TrimmedRight )
 
-		mediaLink_LeftOffset = trimmedLeft_Length + len ( commentStart ) + len ( mediaLink_EndCap ) + len ( V.spaceCharacter )
+		mediaLink_LeftOffset = trimmedLeft_Length + len ( V.commentStart ) + len ( V.mediaLink_EndCap ) + len ( V.spaceCharacter )
 		mediaLink_RightOffset = trimmedRight_Length
 
-		if commentEnd != "":
-			mediaLink_RightOffset = trimmedRight_Length + len ( V.spaceCharacter ) + len ( commentEnd )
+		if V.commentEnd != "":
+			mediaLink_RightOffset = trimmedRight_Length + len ( V.spaceCharacter ) + len ( V.commentEnd )
 
 		mediaLink_Region = sublime.Region ( regionLine_A.a + mediaLink_LeftOffset, regionLine_A.b - mediaLink_RightOffset )
 		mediaLink_Text = view.substr ( mediaLink_Region )
@@ -949,40 +891,31 @@ class Commands ():
 
 	def add_TitleMarkers ( titleText, titleMode ):
 
-		settings              = sublime.load_settings ( "SlideNav.sublime-settings" )
-		titleEndcap           = settings.get ( "title_endcap", "" )
-		titleFill             = settings.get ( "title_fill", "" )
-		title_StartCap_Length = settings.get ( "title_startcap_length", "" )
-		titlePadding_Amount   = settings.get ( "title_padding", "" )
-		title_MaxLength       = settings.get ( "title_max_length", "" )
-
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
-		titleText = titleText.replace ( commentStart, "" )
-		titleText = titleText.replace ( commentEnd, "" )
-		titleText = titleText.replace ( titleEndcap, "" )
-		titleText = titleText.replace ( titleFill, "" )
+		titleText = titleText.replace ( V.commentStart, "" )
+		titleText = titleText.replace ( V.commentEnd, "" )
+		titleText = titleText.replace ( V.titleEndcap, "" )
+		titleText = titleText.replace ( V.titleFill, "" )
 		titleText = titleText.strip ()
 
-		titlePadding = V.spaceCharacter * titlePadding_Amount
+		titlePadding = V.spaceCharacter * V.titlePadding_Amount
 
 		titlePrefix =                             \
-			commentStart                          + \
-			titleEndcap                           + \
-			( titleFill * title_StartCap_Length ) + \
+			V.commentStart                          + \
+			V.titleEndcap                           + \
+			( V.titleFill * V.title_StartCap_Length ) + \
 			titlePadding
 
 		titlePosition = len ( titlePrefix )
 
 		titleText = titlePrefix + titleText + titlePadding
 
-		adjusted_MaxLength = title_MaxLength - ( len ( titleText ) + len ( titleEndcap ) + len ( commentEnd ) )
+		adjusted_MaxLength = V.title_MaxLength - ( len ( titleText ) + len ( V.titleEndcap ) + len ( V.commentEnd ) )
 
 		titleText =                            \
 			titleText                          + \
-			( titleFill * adjusted_MaxLength ) + \
-			titleEndcap                        + \
-			commentEnd
+			( V.titleFill * adjusted_MaxLength ) + \
+			V.titleEndcap                        + \
+			V.commentEnd
 
 		if titleMode == "Text":
 			return ( titleText )
@@ -1004,11 +937,6 @@ class Commands ():
 
 		contentRegion = sublime.Region ( 0, 0 )
 
-		settings    = sublime.load_settings ( "SlideNav.sublime-settings" )
-		titleEndcap = settings.get ( "title_endcap", "" )
-
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
 		cursorSelection = view.sel () [0]
 		cursorLine_A    = view.line ( cursorSelection.a )
 
@@ -1025,12 +953,6 @@ class Commands ():
 
 	def find_Titles ( view ):
 
-		settings    = sublime.load_settings ( "SlideNav.sublime-settings" )
-		titleEndcap = settings.get ( "title_endcap", "" )
-		titleFill   = settings.get ( "title_fill", "" )
-
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
 		titleRegions = view.find_all ( V.title_RegEx )
 		return ( titleRegions )
 
@@ -1039,10 +961,6 @@ class Commands ():
 		#▐▌»»▒▐▌───────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
 	def find_MediaPaths ( view ):
-
-		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
 
 		mediaFile_Regions = view.find_all ( V.mediaPath_RegEx )
 
@@ -1054,11 +972,6 @@ class Commands ():
 
 	def find_MediaLinks ( view ):
 
-		settings                 = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_EndCap         = settings.get ( "medialink_endcap", "" )
-		commentStart, commentEnd = Commands.get_CommentCharacters ()
-
-		# mediaFile_Regions = view.find_all ( V.mediaLink_RegEx )
 		mediaFile_Regions = view.find_all ( V.allLinks_RegEx )
 
 		return ( mediaFile_Regions )
@@ -1069,24 +982,39 @@ class Commands ():
 	#░░░░░                             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
 	#▓▓▓▓▓─────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌡#
 
+		#▐▌»»▒▐▌────────────────────────────▐▌▒««▐▌_____________________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   get_FileType      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
+		#▐▌»»▒▐▌────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+
+	def get_FileType ():
+
+		try:
+			documentExtension = sublime.active_window ().extract_variables () ["file_extension"]
+		except KeyError:
+			documentExtension = V.error_FileType
+
+		return ( documentExtension )
+
 		#▐▌»»▒▐▌────────────────────────────────────────▐▌▒««▐▌_________________________________________________________________________________________________________________________________________¦••⌠#
 		#▐▌»»▒▐▌    • •   get_IndentationCharacter      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
 		#▐▌»»▒▐▌────────────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
 
-	def get_IndentationCharacter ( view ):
+	def get_IndentationCharacter ():
 
-			indentationCharacter = ""
+			V.indentationCharacter = ""
+
+			view = sublime.active_window ().active_view ()
 
 			indent_Size                  = view.settings ().get ( "tab_size" )
-			indentationCharacter_IsSpace = view.settings ().get ( "translate_tabs_to_spaces" )
+			V.indentationCharacter_IsSpace = view.settings ().get ( "translate_tabs_to_spaces" )
 
-			if indentationCharacter_IsSpace == True:
-				indentationCharacter = V.spaceCharacter * indent_Size
+			if V.indentationCharacter_IsSpace == True:
+				V.indentationCharacter = V.spaceCharacter * indent_Size
 
-			elif indentationCharacter_IsSpace == False:
-				indentationCharacter = V.tabCharacter
+			elif V.indentationCharacter_IsSpace == False:
+				V.indentationCharacter = V.tabCharacter
 
-			return ( indentationCharacter )
+			return ( V.indentationCharacter )
 
 		#▐▌»»▒▐▌─────────────────────────────────▐▌▒««▐▌________________________________________________________________________________________________________________________________________________¦••⌠#
 		#▐▌»»▒▐▌    • •   get_VisibleRegion      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
@@ -1137,26 +1065,16 @@ class Commands ():
 
 	def get_CommentCharacters ():
 
-		fileType_Exists = True
-		commentStart = ""
-		commentEnd   = ""
+		V.commentStart = ""
+		V.commentEnd   = ""
 
-		settings          = sublime.load_settings ( "SlideNav.sublime-settings" )
-		commentCharacters = settings.get ( "comment_characters", [] )
+		for documentType in V.commentCharacters:
 
-		try:
-			documentExtension = sublime.active_window ().extract_variables () ["file_extension"]
-		except KeyError:
-			fileType_Exists = False
+			if V.commentCharacters [ documentType ] [ "extension" ] == V.documentExtension:
+				V.commentStart = V.commentCharacters [ documentType ] [ "comment_start" ]
+				V.commentEnd   = V.commentCharacters [ documentType ] [ "comment_end" ]
 
-		if fileType_Exists == True:
-			for documentType in commentCharacters:
-
-				if commentCharacters [ documentType ] [ "extension" ] == documentExtension:
-					commentStart = commentCharacters [ documentType ] [ "comment_start" ]
-					commentEnd   = commentCharacters [ documentType ] [ "comment_end" ]
-
-		return ( commentStart, commentEnd )
+		return ( V.commentStart, V.commentEnd )
 
 #▐▌▒▓▒▐▌═════════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
 #▐▌▓▒▓▐▌                         ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡#
@@ -1168,13 +1086,24 @@ class EventListener ( sublime_plugin.EventListener ):
 
 	mediaLink_Enabled = True
 
+	#▐▌»»▒▐▌───────────────────────────────────▐▌▒««▐▌_________________________________________________________________________________________________________________________________________________¦•⌠#
+	#▐▌»»▒▐▌    •   on_selection_modified      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+	#▐▌»»▒▐▌───────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦•⌡#
+
 	def on_selection_modified ( self, view ):
 
-		settings                  = sublime.load_settings ( "SlideNav.sublime-settings" )
-		mediaLink_OnClick_Enabled = settings.get ( "medialink_onclick", "" )
+		# ? ? ?     • •   Verify Extension      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦••i1⌡#
+
+		documentExtension = Commands.get_FileType ()
+
+		if documentExtension != V.documentExtension \
+		or V.settingsLoaded == False:
+			V.load_DynamicVars ()
+
+		# ? ? ?     • •   open_MediaLink      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦••i1⌡#
 
 		if EventListener.mediaLink_Enabled == True \
-		and mediaLink_OnClick_Enabled == True:
+		and V.mediaLink_OnClick_Enabled == True:
 			Commands.open_MediaLink ( view )
 
 #▐▌▒▓▒▐▌═════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
@@ -1185,85 +1114,181 @@ class EventListener ( sublime_plugin.EventListener ):
 
 class V ():
 
-	#═════      •   WhiteSpace      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+	#▐▌»»▒▐▌─────────────────────────────▐▌▒««▐▌_______________________________________________________________________________________________________________________________________________________¦•⌠#
+	#▐▌»»▒▐▌    •   load_StaticVars      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+	#▐▌»»▒▐▌─────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦•⌡#
 
-	tabCharacter   = "	"
-	spaceCharacter = " "
+	def load_StaticVars ( V ):
 
-	#═════      •   Settings      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
-	settings                      = sublime.load_settings ( "SlideNav.sublime-settings" )
-	titleEndcap                   = settings.get ( "title_endcap", "" )
-	titleFill                     = settings.get ( "title_fill", "" )
-	mediaLink_EndCap              = settings.get ( "medialink_endcap", "" )
-	mediaLink_IndentationAmount   = settings.get ( "medialink_indentation_amount", "" )
-	mediaLink_WrapperFill         = settings.get ( "medialink_wrapper_fill", "" )
-	textLink_MultiLine_StartChar  = settings.get ( "textlink_multiline_start", "" )
-	textLink_MultiLine_EndChar    = settings.get ( "textlink_multiline_end", "" )
-	textLink_SingleLine_StartChar = settings.get ( "textlink_singleline", "" )
-	textLink_Insertion_Mode       = settings.get ( "textlink_insertion", "" )
-	textLink_Padding_Amount       = settings.get ( "textlink_padding", "" )
-	scrollAmount                  = settings.get ( "scroll_amount", "" )
-	commentStart, commentEnd      = Commands.get_CommentCharacters ()
+		#═════      • •   WhiteSpace      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
-	#═════      •   Default Titles      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+		V.tabCharacter   = "	"
+		V.spaceCharacter = " "
 
-	slide_DefaultTitle     = "___SLIDE_TITLE_GOES_HERE___"
-	mediaLink_DefaultTitle = "___MEDIALINK_TITLE_GOES_HERE___"
-	filePath_DefaultTitle  = "___FILEPATH_GOES_HERE___"
+		#═════      • •   Default Titles      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
-	#═════      •   Errors      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•s1⌡#
+		V.slide_DefaultTitle     = "___SLIDE_TITLE_GOES_HERE___"
+		V.mediaLink_DefaultTitle = "___MEDIALINK_TITLE_GOES_HERE___"
+		V.filePath_DefaultTitle  = "___FILEPATH_GOES_HERE___"
 
-	errorStart = "▌▓▓▓▓▓   @SlideNav: "
-	errorEnd   = "   ▓▓▓▓▓▐"
+		#═════      • •   Errors      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
-	#▄▄▄▄▄─────────────────────▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦•⌠#
-	#░░░░░      •   RegEx      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░s2#
-	#▀▀▀▀▀─────────────────────▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦•⌡#
+		V.errorStart = "▌▓▓▓▓▓   @SlideNav: "
+		V.errorEnd   = "   ▓▓▓▓▓▐"
 
-	lineStart_WhiteSpace_and_Comment_RegEx = "\n[\\	\\ ]*" + commentStart + "?[\\	\\ ]*"
+		V.error_FileType = "!!! FILETYPE_ERROR !!!"
 
-	slide_RegEx =                                    \
-		"(" + commentStart + titleEndcap + ")"       + \
-		"("                                          + \
-			"("                                        + \
-				"([\\S\\s]*?)"                           + \
-				"(?=" + commentStart + titleEndcap + ")" + \
-			")"                                        + \
-			"|"                                        + \
-			"([\\S\\s]*)"                              + \
-		")"
+	#▐▌»»▒▐▌──────────────────────────────▐▌▒««▐▌______________________________________________________________________________________________________________________________________________________¦•⌠#
+	#▐▌»»▒▐▌    •   load_DynamicVars      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
+	#▐▌»»▒▐▌──────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦•⌡#
 
-	title_RegEx =                                 \
-		"(" + commentStart + titleEndcap + ")"    + \
-		"(" + titleFill + "*)"                    + \
-		"(.*" + titleEndcap + commentEnd + "\S*)" + \
-		"(.*)"
+	def load_DynamicVars ( V ):
+
+		# ? ? ?     • •   Verify Extension      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?⌠¦••i1⌡#
+
+		V.documentExtension = Commands.get_FileType ()
+
+		if V.documentExtension == V.error_FileType:
+			return
+
+		# --?--     • •   Load Variables       -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? -- ? ⌠¦••e1⌡#
+
+		else:
+
+			V.load_Settings ()
+
+			V.commentStart, V.commentEnd = Commands.get_CommentCharacters ()
+			V.indentationCharacter       = Commands.get_IndentationCharacter ()
+
+			V.load_RegEx ()
+
+	#▐▌»»▒▐▌───────────────────────────▐▌▒««▐▌_________________________________________________________________________________________________________________________________________________________¦•⌠#
+	#▐▌»»▒▐▌    •   load_Settings      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+	#▐▌»»▒▐▌───────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦•⌡#
+
+	def load_Settings ( V ):
+
+		settings         = sublime.load_settings ( "SlideNav.sublime-settings" )
+		V.settingsLoaded = True
+
+		#═════      • •   Set FailSafes      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
+
+		V.commentCharacters             = []
+		V.mediaFileTypes                = []
+		V.goTo_Start_OnExit             = False
+		V.mediaLink_OnClick_Enabled     = False
+		V.mediaLink_OnNav_Enabled       = False
+		V.mediaLink_WrapperEnabled      = False
+		V.mediaLink_IndentationAmount   = 0
+		V.mediaPath_TabAmount           = 0
+		V.scrollAmount                  = 0
+		V.textLink_LeftPadding_Amount   = 0
+		V.textLink_RightPadding_Amount  = 0
+		V.title_MaxLength               = 0
+		V.title_StartCap_Length         = 0
+		V.titlePadding_Amount           = 0
+		V.mediaLink_EndCap              = ""
+		V.mediaLink_WrapperFill         = ""
+		V.textLink_Insertion_Mode       = ""
+		V.textLink_MultiLine_EndChar    = ""
+		V.textLink_MultiLine_StartChar  = ""
+		V.textLink_SingleLine_StartChar = ""
+		V.titleEndcap                   = ""
+		V.titleFill                     = ""
+
+		# ? ? ?     • •   Load Settings      ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ⌠¦••i1⌡#
+
+		try:
+
+			V.commentCharacters             = settings.get ( "comment_characters", [] )
+			V.mediaFileTypes                = settings.get ( "mediafile_types", [] )
+			V.goTo_Start_OnExit             = bool ( settings.get ( "goto_start_onexit", "" ) )
+			V.mediaLink_OnClick_Enabled     = bool ( settings.get ( "medialink_onclick", "" ) )
+			V.mediaLink_OnNav_Enabled       = bool ( settings.get ( "medialink_on_navigate", "" ) )
+			V.mediaLink_WrapperEnabled      = bool ( settings.get ( "medialink_wrapper_enabled", "" ) )
+			V.mediaLink_IndentationAmount   = int ( settings.get ( "medialink_indentation_amount", "" ) )
+			V.mediaPath_TabAmount           = int ( settings.get ( "mediapath_tab_amount", "" ) )
+			V.scrollAmount                  = int ( settings.get ( "scroll_amount", "" ) )
+			V.textLink_LeftPadding_Amount   = int ( settings.get ( "textlink_padding_left", "" ) )
+			V.textLink_RightPadding_Amount  = int ( settings.get ( "textlink_padding_right", "" ) )
+			V.title_MaxLength               = int ( settings.get ( "title_max_length", "" ) )
+			V.title_StartCap_Length         = int ( settings.get ( "title_startcap_length", "" ) )
+			V.titlePadding_Amount           = int ( settings.get ( "title_padding", "" ) )
+			V.mediaLink_EndCap              = str ( settings.get ( "medialink_endcap", "" ) )
+			V.mediaLink_WrapperFill         = str ( settings.get ( "medialink_wrapper_fill", "" ) )
+			V.textLink_Insertion_Mode       = str ( settings.get ( "textlink_insertion", "" ) )
+			V.textLink_MultiLine_EndChar    = str ( settings.get ( "textlink_multiline_end", "" ) )
+			V.textLink_MultiLine_StartChar  = str ( settings.get ( "textlink_multiline_start", "" ) )
+			V.textLink_SingleLine_StartChar = str ( settings.get ( "textlink_singleline", "" ) )
+			V.titleEndcap                   = str ( settings.get ( "title_endcap", "" ) )
+			V.titleFill                     = str ( settings.get ( "title_fill", "" ) )
+
+		except TypeError:
+			V.settingsLoaded = False
+
+	#▐▌»»▒▐▌────────────────────────▐▌▒««▐▌____________________________________________________________________________________________________________________________________________________________¦•⌠#
+	#▐▌»»▒▐▌    •   load_RegEx      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░m2#
+	#▐▌»»▒▐▌────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦•⌡#
+
+	def load_RegEx ( V ):
+
+		#═════      • •   General      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
+
+		V.lineStart_WhiteSpace_and_Comment_RegEx = "\n[\\	\\ ]*" + V.commentStart + "?[\\	\\ ]*"
+
+		#═════      • •   Slides      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
+
+		V.slide_RegEx =                                    \
+			"(" + V.commentStart + V.titleEndcap + ")"       + \
+			"("                                          + \
+				"("                                        + \
+					"([\\S\\s]*?)"                           + \
+					"(?=" + V.commentStart + V.titleEndcap + ")" + \
+				")"                                        + \
+				"|"                                        + \
+				"([\\S\\s]*)"                              + \
+			")"
+
+		V.title_RegEx =                                 \
+			"(" + V.commentStart + V.titleEndcap + ")"    + \
+			"(" + V.titleFill + "*)"                    + \
+			"(.*" + V.titleEndcap + V.commentEnd + "\S*)" + \
+			"(.*)"
 
 		#═════      • •   MediaLinks      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
-	mediaPath_RegEx =                                                                    \
-		"([\\	\\ ]*" + commentStart + mediaLink_EndCap + ".*" + mediaLink_EndCap + ".*)" + \
-		"(\n[\\	\\ ]*" + commentStart + "@.*)"
+		V.mediaPath_RegEx =                                                                    \
+			"([\\	\\ ]*" + V.commentStart + V.mediaLink_EndCap + ".*" + V.mediaLink_EndCap + ".*)" + \
+			"(\n[\\	\\ ]*" + V.commentStart + "@.*)"
 
-	mediaLink_RegEx = commentStart + mediaLink_EndCap + ".*" + mediaLink_EndCap + commentEnd
+		V.mediaLink_RegEx = V.commentStart + V.mediaLink_EndCap + ".*" + V.mediaLink_EndCap + V.commentEnd
 
 		#═════      • •   TextLinks      ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
-	textLink_SingleLine_RegEx = lineStart_WhiteSpace_and_Comment_RegEx + textLink_SingleLine_StartChar + ".*"
+		V.textLink_SingleLine_RegEx = V.lineStart_WhiteSpace_and_Comment_RegEx + V.textLink_SingleLine_StartChar + ".*"
 
-	textLink_MultiLine_RegEx =                                                                 \
-		"("                                                                                    + \
-			lineStart_WhiteSpace_and_Comment_RegEx + textLink_MultiLine_StartChar + "[\\S\\s]*?" + \
-			lineStart_WhiteSpace_and_Comment_RegEx + textLink_MultiLine_EndChar + ".*"           + \
-		")"
+		V.textLink_MultiLine_RegEx =                                                                 \
+			"("                                                                                    + \
+				V.lineStart_WhiteSpace_and_Comment_RegEx + V.textLink_MultiLine_StartChar + "[\\S\\s]*?" + \
+				V.lineStart_WhiteSpace_and_Comment_RegEx + V.textLink_MultiLine_EndChar + ".*"           + \
+			")"
 
-	all_TextLink_RegEx =                      \
-		"(" + textLink_SingleLine_RegEx + ")" + \
-		"|"                                   + \
-		"(" + textLink_MultiLine_RegEx + ")"
+		V.all_TextLink_RegEx =                      \
+			"(" + V.textLink_SingleLine_RegEx + ")" + \
+			"|"                                   + \
+			"(" + V.textLink_MultiLine_RegEx + ")"
 
-	allLinks_RegEx =                \
-		all_TextLink_RegEx          + \
-		"|"                         + \
-		"(" + mediaLink_RegEx + ")"
+		V.allLinks_RegEx =                \
+			V.all_TextLink_RegEx          + \
+			"|"                         + \
+			"(" + V.mediaLink_RegEx + ")"
 
+#▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
+#░░░░░                ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
+#░░░░░      INIT      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░s3#
+#░░░░░                ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░‡#
+#▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀¦⌡#
+
+V = V ()
+V.load_StaticVars ()
+V.load_DynamicVars ()
