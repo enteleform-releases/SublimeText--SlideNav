@@ -582,7 +582,7 @@ class Commands ():
 					continue
 
 				mediaLink_WrapperLine_Text =                                                             \
-					( V.indentationCharacter * V.mediaLink_IndentationAmount )                               + \
+					( V.indentationCharacter * V.mediaLink_IndentationAmount )                             + \
 					V.commentStart                                                                         + \
 					( V.mediaLink_WrapperFill * ( regionText_Length + mediaLink_SurroundingText_Length ) ) + \
 					V.commentEnd
@@ -608,11 +608,11 @@ class Commands ():
 
 		filePath_Marker = "@"
 
-		filePath_Prefix =                                  \
-			"\n"                                           + \
+		filePath_Prefix =                                    \
+			"\n"                                               + \
 			( V.indentationCharacter * V.mediaPath_TabAmount ) + \
-			V.commentStart                                   + \
-			filePath_Marker                                + \
+			V.commentStart                                     + \
+			filePath_Marker                                    + \
 			V.spaceCharacter
 
 		filePath_Suffix = V.spaceCharacter + V.commentEnd
@@ -624,9 +624,9 @@ class Commands ():
 		selectedRegions = view.sel ()
 		view.run_command ( "reverse_selection_direction" )
 
-		mediaLink_LeftOffset  =      \
-			len ( V.commentStart )     + \
-			len ( filePath_Marker )  + \
+		mediaLink_LeftOffset =   \
+			len ( V.commentStart )  + \
+			len ( filePath_Marker ) + \
 			len ( V.spaceCharacter )
 
 		mediaLink_RightOffset = 0
@@ -634,7 +634,7 @@ class Commands ():
 		if V.commentEnd != "":
 
 			mediaLink_RightOffset =      \
-				len ( V.spaceCharacter ) + \
+				len ( V.spaceCharacter )   + \
 				len ( V.mediaLink_EndCap ) + \
 				len ( V.commentEnd )
 
@@ -750,8 +750,8 @@ class Commands ():
 
 		trimmed_MediaFile_Path = mediaFile_Path [ fileStart_Offset : len ( mediaFile_Path ) ].lstrip ()
 
-		whitespaceOffset = \
-			( len ( mediaFile_Path ) - len ( trimmed_MediaFile_Path ) )   \
+		whitespaceOffset =                                              \
+			( len ( mediaFile_Path ) - len ( trimmed_MediaFile_Path ) )    \
 			+ ( len ( mediaLink_Path ) - len ( trimmed_MediaLink_Path ) ) \
 			- fileStart_Offset
 
@@ -899,9 +899,9 @@ class Commands ():
 
 		titlePadding = V.spaceCharacter * V.titlePadding_Amount
 
-		titlePrefix =                             \
-			V.commentStart                          + \
-			V.titleEndcap                           + \
+		titlePrefix =                               \
+			V.commentStart                            + \
+			V.titleEndcap                             + \
 			( V.titleFill * V.title_StartCap_Length ) + \
 			titlePadding
 
@@ -912,7 +912,7 @@ class Commands ():
 		adjusted_MaxLength = V.title_MaxLength - ( len ( titleText ) + len ( V.titleEndcap ) + len ( V.commentEnd ) )
 
 		titleText =                            \
-			titleText                          + \
+			titleText                            + \
 			( V.titleFill * adjusted_MaxLength ) + \
 			V.titleEndcap                        + \
 			V.commentEnd
@@ -1238,26 +1238,26 @@ class V ():
 
 		#═════      • •   Slides      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
-		V.slide_RegEx =                                    \
-			"(" + V.commentStart + V.titleEndcap + ")"       + \
-			"("                                          + \
-				"("                                        + \
-					"([\\S\\s]*?)"                           + \
+		V.slide_RegEx =                                  \
+			"(" + V.commentStart + V.titleEndcap + ")"     + \
+			"("                                            + \
+				"("                                           + \
+					"([\\S\\s]*?)"                               + \
 					"(?=" + V.commentStart + V.titleEndcap + ")" + \
-				")"                                        + \
-				"|"                                        + \
-				"([\\S\\s]*)"                              + \
+				")"                                           + \
+				"|"                                           + \
+				"([\\S\\s]*)"                                 + \
 			")"
 
 		V.title_RegEx =                                 \
 			"(" + V.commentStart + V.titleEndcap + ")"    + \
-			"(" + V.titleFill + "*)"                    + \
+			"(" + V.titleFill + "*)"                      + \
 			"(.*" + V.titleEndcap + V.commentEnd + "\S*)" + \
 			"(.*)"
 
 		#═════      • •   MediaLinks      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
-		V.mediaPath_RegEx =                                                                    \
+		V.mediaPath_RegEx =                                                                      \
 			"([\\	\\ ]*" + V.commentStart + V.mediaLink_EndCap + ".*" + V.mediaLink_EndCap + ".*)" + \
 			"(\n[\\	\\ ]*" + V.commentStart + "@.*)"
 
@@ -1267,20 +1267,20 @@ class V ():
 
 		V.textLink_SingleLine_RegEx = V.lineStart_WhiteSpace_and_Comment_RegEx + V.textLink_SingleLine_StartChar + ".*"
 
-		V.textLink_MultiLine_RegEx =                                                                 \
-			"("                                                                                    + \
+		V.textLink_MultiLine_RegEx =                                                                \
+			"("                                                                                       + \
 				V.lineStart_WhiteSpace_and_Comment_RegEx + V.textLink_MultiLine_StartChar + "[\\S\\s]*?" + \
 				V.lineStart_WhiteSpace_and_Comment_RegEx + V.textLink_MultiLine_EndChar + ".*"           + \
 			")"
 
-		V.all_TextLink_RegEx =                      \
+		V.all_TextLink_RegEx =                    \
 			"(" + V.textLink_SingleLine_RegEx + ")" + \
-			"|"                                   + \
+			"|"                                     + \
 			"(" + V.textLink_MultiLine_RegEx + ")"
 
-		V.allLinks_RegEx =                \
-			V.all_TextLink_RegEx          + \
-			"|"                         + \
+		V.allLinks_RegEx =     \
+			V.all_TextLink_RegEx + \
+			"|"                  + \
 			"(" + V.mediaLink_RegEx + ")"
 
 #▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
