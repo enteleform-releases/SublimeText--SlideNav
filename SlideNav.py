@@ -362,6 +362,8 @@ class Commands ():
 
 		for region in selectedRegions:
 
+			region = Commands.verify_InvertedRegion ( region )
+
 			regionLine_A            = view.line ( region.a )
 			regionText              = view.substr ( regionLine_A ).strip ()
 			cursorRow, cursorColumn = view.rowcol ( region.a )
@@ -417,6 +419,8 @@ class Commands ():
 		selectedRegions = view.sel ()
 
 		for region in selectedRegions:
+
+			region = Commands.verify_InvertedRegion ( region )
 
 			regionLine_A            = view.line ( region.a )
 			regionLine_B            = view.line ( region.b )
@@ -488,6 +492,8 @@ class Commands ():
 		selectedRegions = view.sel ()
 
 		for region in selectedRegions:
+
+			region = Commands.verify_InvertedRegion ( region )
 
 			regionLine_A            = view.line ( region.a )
 			regionLine_B            = view.line ( region.b )
@@ -625,6 +631,7 @@ class Commands ():
 		view.run_command ( "reverse_selection_direction" )
 
 		mediaLink_LeftOffset =   \
+			len ( "\n" )            + \
 			len ( V.commentStart )  + \
 			len ( filePath_Marker ) + \
 			len ( V.spaceCharacter )
@@ -1028,9 +1035,11 @@ class Commands ():
 		documentEnd    = view.size ()
 		documentRegion = sublime.Region ( documentStart, documentEnd )
 
+		x, y               = view.viewport_position()
 		foldedRegions      = view.unfold ( documentRegion )
 		foldedRegion_Count = len ( foldedRegions )
 		view.fold ( foldedRegions )
+		view.set_viewport_position ( [ 0, y ], animate = False )
 
 		if foldedRegion_Count == 2:
 			visibleRegion = sublime.Region ( foldedRegions [0].b + 1, foldedRegions [1].a )
@@ -1075,6 +1084,18 @@ class Commands ():
 				V.commentEnd   = V.commentCharacters [ documentType ] [ "comment_end" ]
 
 		return ( V.commentStart, V.commentEnd )
+
+		#▐▌»»▒▐▌─────────────────────────────────────▐▌▒««▐▌____________________________________________________________________________________________________________________________________________¦••⌠#
+		#▐▌»»▒▐▌    • •   verify_InvertedRegion      ▐▌▒««▐▌░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬░╬m2#
+		#▐▌»»▒▐▌─────────────────────────────────────▐▌▒««▐▌‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾¦••⌡#
+
+	def verify_InvertedRegion ( region ):
+
+		if region.a > region.b:
+			region = sublime.Region ( region.b, region.a )
+			print ( "FLIPPED" )
+
+		return ( region )
 
 #▐▌▒▓▒▐▌═════════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
 #▐▌▓▒▓▐▌                         ▐▌▓▒▓▐▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓‡#
@@ -1292,4 +1313,3 @@ class V ():
 V = V ()
 V.load_StaticVars ()
 V.load_DynamicVars ()
-
