@@ -108,6 +108,11 @@ Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )
 Align ( resizes all Slide titles to same length )
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
+## GETTING STARTED
+
+To get started, see:
+[How do I create new presentation?](https://github.com/Enteleform/ST_SlideNav/issues/1)
+
 ## CUSTOMIZATION
 
 Modifications available @ [SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)
