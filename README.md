@@ -79,21 +79,24 @@ Zoom_Out ( exit Slide & show full document )
 
 ### Insert Snippets
 
-* All Snippet commands can be used 2 ways
+* Slide, MediaFile, & MediaLink snippet commands can be used:
  * on blank lines ( new text area will automatically be selected )
  * on lines with text ( text area will automatically use line's text )
+* TextLink snippet commands can be used:
+ * on single lines ( LinkNav will select the affected line )
+ * on multiple lines ( LinkNav will select the affected lines )
 
 Insert_Slide
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
-
-Insert_TextLink
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 Insert_MediaFile ( MediaLink + path )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
 Insert_MediaLink
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
+
+Insert_TextLink
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 ### MediaLink
 
