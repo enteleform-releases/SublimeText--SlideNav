@@ -79,24 +79,21 @@ Zoom_Out ( exit Slide & show full document )
 
 ### Insert Snippets
 
-* Slide, MediaFile, & MediaLink snippet commands can be used:
+* All Snippet commands can be used 2 ways
  * on blank lines ( new text area will automatically be selected )
  * on lines with text ( text area will automatically use line's text )
-* The TextLink snippet command can be used:
- * on single lines ( LinkNav will select the affected line )
- * on multiple lines ( LinkNav will select the affected lines )
 
 Insert_Slide
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
+
+Insert_TextLink
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 Insert_MediaFile ( MediaLink + path )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
 Insert_MediaLink
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
-
-Insert_TextLink
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 ### MediaLink
 
@@ -110,11 +107,6 @@ Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )
 
 Align ( resizes all Slide titles to same length )
 <kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
-
-## GETTING STARTED
-
-To get started, see:
-[How do I create new presentation?](https://github.com/Enteleform/ST_SlideNav/issues/1)
 
 ## CUSTOMIZATION
 
@@ -130,7 +122,7 @@ In order to get the most functionality out of SlideNav, read the comments @ [Sli
 
 ## FEEDBACK
 
-So far, SlideNav has only been tested with Windows 10 & SublimeText 3.
+So far, SlideNav has only been tested with Windows & SublimeText 3.
 
 This is my first release! Feel free to contact me at enteleform@gmail.com with any feedback!
 
