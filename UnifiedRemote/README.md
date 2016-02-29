@@ -32,7 +32,8 @@ https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 	═══════════════════════════════════  SlideNav  ═══════════════════════════════════
 
 		┌────────────────────────────────────┐  ┌────────────────────────────────────┐
-		│           Previous Slide           │  │             Next Slide             │
+		│      Tap:  Previous Slide          │  │      Tap:  Next Slide              │
+		│     Hold: Caret To Slide Top       │  │     Hold: Caret To Slide Bottom    │
 		└────────────────────────────────────┘  └────────────────────────────────────┘
 
 	═══════════════════════════════════  LinkNav  ════════════════════════════════════
@@ -44,7 +45,7 @@ https://github.com/unifiedremote/Docs/blob/master/intro/getting-started.md
 	════════════════════════════════════  Scroll  ════════════════════════════════════
 
 		┌────────────────────────────────────┐  ┌────────────────────────────────────┐
-		│                Up                  │  │               Down                 │
+		│              Caret Up              │  │             Caret Down             │
 		└────────────────────────────────────┘  └────────────────────────────────────┘
 ```
 #Key Bindings

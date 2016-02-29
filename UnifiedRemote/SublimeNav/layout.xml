@@ -35,8 +35,8 @@
 		</row>
 
 		<row weight="4">
-			<button id = "SlideNav_Up"          icon = "up"         color = "#4AC547" onTap = "SlideNav_Up" />
-			<button id = "SlideNav_Down"        icon = "down"       color = "#4AC547" onTap = "SlideNav_Down" />
+			<button id = "SlideNav_Up"          icon = "up"         color = "#4AC547" onTap = "SlideNav_Up"   onhold = "Slide_Top" />
+			<button id = "SlideNav_Down"        icon = "down"       color = "#4AC547" onTap = "SlideNav_Down" onhold = "Slide_Bottom" />
 		</row>
 
 <!--▐▌▒▓▒▐▌═══════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠-->
