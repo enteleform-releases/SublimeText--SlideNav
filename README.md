@@ -85,6 +85,9 @@ Zoom_In  ( zoom to selected Slide - Slide title line must be selected )
 Zoom_Out ( exit Slide & show full document )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
 
+Reset_Zoom ( removes zoom level & shows text @ default font size )
+<kbd>ctrl</kbd>+<kbd>alt</kbd>0<kbd>-</kbd>
+
 ### Insert Snippets
 
 * Slide, MediaFile, & MediaLink snippet commands can be used:
