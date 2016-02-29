@@ -50,7 +50,7 @@ More info at [UnifiedRemote/README.md](https://github.com/Enteleform/ST_SlideNav
 ## GETTING STARTED
 
 To get started, see:
-* [SlideNav Tutorial](https://github.com/Enteleform/ST_SlideNav/blob/master/Tutorial/%5BSlideNav%5D%20Tutorial.py)
+* [SlideNav Interactive Tutorial](https://github.com/Enteleform/ST_SlideNav/blob/master/Tutorial/%5BSlideNav%5D%20Tutorial.py)
 * [How do I create new presentation?](https://github.com/Enteleform/ST_SlideNav/issues/1)
 
 ## COMMANDS
