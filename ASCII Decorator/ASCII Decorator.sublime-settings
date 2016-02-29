@@ -15,7 +15,7 @@
 	// You can search by font size using header levels, similar to HTML ( "H1", "H2", etc )
 	
 	// Styles are also searchable, the most common being: "Regular", "Bold", "Outline", & "Script"
-	// All other styles can be searched by using the "FX" keyword.
+	// All other styles can be searched with the "FX" keyword.
 
 	// The list can be accessed by using ASCII Decorator's "figlet_favorites" command @ key bindings,
 	// or @ RightClick / ASCII Decorator / Font Favorites
