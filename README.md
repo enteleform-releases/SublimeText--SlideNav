@@ -86,7 +86,7 @@ Zoom_Out ( exit Slide & show full document )
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
 
 Reset_Zoom ( removes zoom level & shows text @ default font size )
-<kbd>ctrl</kbd>+<kbd>alt</kbd><kbd>0</kbd>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>0</kbd>
 
 ### Insert Snippets
 
