@@ -34,11 +34,11 @@ This GIF has 3 components:
 
 ### Remote Control
 
-Included in [/UnifiedRemote](https://github.com/Enteleform/ST_SlideNav/tree/master/UnifiedRemote) is a custom preset for Unified Remote
+Included in __[/UnifiedRemote](https://github.com/Enteleform/ST_SlideNav/tree/master/UnifiedRemote)__ is a custom preset for Unified Remote
 
 Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
 
-More info at [UnifiedRemote/README.md](https://github.com/Enteleform/ST_SlideNav/blob/master/UnifiedRemote/README.md)
+More info at __[UnifiedRemote/README.md](https://github.com/Enteleform/ST_SlideNav/blob/master/UnifiedRemote/README.md)__
 
 ### Snippets
 
@@ -50,10 +50,10 @@ More info at [UnifiedRemote/README.md](https://github.com/Enteleform/ST_SlideNav
 ## GETTING STARTED
 
 To get started, see:
-* [SlideNav Interactive Tutorial](https://github.com/Enteleform/ST_SlideNav/blob/master/Tutorial/%5BSlideNav%5D%20Tutorial.py)
-* [How do I create new presentation?](https://github.com/Enteleform/ST_SlideNav/issues/1)
+* __[SlideNav Interactive Tutorial](https://github.com/Enteleform/ST_SlideNav/blob/master/Tutorial/%5BSlideNav%5D%20Tutorial.py)__
+* __[How do I create new presentation?](https://github.com/Enteleform/ST_SlideNav/issues/1)__
 
-In order to get the most functionality out of SlideNav, read the comments @ [SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)
+In order to get the most functionality out of SlideNav, read the comments @ __[SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)__
 
 ## COMMANDS
 
@@ -126,7 +126,7 @@ Align ( resizes all Slide titles to same length )
 
 ## CUSTOMIZATION
 
-Modifications available @ [SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)
+Modifications available @ __[SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)__
 
 * Define Snippet Visual Styles
 * Define MediaLink Applications & Their Associated Extensions
@@ -134,10 +134,10 @@ Modifications available @ [SlideNav.sublime-settings](https://github.com/Entelef
 
 ## EXTRAS
 
-I recommend using [ASCII Decorator](https://packagecontrol.io/packages/ASCII%20Decorator) paired with my [Sublime-Settings](https://github.com/Enteleform/ST_SlideNav/blob/master/ASCII%20Decorator/ASCII%20Decorator.sublime-settings) file.
+I recommend using __[ASCII Decorator](https://packagecontrol.io/packages/ASCII%20Decorator)__ paired with my __[Sublime-Settings](https://github.com/Enteleform/ST_SlideNav/blob/master/ASCII%20Decorator/ASCII%20Decorator.sublime-settings)__ file.
 It's a quick & easy way to add visual contast and emphasis to your presentations.
 
-This [Image To ASCII Converter](http://www.text-image.com/convert/ascii.html) is great for turning your favorite [ memes | images | whatever ] into text that you can include in your presentations.
+This __[Image To ASCII Converter](http://www.text-image.com/convert/ascii.html)__ is great for turning your favorite [ memes | images | whatever ] into text that you can include in your presentations.
 
 ## FEEDBACK
 
