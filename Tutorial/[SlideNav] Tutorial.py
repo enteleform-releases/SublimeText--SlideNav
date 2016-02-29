@@ -13,38 +13,38 @@ In order for the tutorial to function, this file must be saved with a .py extens
 
 	# Here's an example with the prep notes for my last presentation:
 
-	@ Organizer
-		• Get WiFi
-		• Check if audio connections are available
+	# @ Organizer
+	# 	• Get WiFi
+	# 	• Check if audio connections are available
 
-	@ Setup
-		• Set Up Network on Phone & PC
-		• Close All Background Apps
-		• Set MaxVolume
-		• Run MediaApps Once
-		• Open XYplorer tabs:
-			- Making Your Own Sublime Text Plugins
-			- Making Your Own Sublime Text Plugins/MediaLinks
-			- SlideNav
-		• Open UnifiedRemote
+	# @ Setup
+	# 	• Set Up Network on Phone & PC
+	# 	• Close All Background Apps
+	# 	• Set MaxVolume
+	# 	• Run MediaApps Once
+	# 	• Open XYplorer tabs:
+	# 		- Making Your Own Sublime Text Plugins
+	# 		- Making Your Own Sublime Text Plugins/MediaLinks
+	# 		- SlideNav
+	# 	• Open UnifiedRemote
 
-	@ SublimeText
-		• Align Slide Titles ( Ctrl + Super + Period )
-		• Turn Off Relative Lines ( Ctrl + Alt + R )
-		• Set Single Window ( Ctrl + Super + Alt + 0 )
-		• Make Sure Top Menu Is Not Visible
-		• Open Timer
-		• Open Slides & SlideNav
+	# @ SublimeText
+	# 	• Align Slide Titles ( Ctrl + Super + Period )
+	# 	• Turn Off Relative Lines ( Ctrl + Alt + R )
+	# 	• Set Single Window ( Ctrl + Super + Alt + 0 )
+	# 	• Make Sure Top Menu Is Not Visible
+	# 	• Open Timer
+	# 	• Open Slides & SlideNav
 
-	@ Pre-Presentation
-		• Test Remote
-		• Remote ( SublimeText FullScreen )
-		• Set Presentation @ "Setup" Slide
+	# @ Pre-Presentation
+	# 	• Test Remote
+	# 	• Remote ( SublimeText FullScreen )
+	# 	• Set Presentation @ "Setup" Slide
 
-	@ Start-Presentation
-		• Zoom To Slide Width + Height
-		• Set Timer Size == MiniMap
-		• Set Cursor OffScreen
+	# @ Start-Presentation
+	# 	• Zoom To Slide Width + Height
+	# 	• Set Timer Size == MiniMap
+	# 	• Set Cursor OffScreen
 
 
 #▐▌▒▓▒▐▌════════════════════▐▌▒▓▒▐▌▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄¦⌠#
