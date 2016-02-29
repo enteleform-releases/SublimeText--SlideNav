@@ -82,7 +82,7 @@ Zoom_Out ( exit Slide & show full document )
 * Slide, MediaFile, & MediaLink snippet commands can be used:
  * on blank lines ( new text area will automatically be selected )
  * on lines with text ( text area will automatically use line's text )
-* TextLink snippet commands can be used:
+* The TextLink snippet command can be used:
  * on single lines ( LinkNav will select the affected line )
  * on multiple lines ( LinkNav will select the affected lines )
 
