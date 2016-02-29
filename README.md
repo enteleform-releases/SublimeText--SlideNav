@@ -1,5 +1,5 @@
 
-# ST_SlideNav
+# SlideNav
 
 Easily create slide presentations in Sublime Text with SlideNav
 
