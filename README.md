@@ -127,7 +127,7 @@ In order to get the most functionality out of SlideNav, read the comments @ [Sli
 
 ## FEEDBACK
 
-So far, SlideNav has only been tested with Windows & SublimeText 3.
+So far, SlideNav has only been tested with Windows 10 & SublimeText 3.
 
 This is my first release! Feel free to contact me at enteleform@gmail.com with any feedback!
 
