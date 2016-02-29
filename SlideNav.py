@@ -604,67 +604,55 @@ class Commands ():
 
 	def insert_MediaLink_Path ( edit, view ):
 
-		filePath_Regions = []
+		mediaPath_Regions = []
 
-		mediaLink_Prefix = V.commentStart + V.mediaLink_EndCap + V.spaceCharacter
-		mediaLink_Suffix = V.spaceCharacter + V.mediaLink_EndCap
+		mediaPath_Marker  = "@"
+		mediaPath_Padding = V.indentationCharacter * V.mediaPath_TabAmount
 
-		if V.commentEnd != "":
-			mediaLink_Suffix = mediaLink_Suffix + V.commentEnd
-
-		filePath_Marker = "@"
-
-		filePath_Prefix =                                    \
-			"\n"                                               + \
-			( V.indentationCharacter * V.mediaPath_TabAmount ) + \
-			V.commentStart                                     + \
-			filePath_Marker                                    + \
+		mediaPath_Prefix =  \
+			V.commentStart    + \
+			mediaPath_Marker  + \
 			V.spaceCharacter
 
-		filePath_Suffix = V.spaceCharacter + V.commentEnd
+		mediaPath_Suffix  = V.spaceCharacter + V.mediaLink_EndCap
+		if V.commentEnd != "":
+			mediaPath_Suffix = mediaPath_Suffix + V.commentEnd
 
-		complete_FilePath = filePath_Prefix + V.filePath_DefaultTitle + filePath_Suffix
+		default_MediaPath =       \
+			"\n"                     + \
+			mediaPath_Padding        + \
+			mediaPath_Prefix         + \
+			V.mediaPath_DefaultTitle + \
+			mediaPath_Suffix
+
+		mediaPath_SelectionOffset = len ( "\n" + mediaPath_Padding + mediaPath_Prefix )
+		mediaPath_SelectionLength = len ( V.mediaPath_DefaultTitle )
 
 		Commands.insert_MediaLink ( edit, view, False, True )
-
 		selectedRegions = view.sel ()
-		view.run_command ( "reverse_selection_direction" )
-
-		mediaLink_LeftOffset =   \
-			len ( "\n" )            + \
-			len ( V.commentStart )  + \
-			len ( filePath_Marker ) + \
-			len ( V.spaceCharacter )
-
-		mediaLink_RightOffset = 0
-
-		if V.commentEnd != "":
-
-			mediaLink_RightOffset =      \
-				len ( V.spaceCharacter )   + \
-				len ( V.mediaLink_EndCap ) + \
-				len ( V.commentEnd )
 
 		for region in selectedRegions:
 
-			regionLine_A = view.line ( region.a )
-			regionText = view.substr ( regionLine_A ).strip ()
-			trimmed_RegionText = regionText [ len ( mediaLink_Prefix ) : len ( regionText ) - len ( mediaLink_Suffix ) ]
+			regionLine_A       = view.line ( region.a )
+			regionText         = view.substr ( regionLine_A ).strip ()
+			trimmed_RegionText = regionText [ len ( mediaPath_Prefix ) : len ( regionText ) - len ( mediaPath_Suffix ) ]
+			newLine_Position   = regionLine_A.b
 
-			newLine_Position = region.b + mediaLink_RightOffset
-			view.insert ( edit, newLine_Position, complete_FilePath )
+			print ( trimmed_RegionText )
 
-			filePathRegion_A = region.a + len ( filePath_Prefix ) + mediaLink_LeftOffset + mediaLink_RightOffset
-			filePathRegion_B = region.b + len ( filePath_Prefix + V.filePath_DefaultTitle ) + mediaLink_RightOffset
-			filePathRegion   = sublime.Region ( filePathRegion_A, filePathRegion_B )
+			view.insert ( edit, newLine_Position, default_MediaPath )
+
+			mediaPathRegion_A = newLine_Position + mediaPath_SelectionOffset
+			mediaPathRegion_B = mediaPathRegion_A + mediaPath_SelectionLength
+			mediaPathRegion   = sublime.Region ( mediaPathRegion_A, mediaPathRegion_B )
 
 			if trimmed_RegionText != V.mediaLink_DefaultTitle:
-				filePath_Regions.append ( filePathRegion )
+				mediaPath_Regions.append ( mediaPathRegion )
 			else:
-				filePath_Regions.append ( region )
+				mediaPath_Regions.append ( region )
 
 		view.selection.clear ()
-		view.selection.add_all ( filePath_Regions )
+		view.selection.add_all ( mediaPath_Regions )
 		view.run_command ( "reverse_selection_direction" )
 
 	#▓▓▓▓▓──────────────────────────────▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓¦•⌠#
@@ -1150,7 +1138,7 @@ class V ():
 
 		V.slide_DefaultTitle     = "___SLIDE_TITLE_GOES_HERE___"
 		V.mediaLink_DefaultTitle = "___MEDIALINK_TITLE_GOES_HERE___"
-		V.filePath_DefaultTitle  = "___FILEPATH_GOES_HERE___"
+		V.mediaPath_DefaultTitle = "___FILEPATH_GOES_HERE___"
 
 		#═════      • •   Errors      ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦••s1⌡#
 
