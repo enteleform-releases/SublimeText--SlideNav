@@ -8,9 +8,9 @@ Also includes a file launcher to quickly open media files during your presentati
 ### DEMO
 
 This GIF has 3 components:
-* Top-Left: A Vysor clone of my Android phone screen.  I am running the entire demo from my phone, using the included preset for UnifiedRemote.
-* Bottom-Left: A keycapture window displaying all commands which are being executed by UnifiedRemote
-* Right: SlideNav in action
+* __Top-Left:__ A Vysor clone of my Android phone screen.  I am running the entire demo from my phone, using the included preset for UnifiedRemote.
+* __Bottom-Left:__ A key-capture window displaying all commands which are being executed by UnifiedRemote
+* __Right:__ SlideNav in action
 
 ![Overview](https://raw.githubusercontent.com/Enteleform/_README_RESOURCES/master/ST_SlideNav/Overview.gif)
 ( click to zoom in )
