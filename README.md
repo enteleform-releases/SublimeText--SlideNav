@@ -53,6 +53,8 @@ To get started, see:
 * [SlideNav Interactive Tutorial](https://github.com/Enteleform/ST_SlideNav/blob/master/Tutorial/%5BSlideNav%5D%20Tutorial.py)
 * [How do I create new presentation?](https://github.com/Enteleform/ST_SlideNav/issues/1)
 
+In order to get the most functionality out of SlideNav, read the comments @ [SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)
+
 ## COMMANDS
 
 These are the included commands & default keybindings:
@@ -136,10 +138,6 @@ I recommend using [ASCII Decorator](https://packagecontrol.io/packages/ASCII%20D
 It's a quick & easy way to add visual contast and emphasis to your presentations.
 
 This [Image To ASCII Converter](http://www.text-image.com/convert/ascii.html) is great for turning your favorite [ memes | images | whatever ] into text that you can include in your presentations.
-
-## KNOWN LIMITATIONS
-
-In order to get the most functionality out of SlideNav, read the comments @ [SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)
 
 ## FEEDBACK
 
