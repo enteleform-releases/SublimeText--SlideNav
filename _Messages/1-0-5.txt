@@ -1,0 +1,14 @@
+▌▓▓▓▓▓   SlideNav v1.0.5   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌
+
+
+	I made some minor changes @ SlideNav.sublime-settings to improve readability
+	and keep terminology consistent between all of the documentation.
+
+	If you've already set up your user settings, change these two keys:
+
+		medialink_onclick       --->   medialink_click_enabled
+
+		medialink_on_navigate   --->   medialink_linknav_enabled
+
+
+▌▓▓▓▓▓   /SlideNav v1.0.5   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌
