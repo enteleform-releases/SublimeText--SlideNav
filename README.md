@@ -25,11 +25,12 @@ This GIF has 3 components:
 ### MediaLink, TextLink, & LinkNav
 
 * Launch files during your presentation with MediaLinks
-* MediaLinks can be launched automatically upon clicking, with LinkNav, or with a hotkey
-* List your MediaLink+Path at the beginning of the document, and access it anywhere else in the document
-* Define applications & extensions @ SlideNav.sublime-settings
+ * MediaLinks can be launched automatically upon clicking, with LinkNav, or with a hotkey
+ * List your MediaLink+Path at the beginning of the document, and access it anywhere else in the document
+ * Define applications & extensions @ SlideNav.sublime-settings  
 
-* Textlinks allow you to define segments of text to hightlight during the presentation
+* Textlinks allow you to define segments of text to highlight during the presentation  
+
 * LinkNav automatically moves through your presentation by MediaLink & TextLink sections
 
 ### Remote Control
@@ -42,8 +43,7 @@ More info at __[UnifiedRemote/README.md](https://github.com/Enteleform/ST_SlideN
 
 ### Snippets
 
-* Slide dividers, MediaLinks, & TextLinks are generated automatically via hotkey
-* MediaLinks can be generated with or without path ( use with path to define MediaLink, use without path to launch MediaLink anywhere else in the document )
+* Slide dividers, MediaFiles, MediaLinks, & TextLinks are generated automatically via hotkey
 
 ![Snippets](https://raw.githubusercontent.com/Enteleform/_README_RESOURCES/master/ST_SlideNav/Snippets.gif)
 
