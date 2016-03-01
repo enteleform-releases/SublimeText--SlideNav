@@ -27,7 +27,7 @@ This GIF has 3 components:
 * Launch files during your presentation with MediaLinks
  * MediaLinks can be launched automatically with LinkNav, upon clicking, or with a hotkey
  * List your MediaFiles before your first slide, and access them from any of your slides via MediaLink
- * Define applications & extensions @ SlideNav.sublime-settings  
+ * Define applications & extensions @ __[SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)__
 
 * Textlinks allow you to define segments of text to highlight during the presentation  
 
