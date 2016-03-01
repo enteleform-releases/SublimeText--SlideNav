@@ -170,12 +170,6 @@
 					"extensions": [ "ahk" ]
 				},
 
-			// "commandline":
-			// 	{
-			// 		"application":"C:\\Users\\Fico\\OneDrive\\( Scripts )\\Batch\\Run CMD from SlideNav.bat",
-			// 		"extensions": [ "ahk" ]
-			// 	},
-
 			"document":
 				{
 					"application": "C:\\Program Files\\Sublime Text 3\\sublime_text.exe",
