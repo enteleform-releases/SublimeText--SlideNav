@@ -17,7 +17,6 @@ This GIF has 3 components:
 * __Right:__ SlideNav in action  
 
 ![Overview](https://raw.githubusercontent.com/Enteleform/_README_RESOURCES/master/ST_SlideNav/Overview.gif)
-( click to zoom in )
 
 ## FEATURES
 
