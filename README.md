@@ -7,13 +7,7 @@ Also includes a file launcher to quickly open media files during your presentati
 
 ## SECTIONS
 
-[Demo](https://github.com/Enteleform/ST_SlideNav#demo)  
-[Features](https://github.com/Enteleform/ST_SlideNav#features)  
-[Getting Started](https://github.com/Enteleform/ST_SlideNav#getting-started)  
-[Commands](https://github.com/Enteleform/ST_SlideNav#commands)  
-[Customization](https://github.com/Enteleform/ST_SlideNav#customization)  
-[Extras](https://github.com/Enteleform/ST_SlideNav#extras)  
-[Feedback](https://github.com/Enteleform/ST_SlideNav#feedback)
+[Demo](https://github.com/Enteleform/ST_SlideNav#demo) &nbsp;| &nbsp;[Features](https://github.com/Enteleform/ST_SlideNav#features) &nbsp;| &nbsp;[Getting Started](https://github.com/Enteleform/ST_SlideNav#getting-started) &nbsp;| &nbsp;[Commands](https://github.com/Enteleform/ST_SlideNav#commands) &nbsp;| &nbsp;[Customization](https://github.com/Enteleform/ST_SlideNav#customization) &nbsp;| &nbsp;[Extras](https://github.com/Enteleform/ST_SlideNav#extras) &nbsp;| &nbsp;[Feedback](https://github.com/Enteleform/ST_SlideNav#feedback)
 
 ## DEMO
 
