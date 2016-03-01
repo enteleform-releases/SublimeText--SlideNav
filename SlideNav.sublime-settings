@@ -54,7 +54,7 @@
 	"medialink_endcap": "□",
 
 	// These characters define TextLinks and will only function if they are at the beginning of a line
-	//     They can be preceded by whitespace and/or the "comment_start" character of the presentations filetype
+	//     They can be preceded by whitespace and/or the "comment_start" character of the presentation's filetype
 	// !IMPORTANT! make sure multiline starts are always paired with ends
 	//     Otherwise, navigation will skip to the next available end
 	"textlink_multiline_start": "┌",
@@ -73,14 +73,12 @@
 	"medialink_wrapper_fill":    "■",
 
 	// If enabled, this value allows MediaLinks to launch automatically upon being clicked
-	//     Otherwise, MediaLinks can be launched manually via key-binding
-	"medialink_onclick": true, // true | false
+	"medialink_click_enabled": true, // true | false
 
-	// If enabled, this value allows MediaLinks to launch with the NavigateMediaLinks commands
-	//     Otherwise, MediaLinks can be launched manually via key-binding
-	"medialink_on_navigate": true, // true | false
+	// If enabled, this value allows MediaLinks to launch with the LinkNav commands
+	"medialink_linknav_enabled": true, // true | false
 
-	// These values affect the visual appearance of MediaLinks
+	// These values affect the visual appearance of MediaFiles
 	"medialink_indentation_amount": 1,
 	"mediapath_tab_amount":         3,
 
