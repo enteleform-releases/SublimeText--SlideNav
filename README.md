@@ -61,32 +61,32 @@ These are the included commands & default keybindings:
 
 * Both SlideNav commands will automatically show the first slide when they are first used
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SlideNav_Down` ( show next Slide )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`SlideNav_Down` ( show next Slide )  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SlideNav_Up` ( show previous Slide )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`SlideNav_Up` ( show previous Slide )  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Navigate Links
 
 * Both LinkNav commands are limited to Links that are currently Visible, meaning you can use them without accidentally moving into the next slide
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`LinkNav_Down`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`LinkNav_Down`  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`LinkNav_Up`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`LinkNav_Up`  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Zoom_In ` ( zoom to selected Slide - Slide title line must be selected )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Zoom_In ` ( zoom to selected Slide - Slide title line must be selected )  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Zoom_Out` ( exit Slide & show full document )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Zoom_Out` ( exit Slide & show full document )  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Reset_Zoom` ( removes zoom level & shows text @ default font size )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>0</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Reset_Zoom` ( removes zoom level & shows text @ default font size )  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>0</kbd>
 
 ### Insert Snippets
 
@@ -98,30 +98,30 @@ These are the included commands & default keybindings:
  * on single lines ( LinkNav will select the affected line )
  * on multiple lines ( LinkNav will select the affected lines )
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Insert_Slide`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Insert_Slide`  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Insert_MediaFile` ( MediaLink + path )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Insert_MediaFile` ( MediaLink + path )  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Insert_MediaLink`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Insert_MediaLink`  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Insert_TextLink`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Insert_TextLink`  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 ### MediaLink
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Open_MediaLink`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Open_MediaLink`  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Toggle_MediaLink` ( enable/disable automatically opening MediaLinks on click )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Toggle_MediaLink` ( enable/disable automatically opening MediaLinks on click )  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 ### Slides
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Align` ( resizes all Slide titles to same length )  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;`Align` ( resizes all Slide titles to same length )  
+&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
 ## CUSTOMIZATION
 
