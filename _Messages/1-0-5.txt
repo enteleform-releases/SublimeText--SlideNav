@@ -1,7 +1,25 @@
-▌▓▓▓▓▓   SlideNav v1.0.5   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌
+▌▓▓▓▓▓   SlideNav v1.0.5   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌
 
 
-	I made some minor changes @ SlideNav.sublime-settings to improve readability
+═════      @ README.md      ════════════════════════════════════════════════════
+
+
+	Updates:
+		• Improved GIF demos of SlideNav showing all major features
+		• "Geting Started" Section
+				• Includes an interactive tutorial file that
+					explains & demonstrates all major features
+		• "Extras" section with some useful resources that work well with SlideNav
+
+	Check them out @ http://github.com/Enteleform/ST_SlideNav
+
+
+═════      @ SlideNav.sublime-settings      ════════════════════════════════════
+
+
+	!!!!! IMPORTANT !!!!!
+
+	I made some minor changes to improve readability
 	and keep terminology consistent between all of the documentation.
 
 	If you've already set up your user settings, change these two keys:
@@ -11,4 +29,4 @@
 		medialink_on_navigate   --->   medialink_linknav_enabled
 
 
-▌▓▓▓▓▓   /SlideNav v1.0.5   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌
+▌▓▓▓▓▓   /SlideNav v1.0.5   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▌
