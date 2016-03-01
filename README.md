@@ -35,11 +35,9 @@ This GIF has 3 components:
 
 ### Remote Control
 
-Included in __[/UnifiedRemote](https://github.com/Enteleform/ST_SlideNav/tree/master/UnifiedRemote)__ is a custom preset for Unified Remote
-
-Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
-
-More info at __[UnifiedRemote/README.md](https://github.com/Enteleform/ST_SlideNav/blob/master/UnifiedRemote/README.md)__
+* Included in __[/UnifiedRemote](https://github.com/Enteleform/ST_SlideNav/tree/master/UnifiedRemote)__ is a custom preset for Unified Remote
+* Unified Remote can be installed on your Android/IOS devices to control your PC/Mac computer!
+* More info at __[UnifiedRemote/README.md](https://github.com/Enteleform/ST_SlideNav/blob/master/UnifiedRemote/README.md)__
 
 ### Snippets
 
@@ -95,6 +93,7 @@ Reset_Zoom ( removes zoom level & shows text @ default font size )
 * Slide, MediaFile, & MediaLink snippet commands can be used:
  * on blank lines ( new text area will automatically be selected )
  * on lines with text ( text area will automatically use line's text )
+
 * The TextLink snippet command can be used:
  * on single lines ( LinkNav will select the affected line )
  * on multiple lines ( LinkNav will select the affected lines )
