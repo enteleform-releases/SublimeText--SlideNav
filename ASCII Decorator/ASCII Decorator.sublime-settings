@@ -1,12 +1,12 @@
 {
-    "ascii_decorator_font":             "old banner",
+    "ascii_decorator_font":             "univers",
     "show_preview":                     true,
     "default_insert_as_comment":        true,
-    "default_comment_style_preference": "line",
+    "default_comment_style_preference": "line", // "line" | "block"
     "default_use_additional_indent":    false,
     "default_width":                    80,
-    "default_direction":                "auto",
-    "default_justify":                  "left",
+    "default_direction":                "auto", // "auto" | "left-to-right" | "right-to-left"
+    "default_justify":                  "left", // "auto" | "left" | "center" | "right"
 
     // The following list of font presets was set up by Enteleform for use with the SlideNav plugin.
     // http://packagecontrol.io/packages/SlideNav
