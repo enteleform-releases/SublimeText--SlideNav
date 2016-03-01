@@ -25,7 +25,7 @@ This GIF has 3 components:
 ### MediaLink, TextLink, & LinkNav
 
 * Launch files during your presentation with MediaLinks
- * MediaLinks can be launched automatically upon clicking, with LinkNav, or with a hotkey
+ * MediaLinks can be launched automatically with LinkNav, upon clicking, or with a hotkey
  * List your MediaLink+Path at the beginning of the document, and access it anywhere else in the document
  * Define applications & extensions @ SlideNav.sublime-settings  
 
