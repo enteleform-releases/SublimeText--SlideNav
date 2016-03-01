@@ -61,67 +61,67 @@ These are the included commands & default keybindings:
 
 * Both SlideNav commands will automatically show the first slide when they are first used
 
-SlideNav_Down ( show next Slide )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SlideNav_Down ( show next Slide )`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-SlideNav_Up ( show previous Slide )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SlideNav_Up ( show previous Slide )`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Navigate Links
 
 * Both LinkNav commands are limited to Links that are currently Visible, meaning you can use them without accidentally moving into the next slide
 
-LinkNav_Down  
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`LinkNav_Down`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>=</kbd>
 
-LinkNav_Up  
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`LinkNav_Up`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>-</kbd>
 
 ### Zoom
 
-Zoom_In  ( zoom to selected Slide - Slide title line must be selected )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Zoom_In  ( zoom to selected Slide - Slide title line must be selected )`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd>
 
-Zoom_Out ( exit Slide & show full document )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Zoom_Out ( exit Slide & show full document )`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>-</kbd>
 
-Reset_Zoom ( removes zoom level & shows text @ default font size )  
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>0</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Reset_Zoom ( removes zoom level & shows text @ default font size )`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>0</kbd>
 
 ### Insert Snippets
 
 * Slide, MediaFile, & MediaLink snippet commands can be used:
- * on blank lines ( new text area will automatically be selected )
- * on lines with text ( text area will automatically use line's text )
+ * on lines with text ( first text area will automatically use line's text )
+ * on blank lines     ( first text area will automatically be selected )
 
 * The TextLink snippet command can be used:
  * on single lines ( LinkNav will select the affected line )
  * on multiple lines ( LinkNav will select the affected lines )
 
-Insert_Slide  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Insert_Slide`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
-Insert_MediaFile ( MediaLink + path )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Insert_MediaFile ( MediaLink + path )`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
-Insert_MediaLink  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Insert_MediaLink`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>.</kbd>
 
-Insert_TextLink  
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Insert_TextLink`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 ### MediaLink
 
-Open_MediaLink  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Open_MediaLink`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd>
 
-Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )  
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Toggle_MediaLink ( enable/disable automatically opening MediaLinks on click )`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>.</kbd>
 
 ### Slides
 
-Align ( resizes all Slide titles to same length )  
-<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Align ( resizes all Slide titles to same length )`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>ctrl</kbd>+<kbd>super</kbd>+<kbd>.</kbd>
 
 ## CUSTOMIZATION
 
