@@ -5,7 +5,17 @@ Easily create slide presentations in Sublime Text with SlideNav
 
 Also includes a file launcher to quickly open media files during your presentation
 
-### DEMO
+## SECTIONS
+
+[Demo](https://github.com/Enteleform/ST_SlideNav#demo)  
+[Features](https://github.com/Enteleform/ST_SlideNav#features)  
+[Getting Started](https://github.com/Enteleform/ST_SlideNav#getting-started)  
+[Commands](https://github.com/Enteleform/ST_SlideNav#commands)  
+[Customization](https://github.com/Enteleform/ST_SlideNav#customization)  
+[Extras](https://github.com/Enteleform/ST_SlideNav#extras)  
+[Feedback](https://github.com/Enteleform/ST_SlideNav#feedback)
+
+## DEMO
 
 This GIF has 3 components:
 * __Top-Left:__ A Vysor clone of my Android phone screen.  I am running the entire demo from my phone, using the included preset for UnifiedRemote.
