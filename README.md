@@ -12,9 +12,9 @@ Also includes a file launcher to quickly open media files during your presentati
 ## DEMO
 
 This GIF has 3 components:  
-* __Top-Left:__ A Vysor clone of my Android phone screen.  I am running the entire demo from my phone, using the included preset for UnifiedRemote.  
-* __Bottom-Left:__ A key-capture window displaying all commands which are being executed by UnifiedRemote  
-* __Right:__ SlideNav in action  
+&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;__Top-Left:__ A Vysor clone of my Android phone screen.  I am running the entire demo from my phone, using the included preset for UnifiedRemote.  
+&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;__Bottom-Left:__ A key-capture window displaying all commands which are being executed by UnifiedRemote  
+&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;__Right:__ SlideNav in action  
 
 ![Overview](https://raw.githubusercontent.com/Enteleform/_README_RESOURCES/master/ST_SlideNav/Overview.gif)
 ( click to zoom in )
@@ -52,8 +52,8 @@ This GIF has 3 components:
 ## GETTING STARTED
 
 To get started, see:  
-* __[SlideNav Interactive Tutorial](https://github.com/Enteleform/ST_SlideNav/blob/master/Tutorial/%5BSlideNav%5D%20Tutorial.py)__  
-* __[How do I create new presentation?](https://github.com/Enteleform/ST_SlideNav/issues/1)__  
+&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;__[SlideNav Interactive Tutorial](https://github.com/Enteleform/ST_SlideNav/blob/master/Tutorial/%5BSlideNav%5D%20Tutorial.py)__  
+&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;__[How do I create new presentation?](https://github.com/Enteleform/ST_SlideNav/issues/1)__  
 
 In order to get the most functionality out of SlideNav, read the comments @ __[SlideNav.sublime-settings](https://github.com/Enteleform/ST_SlideNav/blob/master/SlideNav.sublime-settings)__
 
