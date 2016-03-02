@@ -746,7 +746,7 @@ class Commands ():
 
 			#═════      • • •   Set MediaLink FilePath      ══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════⌠¦•••s1⌡#
 
-		filePath_Region = sublime.Region ( mediaLink_PathLine.a + fileStart_Offset + whitespaceOffset, mediaLink_PathLine.b - fileEnd_Offset )
+		filePath_Region = sublime.Region ( mediaLink_PathLine.a + fileStart_Offset + whitespaceOffset, mediaLink_PathLine.b - mediaLink_RightOffset )
 		nextLine_Region = sublime.Region ( mediaLink_PathLine.b + 1, mediaLink_PathLine.b + 1 )
 		filePath        = view.substr ( filePath_Region )
 		filePath_Length = len ( filePath )
