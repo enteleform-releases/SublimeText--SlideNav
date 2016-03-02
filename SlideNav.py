@@ -612,7 +612,7 @@ class Commands ():
 		if V.commentEnd != "":
 			mediaPath_Suffix = V.spaceCharacter + V.commentEnd
 
-		default_MediaPath =       \
+		default_MediaPath =        \
 			"\n"                     + \
 			mediaPath_Padding        + \
 			mediaPath_Prefix         + \
