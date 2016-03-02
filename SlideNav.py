@@ -608,9 +608,9 @@ class Commands ():
 			mediaPath_Marker  + \
 			V.spaceCharacter
 
-		mediaPath_Suffix  = V.spaceCharacter + V.mediaLink_EndCap
+		mediaPath_Suffix = ""
 		if V.commentEnd != "":
-			mediaPath_Suffix = mediaPath_Suffix + V.commentEnd
+			mediaPath_Suffix = V.spaceCharacter + V.commentEnd
 
 		default_MediaPath =       \
 			"\n"                     + \
