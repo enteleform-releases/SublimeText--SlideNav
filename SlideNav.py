@@ -1075,7 +1075,6 @@ class Commands ():
 
 		if region.a > region.b:
 			region = sublime.Region ( region.b, region.a )
-			print ( "FLIPPED" )
 
 		return ( region )
 
