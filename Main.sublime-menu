@@ -1,55 +1,47 @@
 [
-	{
-		"id": "edit",
-		"children":
-			[
-				{ "id": "wrap" },
-				{ "command": "figlet", "caption": "SlideNav" }
-			]
-	},
-	{
-		"id": "preferences",
-		"children":
-			[
-				{
-					"caption": "Package Settings",
-					"mnemonic": "P",
-					"id": "package-settings",
-					"children":
-						[
-							{
-								"caption": "SlideNav",
-								"children":
-									[
-										{
-											"caption": "Settings – Default",
-											"command": "open_file", "args": { "file": "${packages}/SlideNav/SlideNav.sublime-settings"},
-										},
+  {
+    "id": "preferences",
+    "children":
+      [
+        {
+          "caption": "Package Settings",
+          "mnemonic": "P",
+          "id": "package-settings",
+          "children":
+            [
+              {
+                "caption": "SlideNav",
+                "children":
+                  [
+                    {
+                      "caption": "Settings – Default",
+                      "command": "open_file", "args": { "file": "${packages}/SlideNav/SlideNav.sublime-settings"},
+                    },
 
-										{
-											"caption": "Settings – User",
-											"command": "open_file", "args": { "file": "${packages}/User/SlideNav.sublime-settings" },
-										},
+                    {
+                      "caption": "Settings – User",
+                      "command": "open_file", "args": { "file": "${packages}/User/SlideNav.sublime-settings" },
+                    },
 
-										{ "caption": "-" },
+                    { "caption": "-" },
 
-										{
-											"caption": "Key Bindings – Default",
-											"command": "open_file",
-											"args": { "file": "${packages}/SlideNav/Default.sublime-keymap" },
-										},
+                    {
+                      "caption": "Key Bindings – Default",
+                      "command": "open_file",
+                      "args": { "file": "${packages}/SlideNav/Default.sublime-keymap" },
+                    },
 
-										{
-											"caption": "Key Bindings – User",
-											"command": "open_file",
-											"args": { "file": "${packages}/User/SlideNav/Default.sublime-keymap" },
-										},
+                    {
+                      "caption": "Key Bindings – User",
+                      "command": "open_file",
+                      "args": { "file": "${packages}/User/SlideNav/Default.sublime-keymap" },
+                    },
 
-										{ "caption": "-" },
-									]
-							}
-						]
-				}
-			]
-	}
+                    { "caption": "-" },
+                  ]
+              }
+            ]
+        }
+      ]
+  }
 ]
