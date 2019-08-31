@@ -17,7 +17,7 @@ This GIF has 3 components:
 - __Bottom-Left:__ A key-capture window displaying all commands which are being executed by UnifiedRemote  
 - __Right:__ SlideNav in action  
 
-![Overview](https://raw.githubusercontent.com/Enteleform/-RES-/master/%5B%20%40README%20%5D/ST_SlideNav/Overview.gif)
+![Overview](./GIFs/Overview.gif)
 
 ## FEATURES
 
@@ -47,7 +47,7 @@ This GIF has 3 components:
 
 - Slide dividers, MediaFiles, MediaLinks, & TextLinks are generated automatically via hotkey  
 
-![Snippets](https://raw.githubusercontent.com/Enteleform/-RES-/master/%5B%20%40README%20%5D/ST_SlideNav/Snippets.gif)
+![Snippets](./GIFs/Snippets.gif)
 
 ## GETTING STARTED
 
